@@ -22,7 +22,7 @@
             android:value="@string/google_maps_key" />
 
 
-        <activity android:name=".MainActivity">
+        <activity android:name=".HomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -33,7 +33,7 @@
         <activity android:name=".MapActivity"
             android:label="Go Back"
             android:theme="@style/AppTheme"
-            android:parentActivityName=".MainActivity">></activity>
+            android:parentActivityName=".HomeActivity">></activity>
     </application>
 
 </manifest>
