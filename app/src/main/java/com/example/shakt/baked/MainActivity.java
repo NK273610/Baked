@@ -1,5 +1,6 @@
 package com.example.shakt.baked;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -30,6 +31,9 @@ public class MainActivity extends AppCompatActivity {
                 {
                     Toast.makeText(getApplicationContext(),
                             "Redirecting...", Toast.LENGTH_SHORT).show();
+                    Intent intent  = new Intent(getApplicationContext(), HomeActivity.class);
+                    startActivity(intent);
+
                 }
                 else
                 {

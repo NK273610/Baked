@@ -29,8 +29,7 @@
             android:layout_marginEnd="30dp"
             android:layout_marginStart="10dp"
             android:layout_weight="0.4"
-            android:hint="User Name"
-            android:inputType="textCapCharacters" />
+            android:hint="User Name"/>
     </LinearLayout>
 
     <LinearLayout
@@ -70,7 +69,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:onClick="login"
             android:text="@string/login" />
     </LinearLayout>
 
@@ -86,7 +84,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:onClick="login"
             android:text="@string/anonymousLogin" />
     </LinearLayout>
 
