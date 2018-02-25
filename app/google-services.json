@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "408665138817",
+    "firebase_url": "https://bakedproject-d4090.firebaseio.com",
+    "project_id": "bakedproject-d4090",
+    "storage_bucket": "bakedproject-d4090.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:408665138817:android:7c82d2bffe69f87b",
+        "android_client_info": {
+          "package_name": "com.example.shakt.baked"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "408665138817-nvilp9dhvg885t028m9knntp05h5jce2.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.shakt.baked",
+            "certificate_hash": "ac3d33bb54db85688725a7df9717262cb6fb4333"
+          }
+        },
+        {
+          "client_id": "408665138817-8vujlt540455ldce5euourl2ptk2608u.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCoUxbHXSKLvCF02tY9NRktpLrnNELJs7Q"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "408665138817-8vujlt540455ldce5euourl2ptk2608u.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
