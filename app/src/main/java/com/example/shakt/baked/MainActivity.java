@@ -34,8 +34,8 @@ public class MainActivity extends AppCompatActivity {
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(user_name_input.getText().toString().equals("nikhildhirmalani@gmail.com") &&
-                        password_input.getText().toString().equals("nikhil1994"))
+                if(user_name_input.getText().toString().equals("shakti@gmail.com") &&
+                        password_input.getText().toString().equals("shakti1993"))
                 {
 
                     auth.createUserWithEmailAndPassword(user_name_input.getText().toString(), password_input.getText().toString()).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
