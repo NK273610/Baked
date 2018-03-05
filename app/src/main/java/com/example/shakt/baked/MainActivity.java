@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if(user_name_input.getText().toString().equals("shakti@gmail.com") &&
-                        password_input.getText().toString().equals("shakti1993"))
+                        password_input.getText().toString().equals("shakti1994"))
                 {
 
                     auth.createUserWithEmailAndPassword(user_name_input.getText().toString(), password_input.getText().toString()).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
@@ -69,7 +69,8 @@ public class MainActivity extends AppCompatActivity {
         anonymousButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                finish();
+                Intent intent  = new Intent(getApplicationContext(), HomeActivity.class);
+                startActivity(intent);
             }
         });
     }
