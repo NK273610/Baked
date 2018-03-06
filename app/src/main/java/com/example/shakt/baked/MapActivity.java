@@ -12,6 +12,7 @@ import android.util.Log;
 
 
 import com.google.android.gms.location.FusedLocationProviderClient;
+import com.google.android.gms.location.LocationListener;
 import com.google.android.gms.location.LocationRequest;
 import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.location.LocationCallback;
@@ -27,6 +28,8 @@ import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import android.Manifest;
 import android.os.Looper;
+import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
@@ -46,18 +49,61 @@ public class MapActivity extends AppCompatActivity
     private Location mLastLocation;
     private Marker mCurrLocationMarker;
 
+    private Button nslc_button;
+    int PROXIMITY_RADIUS = 10000;
+    double latitude;
+    double longitude;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_map);
+
+        nslc_button = findViewById(R.id.nslcButton);
 
         mFusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this);
 
         mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
+
+        nslc_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mMap.clear();
+                String nslc = "hospital";
+                String url = getUrl(latitude, longitude, nslc);
+                Object dataTransfer[] = new Object[2];
+                dataTransfer[0] = mMap;
+                dataTransfer[1] = url;
+
+                GetNearbyPlacesData getNearbyPlacesData = new GetNearbyPlacesData();
+                getNearbyPlacesData.execute(dataTransfer);
+
+                Toast.makeText(MapActivity.this, "Nearby NSLC", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
+
+
+    private String getUrl(double latitude, double longitude, String nearbyPlace){
+        StringBuilder googlePlaceUrl = new StringBuilder("https://maps.googleapis.com/maps/api/place/nearbysearch/json?");
+        googlePlaceUrl.append("location"+latitude+","+longitude);
+        googlePlaceUrl.append("&radius="+PROXIMITY_RADIUS);
+        googlePlaceUrl.append("&type="+nearbyPlace);
+        googlePlaceUrl.append("&sensor=true");
+        googlePlaceUrl.append("&key="+"AIzaSyAKfUIIH-jfCxxVht0cmqaBIYpN0FvoSak");
+
+        return googlePlaceUrl.toString();
+
+    }
+
+//    @Override
+//    public void onLocationChanged(Location location) {
+//        latitude = location.getLatitude();
+//        longitude = location.getLongitude();
+//    }
 
     @Override
     public void onPause() {
@@ -75,7 +121,7 @@ public class MapActivity extends AppCompatActivity
         mMap = googleMap;
 
         mLocationRequest = new LocationRequest();
-        mLocationRequest.setInterval(1000); // two minute interval
+        mLocationRequest.setInterval(1000);
         mLocationRequest.setFastestInterval(1000);
         mLocationRequest.setPriority(LocationRequest.PRIORITY_BALANCED_POWER_ACCURACY);
 
@@ -96,6 +142,8 @@ public class MapActivity extends AppCompatActivity
         @Override
         public void onLocationResult(LocationResult locationResult) {
             for (Location location : locationResult.getLocations()) {
+                longitude = location.getLongitude();
+                latitude = location.getLatitude();
                 Log.i("MapActivity", "Location: " + location.getLatitude() + " " + location.getLongitude());
                 mLastLocation = location;
                 if (mCurrLocationMarker != null) {
