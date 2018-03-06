@@ -35,6 +35,8 @@ import android.widget.Toast;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 
 
+//inspired from : https://github.com/priyankapakhale/GoogleMapsNearbyPlacesDemo
+
 
 public class MapActivity extends AppCompatActivity
     implements OnMapReadyCallback{
