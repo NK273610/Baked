@@ -19,6 +19,8 @@ import java.util.List;
  * Created by Shakti on 05-03-2018.
  */
 
+// inspired from : https://github.com/priyankapakhale/GoogleMapsNearbyPlacesDemo
+
 public class GetNearbyPlacesData extends AsyncTask<Object, String, String> {
 
     String googlePlacesData;
@@ -67,7 +69,7 @@ public class GetNearbyPlacesData extends AsyncTask<Object, String, String> {
 
             mMap.addMarker(markerOptions);
             mMap.moveCamera(CameraUpdateFactory.newLatLng(latLng));
-            mMap.animateCamera(CameraUpdateFactory.zoomTo(10));
+            mMap.animateCamera(CameraUpdateFactory.zoomTo(15));
 
         }
     }

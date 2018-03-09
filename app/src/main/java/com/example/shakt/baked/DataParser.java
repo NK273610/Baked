@@ -12,7 +12,7 @@ import java.util.List;
  * Created by Shakti on 05-03-2018.
  */
 
-//Source : https://www.youtube.com/watch?v=_Oljjn1fIAc
+// inspired from : https://github.com/priyankapakhale/GoogleMapsNearbyPlacesDemo
 
 public class DataParser {
 
