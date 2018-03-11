@@ -52,7 +52,7 @@ public class MapActivity extends AppCompatActivity
     private Marker mCurrLocationMarker;
 
     private Button nslc_button;
-    int PROXIMITY_RADIUS = 1000;
+    int PROXIMITY_RADIUS = 800;
     double latitude;
     double longitude;
 
@@ -69,25 +69,7 @@ public class MapActivity extends AppCompatActivity
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
 
-//        nslc_button.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                mMap.clear();
-//                String nslc = "hospital";
-//                String url = getUrl(latitude, longitude, nslc);
-//                Object dataTransfer[] = new Object[2];
-//                dataTransfer[0] = mMap;
-//                dataTransfer[1] = url;
-//
-//                GetNearbyPlacesData getNearbyPlacesData = new GetNearbyPlacesData();
-//                getNearbyPlacesData.execute(dataTransfer);
-//
-//                Toast.makeText(MapActivity.this, "Nearby NSLC", Toast.LENGTH_SHORT).show();
-//            }
-//        });
     }
-
-
 
     private String getUrl(double latitude, double longitude, String nearbyPlace){
         StringBuilder googlePlaceUrl = new StringBuilder("https://maps.googleapis.com/maps/api/place/nearbysearch/json?");
@@ -101,11 +83,6 @@ public class MapActivity extends AppCompatActivity
 
     }
 
-//    @Override
-//    public void onLocationChanged(Location location) {
-//        latitude = location.getLatitude();
-//        longitude = location.getLongitude();
-//    }
 
     @Override
     public void onPause() {
