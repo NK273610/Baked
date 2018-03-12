@@ -32,7 +32,7 @@ public class home_tab_1 extends Fragment implements View.OnClickListener{
 
     @Override
     public void onClick(View v) {
-        Intent intent  = new Intent(getActivity(), InfoActivity.class);
+        Intent intent  = new Intent(getActivity().getApplicationContext(), InfoActivity.class);
         startActivity(intent);
     }
 
