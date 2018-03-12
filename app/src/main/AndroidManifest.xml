@@ -33,7 +33,8 @@
             android:value="@string/google_maps_key" />
 
         <activity android:name=".MainActivity" />
-        <activity android:name=".HomeActivity" />
+        <activity android:name=".HomeActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
         <activity
             android:name=".MapActivity"
             android:label="Go Back"
@@ -49,8 +50,9 @@
         <activity android:name=".IntroActivity" />
         <activity
             android:name=".InfoActivity"
-            android:label="@string/title_activity_info"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:parentActivityName=".HomeActivity"
+            android:label="Back"
+            android:theme="@style/AppTheme.NoActionBar"/>
     </application>
 
 </manifest>
