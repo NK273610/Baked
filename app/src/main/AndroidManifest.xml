@@ -50,7 +50,8 @@
         <activity android:name=".IntroActivity" />
         <activity
             android:name=".InfoActivity"
-            android:label="@string/title_activity_info"
+            android:parentActivityName=".HomeActivity"
+            android:label="Back"
             android:theme="@style/AppTheme.NoActionBar"/>
     </application>
 
