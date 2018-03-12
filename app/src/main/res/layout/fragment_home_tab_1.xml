@@ -6,13 +6,12 @@
     android:layout_height="match_parent"
     tools:context="com.example.shakt.baked.home_tab_1">
 
-    <TextView
-        android:id="@+id/section_label"
+    <Button
+        android:id="@+id/info_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintLeft_toLeftOf="parent"
-        tools:layout_constraintLeft_creator="1"
-        tools:layout_constraintTop_creator="1"
-        android:text="Recommendation stuff here"/>
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="60dp"
+        android:text="Info" />
 
 </android.support.constraint.ConstraintLayout>
