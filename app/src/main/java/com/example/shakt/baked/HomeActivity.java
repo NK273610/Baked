@@ -9,6 +9,7 @@ import android.widget.Button;
 public class HomeActivity extends AppCompatActivity {
 
     private Button btnMapActivity;
+    private Button btnInfoActivity;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -16,12 +17,23 @@ public class HomeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_home);
 
         btnMapActivity = findViewById(R.id.map_button);
+        btnInfoActivity = findViewById(R.id.info_button);
 
         btnMapActivity.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
                 Intent intent  = new Intent(getApplicationContext(), MapActivity.class);
+                startActivity(intent);
+
+            }
+        });
+
+        btnInfoActivity.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent  = new Intent(getApplicationContext(), InfoActivity.class);
                 startActivity(intent);
 
             }
