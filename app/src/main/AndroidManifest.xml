@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.shakt.baked">
-     <uses-permission android:name="android.permission.INTERNET"></uses-permission>
+
+    <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.CALL_PHONE" />
     <uses-permission android:name="android.permission.READ_SMS" />
@@ -19,19 +20,11 @@
         <meta-data
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
-
-        <!-- The API key for Google Maps-based APIs. -->
-
-
-        <!-- <meta-data -->
-        <!-- android:name="com.google.android.geo.API_KEY" -->
-        <!-- android:value="AIzaSyBMiUlC0bApWT2E4WN2Yv7kwCA8BB4BxNk"/> -->
-
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
 
-        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".MainActivity" />
         <activity android:name=".HomeActivity" />
         <activity
             android:name=".MapActivity"
@@ -41,11 +34,40 @@
         <activity android:name=".SplashScreenActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".IntroActivity"></activity>
+        <activity android:name=".IntroActivity" />
+        <activity android:name= ".UserAccount"
+            android:theme = "@style/Theme.AppCompat.Light.NoActionBar"
+            >
+
+        </activity>
+        <activity
+            android:name=".Reviews"
+            android:parentActivityName=".UserAccount"
+            android:theme = "@style/Theme.AppCompat.Light.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".UserAccount" />
+        </activity>
+        <activity
+            android:name=".favourite_Activity"
+            android:parentActivityName=".UserAccount"
+            android:theme = "@style/Theme.AppCompat.Light.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".UserAccount" />
+        </activity>
+        <activity
+            android:name=".OrderHistortActivity"
+            android:parentActivityName=".UserAccount"
+            android:theme = "@style/Theme.AppCompat.Light.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".UserAccount" />
+        </activity>
+
     </application>
 
 </manifest>

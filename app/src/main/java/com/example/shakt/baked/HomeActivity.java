@@ -6,16 +6,19 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import java.nio.file.Files;
+
 public class HomeActivity extends AppCompatActivity {
 
     private Button btnMapActivity;
-
+    private Button useraccount;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
         btnMapActivity = findViewById(R.id.map_button);
+        useraccount = findViewById(R.id.btn_useraccount);
 
         btnMapActivity.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -26,5 +29,14 @@ public class HomeActivity extends AppCompatActivity {
 
             }
         });
+        useraccount.setOnClickListener(new View.OnClickListener() {
+                                           @Override
+                                           public void onClick(View v) {
+                                               Intent intent = new Intent(getApplicationContext(),UserAccount.class);
+                                               startActivity(intent);
+                                           }
+                                       }
+        );
+
     }
 }
