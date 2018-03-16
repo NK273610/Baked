@@ -30,7 +30,7 @@ public class IntroActivity extends MaterialIntroActivity {
         addSlide(new SlideFragmentBuilder()
                         .backgroundColor(R.color.colorAccent)
                         .buttonsColor(R.color.colorWhite)
-                        .image(R.drawable.ic_launcher_background)
+                        .image(R.mipmap.baked_app_icon)
                         .title("Organize your time with us")
                         .description("Would you try?")
                         .build(),
