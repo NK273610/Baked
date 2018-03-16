@@ -13,7 +13,7 @@ import android.widget.Button;
 
 public class home_tab_1 extends Fragment implements View.OnClickListener{
 
-    private Button infoButton;
+
 
     public home_tab_1() {
         // Required empty public constructor
@@ -25,15 +25,13 @@ public class home_tab_1 extends Fragment implements View.OnClickListener{
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_home_tab_1, container, false);
         // Inflate the layout for this fragment
-        infoButton = (Button) view.findViewById(R.id.info_button);
-        infoButton.setOnClickListener(this);
+
         return view;
     }
 
-    @Override
-    public void onClick(View v) {
-        Intent intent  = new Intent(getActivity().getApplicationContext(), InfoActivity.class);
-        startActivity(intent);
-    }
 
+    @Override
+    public void onClick(View view) {
+
+    }
 }
