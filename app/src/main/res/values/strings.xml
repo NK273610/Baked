@@ -15,7 +15,21 @@
     <string name="tab_text_1">Tab 1</string>
     <string name="tab_text_2">Tab 2</string>
     <string name="tab_text_3">Tab 3</string>
-    <string name="action_settings">Settings</string>
-    <string name="section_format">Hello World from section: %1$d</string>
     <string name="welcome">Welcome</string>
+    <string name="title_activity_user_account">UserAccountActivity</string>
+    <string name="section_format">Hello World from section: %1$d</string>
+    <string name="title_activity_useraccount">useraccount</string>
+    <string name="user_id">"@"Booty Baba</string>
+    <string name="user_name">bleh bl bleh</string>
+    <string name="order_history">Order History</string>
+    <string name="reviews">Reviews</string>
+    <string name="favourites">Favourites</string>
+    <string name="following_value">1</string>
+    <string name="following">FOLLOWING</string>
+    <string name="post_value">2</string>
+    <string name="posts">POSTS</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="action_settings">Settings</string>
+
 </resources>
