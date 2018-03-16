@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.shakt.baked">
-
-    <uses-permission android:name="android.permission.INTERNET" />
+     <uses-permission android:name="android.permission.INTERNET"></uses-permission>
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.CALL_PHONE" />
     <uses-permission android:name="android.permission.READ_SMS" />
@@ -55,6 +54,44 @@
             </intent-filter>
 
         </activity>
+        <activity android:name= ".UserAccount"
+            android:theme = "@style/Theme.AppCompat.Light.NoActionBar"
+            >
+
+      </activity>
+       
+        <activity
+            android:name=".Reviews"
+            android:parentActivityName=".UserAccount"
+            android:theme = "@style/Theme.AppCompat.Light.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".UserAccount" />
+        </activity>
+      
+      <activity
+            android:name=".favourite_Activity"
+            android:parentActivityName=".UserAccount"
+            android:theme = "@style/Theme.AppCompat.Light.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".UserAccount" />
+        </activity>
+      
+      <activity
+            android:name=".OrderHistortActivity"
+            android:parentActivityName=".UserAccount"
+            android:theme = "@style/Theme.AppCompat.Light.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".UserAccount" />
+        </activity>
+      <activity
+            android:name=".InfoActivity"
+            android:parentActivityName=".HomeActivity"
+            android:label="Back"
+            android:theme="@style/AppTheme.NoActionBar"/>
+
     </application>
 
 </manifest>
