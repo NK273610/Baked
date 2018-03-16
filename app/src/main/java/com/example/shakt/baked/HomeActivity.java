@@ -1,6 +1,9 @@
 package com.example.shakt.baked;
 
 
+import android.content.Intent;
+import android.support.annotation.NonNull;
+import android.support.design.widget.NavigationView;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -15,7 +18,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
-public class HomeActivity extends AppCompatActivity {
+public class HomeActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
 
     private SectionsPagerAdapter mSectionsPagerAdapter;
 
@@ -45,6 +48,9 @@ public class HomeActivity extends AppCompatActivity {
         mViewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
         tabLayout.addOnTabSelectedListener(new TabLayout.ViewPagerOnTabSelectedListener(mViewPager));
 
+        NavigationView navigationView = (NavigationView) findViewById(R.id.navigation_drawer);
+        navigationView.setNavigationItemSelectedListener(this);
+
     }
 
 
@@ -68,6 +74,25 @@ public class HomeActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
+        int id = item.getItemId();
+        if(id == R.id.nav_login){
+            startActivity(new Intent(getApplicationContext(), MainActivity.class));
+        }
+        else if(id == R.id.nav_acct){
+            startActivity(new Intent(getApplicationContext(), MainActivity.class));
+        }
+        else if(id == R.id.nav_map){
+            startActivity(new Intent(getApplicationContext(), MapActivity.class));
+        }
+        else if(id == R.id.nav_info){
+            startActivity(new Intent(getApplicationContext(), RecommendationActivity.class));
+        }
+        return true;
     }
 
 //    /**
@@ -145,4 +170,5 @@ public class HomeActivity extends AppCompatActivity {
             return 2;
         }
     }
+
 }
