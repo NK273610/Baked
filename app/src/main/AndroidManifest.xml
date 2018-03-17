@@ -42,16 +42,16 @@
             android:theme="@style/AppTheme" />
         <activity android:name=".SplashScreenActivity">
 
-
-        </activity>
-        <activity android:name=".IntroActivity" />
-        <activity android:name=".RecommendationActivity"
-            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
+        </activity>
+        <activity android:name=".IntroActivity" />
+        <activity android:name=".RecommendationActivity"
+            android:theme="@style/AppTheme.NoActionBar">
 
         </activity>
         <activity android:name= ".UserAccount"
@@ -87,11 +87,7 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".UserAccount" />
         </activity>
-      <activity
-            android:name=".InfoActivity"
-            android:parentActivityName=".HomeActivity"
-            android:label="Back"
-            android:theme="@style/AppTheme.NoActionBar"/>
+
 
     </application>
 

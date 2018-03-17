@@ -42,7 +42,7 @@ public class home_tab_1 extends Fragment implements View.OnClickListener{
                 startActivity(intent1);
                 break;
             case R.id.info_button:
-                Intent intent2  = new Intent(getActivity().getApplicationContext(), InfoActivity.class);
+                Intent intent2  = new Intent(getActivity().getApplicationContext(), RecommendationActivity.class);
                 startActivity(intent2);
                 break;
         }
