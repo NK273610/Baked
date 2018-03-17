@@ -30,20 +30,20 @@ public class SplashScreenActivity extends AppCompatActivity {
 
         } else {
 
+            // link for background image : https://www.wallpaperup.com/66805/green_abstract_gaussian_blur.html
 
             EasySplashScreen config = new EasySplashScreen(SplashScreenActivity.this)
                     .withFullScreen()
                     .withSplashTimeOut(3000)
-                    .withBackgroundResource(R.color.colorPrimaryDark)
+                    .withBackgroundResource(R.color.colorAccent)
                     .withTargetActivity(HomeActivity.class)
-                    .withLogo(R.mipmap.baked_icon)
-                    .withAfterLogoText("Baked");
+                    .withLogo(R.mipmap.baked_icon);
 
             //add custom font
-            Typeface pacificoFont = Typeface.createFromAsset(getAssets(), "Pacifico.ttf");
-            config.getAfterLogoTextView().setTextSize(50);
+//            Typeface pacificoFont = Typeface.createFromAsset(getAssets(), "Pacifico.ttf");
+//            config.getAfterLogoTextView().setTextSize(50);
 
-            config.getAfterLogoTextView().setTypeface(pacificoFont);
+//            config.getAfterLogoTextView().setTypeface(pacificoFont);
 
             View easySplashScreenView = config.create();
             setContentView(easySplashScreenView);
