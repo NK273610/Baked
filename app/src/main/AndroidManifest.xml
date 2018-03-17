@@ -53,6 +53,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
 
+
         </activity>
         <activity android:name= ".UserAccount"
             android:theme = "@style/Theme.AppCompat.Light.NoActionBar"
@@ -86,11 +87,7 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".UserAccount" />
         </activity>
-      <activity
-            android:name=".InfoActivity"
-            android:parentActivityName=".HomeActivity"
-            android:label="Back"
-            android:theme="@style/AppTheme.NoActionBar"/>
+
 
     </application>
 
