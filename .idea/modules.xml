@@ -3,7 +3,9 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Baked.iml" filepath="$PROJECT_DIR$/Baked.iml" />
+      <module fileurl="file://D:\baked\Baked\Baked.iml" filepath="D:\baked\Baked\Baked.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://D:\baked\Baked\app\app.iml" filepath="D:\baked\Baked\app\app.iml" />
     </modules>
   </component>
 </project>
