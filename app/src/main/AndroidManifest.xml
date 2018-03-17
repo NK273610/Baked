@@ -51,7 +51,8 @@
         </activity>
         <activity android:name=".IntroActivity" />
         <activity android:name=".RecommendationActivity"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:theme="@style/AppTheme.NoActionBar"
+            android:parentActivityName=".HomeActivity">
 
         </activity>
         <activity android:name= ".UserAccount"
