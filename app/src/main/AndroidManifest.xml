@@ -49,6 +49,7 @@
         <activity android:name=".IntroActivity" />
 
         <activity android:name= ".UserAccount"
+            android:parentActivityName=".HomeActivity"
             android:theme = "@style/Theme.AppCompat.Light.NoActionBar"
             >
 
