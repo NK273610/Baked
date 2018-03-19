@@ -1,6 +1,7 @@
 package com.example.shakt.baked;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by nikhildhirmalani on 12/03/18.
@@ -8,61 +9,73 @@ import java.util.ArrayList;
 
 public class Product_Class {
 
-    ArrayList<Integer> effects_list;
-    ArrayList<Integer> negative_list;
-    ArrayList<Integer> medical_list;
-    String description;
-    ArrayList<String> flavour_list;
-    String pic_url;
+    private List<Integer> Effects;
+    private List<Integer> Negative;
+    private List<Integer> Medical;
+    private String description;
+    private List<String> flavour;
+    private String product_pic;
+    private String product_info;
+
 
     public Product_Class() {
     }
 
-    public ArrayList<Integer> getEffects_list() {
-        return effects_list;
+
+
+    public List<Integer> getEffects() {
+        return Effects;
     }
 
-    public void setEffects_list(ArrayList<Integer> effects_list) {
-        this.effects_list = effects_list;
+    public void setEffects(List<Integer> Effects) {
+        Effects = Effects;
     }
 
-    public ArrayList<Integer> getNegative_list() {
-        return negative_list;
+    public List<Integer> getNegative() {
+        return Negative;
     }
 
-    public void setNegative_list(ArrayList<Integer> negative_list) {
-        this.negative_list = negative_list;
+    public void setNegative(List<Integer> Negative) {
+        Negative = Negative;
     }
 
-    public ArrayList<Integer> getMedical_list() {
-        return medical_list;
+    public List<Integer> getMedical() {
+        return Medical;
     }
 
-    public void setMedical_list(ArrayList<Integer> medical_list) {
-        this.medical_list = medical_list;
+    public void setMedical(List<Integer> Medical) {
+        Medical = Medical;
     }
 
-    public String getDescription() {
+    public String getdescription() {
         return description;
     }
 
-    public void setDescription(String description) {
+    public void setdescription(String description) {
         this.description = description;
     }
 
-    public ArrayList<String> getFlavour_list() {
-        return flavour_list;
+    public List<String> getflavour() {
+        return flavour;
     }
 
-    public void setFlavour_list(ArrayList<String> flavour_list) {
-        this.flavour_list = flavour_list;
+    public void setflavour(List<String> flavour) {
+        this.flavour = flavour;
     }
 
-    public String getPic_url() {
-        return pic_url;
+    public String getproduct_pic() {
+        return product_pic;
     }
 
-    public void setPic_url(String pic_url) {
-        this.pic_url = pic_url;
+    public void setproduct_pic(String product_pic) {
+        this.product_pic = product_pic;
+    }
+
+    public String getproduct_info() {
+        return product_info;
+    }
+
+    public void setproduct_info(String product_info) {
+        this.product_info = product_info;
     }
 }
