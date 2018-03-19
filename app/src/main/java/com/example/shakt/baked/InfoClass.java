@@ -29,6 +29,12 @@ import java.util.List;
 
 public class InfoClass extends Fragment {
 
+    //wkbcjsbcjkdsbcjk
+    //smnbmsbxjsbxjkb
+    //mbsabxjsabnxjksbnx
+    //qsbxsbxjkbxjkqb
+
+
     Button effects;
     public static final String FIREBASE_CHILD_PRODUCTS = "Products";
     Product_Class obj;
