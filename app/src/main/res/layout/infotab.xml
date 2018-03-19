@@ -15,31 +15,5 @@
         android:layout_alignParentTop="true"
         android:layout_marginStart="39dp"
         android:layout_marginTop="49dp"
-        android:text="Effects" />
-
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/Effects"
-        android:layout_centerHorizontal="true"
-        android:text="Negative" />
-
-    <Button
-        android:id="@+id/button3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/button2"
-        android:layout_marginStart="27dp"
-        android:layout_toEndOf="@+id/button2"
-        android:text="Happy" />
-
-    <com.github.mikephil.charting.charts.BarChart
-        android:id="@+id/chart"
-        android:layout_width="300dp"
-        android:layout_height="200dp"
-        android:layout_below="@+id/Effects"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="53dp" />
+        android:text="Button" />
 </RelativeLayout>
-
