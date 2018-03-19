@@ -15,6 +15,12 @@ import android.widget.Button;
 
 public class InfoClass extends Fragment {
 
+    //wkbcjsbcjkdsbcjk
+    //smnbmsbxjsbxjkb
+    //mbsabxjsabnxjksbnx
+    //qsbxsbxjkbxjkqb
+
+
     Button effects;
 
     @Override
