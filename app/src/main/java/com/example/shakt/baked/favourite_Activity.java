@@ -118,6 +118,7 @@ public class favourite_Activity extends AppCompatActivity {
             img.setImageResource(imagearray[position]);
             product_name.setText(favourites.get(name_position));
             ratingBar.setRating(Integer.parseInt(favourites.get(description_position)));
+
             return convertView;
         }
     }
