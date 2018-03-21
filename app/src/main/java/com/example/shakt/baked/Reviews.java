@@ -62,20 +62,18 @@ public class Reviews extends AppCompatActivity {
 
 
 
-        final FirebaseDatabase mydatabase = FirebaseDatabase.getInstance();
-        final DatabaseReference myRef = mydatabase.getReference(FIREBASE_CHILD_USERS);
+         FirebaseDatabase mydatabase = FirebaseDatabase.getInstance();
+         DatabaseReference myRef = mydatabase.getReference(FIREBASE_CHILD_USERS);
         //Enter the user id of the user who we want the reviews of
-        myRef.child(User_id);
-        final DatabaseReference myRef2 = mydatabase.getReference("Products");
+        myRef = myRef.child(User_id);
         ValueEventListener valueEventListener = myRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 for (DataSnapshot userDataSnapshot : dataSnapshot.getChildren()) {
-                    obj = userDataSnapshot.getValue(UserInfoClass.class);
+                      obj = dataSnapshot.getValue(UserInfoClass.class);
+//                    obj = userDataSnapshot.getValue(UserInfoClass.class);
                 }
                 reviews = obj.getReviews();
-                Ratings = obj.getRating();
-                order_history = obj.getOrder_History();
 
                 // TODO add an array of product pics in the firebase
 
@@ -107,37 +105,42 @@ public class Reviews extends AppCompatActivity {
 
     }
 
- class CustomListadapter extends BaseAdapter{
-     //TODO remove this temp array when all pictures are saved in DB
-     int[] imagearray = {R.drawable.ganjaoldy,R.drawable.ganjaoldy,R.drawable.ganjaoldy};
+    class CustomListadapter extends BaseAdapter {
+        //TODO remove this temp array when all pictures are saved in DB
+        int[] imagearray = {R.drawable.ganjaoldy,R.drawable.ganjaoldy,R.drawable.ganjaoldy};
 
-     @Override
-     public int getCount() {
-         return (int)(reviews.size()/2);
-     }
+        @Override
+        public int getCount() {
+            return (int)(reviews.size()/2);
+        }
 
-     @Override
-     public Object getItem(int position) {
-         return null;
-     }
+        @Override
+        public Object getItem(int position) {
+            return null;
+        }
 
-     @Override
-     public long getItemId(int position) {
-         return 0;
-     }
+        @Override
+        public long getItemId(int position) {
+            return 0;
+        }
 
-     @Override
-     public View getView(int position, View convertView, ViewGroup parent) {
-         convertView = getLayoutInflater().inflate(R.layout.customlist_reviews,null);
-         ImageView img = convertView.findViewById(R.id.product_pic);
-         TextView product_name = convertView.findViewById(R.id.product_name);
-         TextView review = convertView.findViewById(R.id.review);
-         img.setImageResource(imagearray[position]);
-         product_name.setText(reviews.get(position));
-         review.setText(reviews.get(position+1));
-         return convertView;
-     }
- }
+        @Override
+        public View getView(int position, View convertView, ViewGroup parent) {
+            int name_position;
+            int description_position;
+           name_position = 2*position;
+           description_position = name_position+1;
+
+            convertView = getLayoutInflater().inflate(R.layout.customlist_reviews,null);
+            ImageView img = convertView.findViewById(R.id.product_pic);
+            TextView product_name = convertView.findViewById(R.id.product_name);
+            TextView review = convertView.findViewById(R.id.review);
+            img.setImageResource(imagearray[position]);
+            product_name.setText(reviews.get(name_position));
+            review.setText(reviews.get(description_position));
+            return convertView;
+        }
+    }
 }
 
 
