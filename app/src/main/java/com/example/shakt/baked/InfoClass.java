@@ -35,8 +35,13 @@ import com.google.firebase.storage.StorageReference;
 import com.squareup.picasso.Picasso;
 
 
+import net.alhazmy13.wordcloud.ColorTemplate;
+import net.alhazmy13.wordcloud.WordCloud;
+import net.alhazmy13.wordcloud.WordCloudView;
+
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 
 public class InfoClass extends Fragment {
@@ -50,6 +55,7 @@ public class InfoClass extends Fragment {
     private StorageReference mStorageRef;
     private RecyclerView rv;
     MyAdapter adapter;
+    List<WordCloud> list ;
 
 
     @Override
@@ -115,7 +121,25 @@ public class InfoClass extends Fragment {
             }
         });
 
+        String text ="The Mango OG flower displays elongated and dense buds that resemble a diamond, at full maturation. Dusted in trichomes, her intoxicating flowers enjoy trippy colors with the underlying hues of yellow, lime green, and orange. Her distinctive pistils cover the Mango OG flower like spikes on a porcupine. Secreting THC-laced crystals from every calyx; Mango OG makes the connoisseur in you want to dissect her carefully with your favorite set of tweezers.";
 
+        generateRandomText(text);
+        WordCloudView wordCloud = (WordCloudView)getView().findViewById(R.id.wordCloud);
+
+        wordCloud.setDataSet(list);
+        wordCloud.setColors(ColorTemplate.MATERIAL_COLORS);
+        wordCloud.setScale(50,10);
+        wordCloud.notifyDataSetChanged();
+
+
+    }
+    private void generateRandomText(String text) {
+        String[] data = text.split(" ");
+        list = new ArrayList<>();
+        Random random = new Random();
+        for (String s : data) {
+            list.add(new WordCloud(s,random.nextInt(50)));
+        }
     }
 
 }
