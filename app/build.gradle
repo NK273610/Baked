@@ -52,8 +52,6 @@ dependencies {
     compile 'net.alhazmy13.wordcloud:library:0.2.0-beta'
 
 
-
-
 }
 apply plugin: 'com.google.gms.google-services'
 
