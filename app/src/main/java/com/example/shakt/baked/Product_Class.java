@@ -16,12 +16,19 @@ public class Product_Class {
     private List<String> flavour;
     private String product_pic;
     private String product_info;
+    private List<String> Image_Url;
 
 
     public Product_Class() {
     }
 
+    public List<String> getImage_Url() {
+        return Image_Url;
+    }
 
+    public void setImage_Url(List<String> image_Url) {
+        Image_Url = image_Url;
+    }
 
     public List<Integer> getEffects() {
         return Effects;
