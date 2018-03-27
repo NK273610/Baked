@@ -1,6 +1,8 @@
 package com.example.shakt.baked;
 
 import android.os.AsyncTask;
+import android.support.v7.widget.LinearLayoutManager;
+import android.widget.LinearLayout;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -12,8 +14,11 @@ import org.w3c.dom.DOMImplementation;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+
+import static android.support.v7.widget.LinearLayoutManager.*;
 
 /**
  * Created by Shakti on 05-03-2018.
@@ -26,6 +31,10 @@ public class GetNearbyPlacesData extends AsyncTask<Object, String, String> {
     String googlePlacesData;
     GoogleMap mMap;
     String url;
+    MapActivity mapActivity = new MapActivity();
+
+    private ArrayList<String> mAddress = new ArrayList<>();
+    private ArrayList<String> mUrls = new ArrayList<>();
 
     @Override
     protected String doInBackground(Object... objects) {
@@ -58,6 +67,8 @@ public class GetNearbyPlacesData extends AsyncTask<Object, String, String> {
 
             String placeName = googlePlace.get("place_name");
             String vicinity = googlePlace.get("vicinity");
+            mAddress.add(vicinity);
+            mUrls.add("https://www.mynslc.com/-/media/About/About-Landing-Pages/650x450/650x450-About-Media-Our-logo.jpg");
 
             double lat = Double.parseDouble(googlePlace.get("lat"));
             double lng = Double.parseDouble(googlePlace.get("lng"));
@@ -72,8 +83,16 @@ public class GetNearbyPlacesData extends AsyncTask<Object, String, String> {
             mMap.addMarker(markerOptions);
             mMap.moveCamera(CameraUpdateFactory.newLatLng(latLng));
             mMap.animateCamera(CameraUpdateFactory.zoomTo(13));
-
         }
+    }
+
+    public ArrayList<String> getmAddress(ArrayList<String> address) {
+//        address = mAddress;
+        return mAddress;
+    }
+
+    public ArrayList<String> getmUrls(){
+        return mUrls;
     }
 }
 
