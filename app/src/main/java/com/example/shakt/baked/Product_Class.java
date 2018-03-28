@@ -17,6 +17,7 @@ public class Product_Class {
     private String product_pic;
     private String product_info;
     private List<String> Image_Url;
+    private List<String> web_url;
 
 
     public Product_Class() {
@@ -24,6 +25,14 @@ public class Product_Class {
 
     public List<String> getImage_Url() {
         return Image_Url;
+    }
+
+    public List<String> getWeb_url() {
+        return web_url;
+    }
+
+    public void setWeb_url(List<String> web_url) {
+        this.web_url = web_url;
     }
 
     public void setImage_Url(List<String> image_Url) {
