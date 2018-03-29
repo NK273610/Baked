@@ -21,8 +21,25 @@ public class Product_Class {
     private List<Integer>ThcCbd;
 
 
-    public Product_Class() {
+    public Product_Class(     List<Integer> Effects ,
+             List<Integer> Negative,
+             List<Integer> Medical,
+             String description,
+             List<String> flavour,
+             String product_pic,
+             String product_info,
+            List<String> Image_Url) {
+
+        this.Effects = Effects ;
+        this.Negative = Negative ;
+        this.Medical = Medical ;
+        this.description = description ;
+        this.flavour = flavour ;
+        this.product_pic = product_pic ;
+        this.product_info = product_info ;
     }
+
+    public Product_Class(){} ;
 
     public List<Integer> getThcCbd() {
         return ThcCbd;
