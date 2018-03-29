@@ -48,6 +48,13 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="53dp" />
 
+    <com.github.mikephil.charting.charts.PieChart
+        android:id="@+id/chart1"
+        android:layout_width="300dp"
+        android:layout_height="200dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/chart"
+        android:layout_marginTop="40dp"/>
 
 
     <android.support.v7.widget.RecyclerView
@@ -55,9 +62,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
-        android:layout_below="@+id/chart"
-
-        android:layout_marginTop="13dp">
+        android:layout_below="@+id/chart1"
+        android:layout_marginTop="40dp">
 
 
     </android.support.v7.widget.RecyclerView>
@@ -65,6 +71,7 @@
         android:id="@+id/wordCloud"
         android:layout_width="match_parent"
         android:layout_height="200dp"
+        android:layout_marginTop="40dp"
         android:layout_below="@+id/mRecylcerID"/>
 
     <android.support.v7.widget.RecyclerView
@@ -72,12 +79,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
+        android:layout_marginTop="40dp"
         android:layout_below="@+id/wordCloud"
-
-        android:layout_marginTop="13dp">
-
-
-    </android.support.v7.widget.RecyclerView>
+        android:layout_marginBottom="30dp"
+        >
+</android.support.v7.widget.RecyclerView>
 
 
 </RelativeLayout>

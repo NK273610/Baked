@@ -18,9 +18,18 @@ public class Product_Class {
     private String product_info;
     private List<String> Image_Url;
     private List<String> web_url;
+    private List<Integer>ThcCbd;
 
 
     public Product_Class() {
+    }
+
+    public List<Integer> getThcCbd() {
+        return ThcCbd;
+    }
+
+    public void setThcCbd(List<Integer> thcCbd) {
+        ThcCbd = thcCbd;
     }
 
     public List<String> getImage_Url() {
