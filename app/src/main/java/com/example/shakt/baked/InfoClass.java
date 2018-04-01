@@ -91,7 +91,7 @@ public class InfoClass extends Fragment {
 
                 }
                 effects.setPressed(true);
-                adapter=new MyAdapter(getContext(),obj.getImage_Url());
+                adapter=new MyAdapter(getContext(),obj.getImageUrl());
                 rv.setAdapter(adapter);
                 getEffects(obj);
                 new_method2(obj.getThcCbd());
@@ -119,7 +119,7 @@ public class InfoClass extends Fragment {
                     }
                 });
 
-                              urladp=new Url_Adapter(obj.getWeb_url());
+                              urladp=new Url_Adapter(obj.getWebUrl());
                               pv.setAdapter(urladp);
 
             }

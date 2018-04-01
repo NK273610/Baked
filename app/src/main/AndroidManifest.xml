@@ -1,13 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.shakt.baked">
-     <uses-permission android:name="android.permission.INTERNET"></uses-permission>
+
+    <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.CALL_PHONE" />
     <uses-permission android:name="android.permission.READ_SMS" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.NETWORK" />
+    <uses-permission android:name="android.permission.USE_CREDENTIALS" />
 
     <application
         android:allowBackup="true"
@@ -41,54 +46,46 @@
             android:parentActivityName=".HomeActivity"
             android:theme="@style/AppTheme" />
         <activity android:name=".SplashScreenActivity">
-
-        </activity>
-
-        <activity android:name=".IntroActivity" />
-      
-        <activity android:name=".RecommendationActivity"
-            android:theme="@style/AppTheme.NoActionBar"
-            android:parentActivityName=".HomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-      
-        <activity android:name= ".UserAccount"
+        <activity android:name=".IntroActivity"></activity>
+        <activity
+            android:name=".RecommendationActivity"
             android:parentActivityName=".HomeActivity"
-            android:theme = "@style/Theme.AppCompat.Light.NoActionBar"
-            >
-      </activity>
-
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
+            android:name=".UserAccount"
+            android:parentActivityName=".HomeActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
         <activity
             android:name=".Reviews"
             android:parentActivityName=".UserAccount"
-            android:theme = "@style/Theme.AppCompat.Light.NoActionBar">
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".UserAccount" />
         </activity>
-      
-      <activity
+        <activity
             android:name=".favourite_Activity"
             android:parentActivityName=".UserAccount"
-            android:theme = "@style/Theme.AppCompat.Light.NoActionBar">
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".UserAccount" />
         </activity>
-      
-      <activity
+        <activity
             android:name=".OrderHistortActivity"
             android:parentActivityName=".UserAccount"
-            android:theme = "@style/Theme.AppCompat.Light.NoActionBar">
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".UserAccount" />
         </activity>
-
+        <activity android:name=".ProductDesc"></activity>
     </application>
 
 </manifest>

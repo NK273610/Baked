@@ -15,6 +15,8 @@ public class home_tab_1 extends Fragment implements View.OnClickListener{
 
     private Button infoButton;
     private Button accountButton;
+    private Button bodyButton;
+    private Button brainButton;
 
     public home_tab_1() {
         // Required empty public constructor
@@ -30,6 +32,11 @@ public class home_tab_1 extends Fragment implements View.OnClickListener{
         infoButton.setOnClickListener(this);
         accountButton = (Button) view.findViewById(R.id.account_button);
         accountButton.setOnClickListener(this);
+
+        bodyButton = (Button) view.findViewById(R.id.body_button);
+        bodyButton.setOnClickListener(this);
+        brainButton = (Button) view.findViewById(R.id.brain_button);
+        brainButton.setOnClickListener(this);
         return view;
     }
 
@@ -44,6 +51,16 @@ public class home_tab_1 extends Fragment implements View.OnClickListener{
             case R.id.info_button:
                 Intent intent2  = new Intent(getActivity().getApplicationContext(), RecommendationActivity.class);
                 startActivity(intent2);
+                break;
+            case R.id.body_button:
+                Intent intent3  = new Intent(getActivity().getApplicationContext(), ProductDesc.class);
+                intent3.putExtra("type", "sativa");
+                startActivity(intent3);
+                break;
+            case R.id.brain_button:
+                Intent intent4  = new Intent(getActivity().getApplicationContext(), ProductDesc.class);
+                intent4.putExtra("type", "indica");
+                startActivity(intent4);
                 break;
         }
 
