@@ -4,27 +4,24 @@ package com.example.shakt.baked;
  * Created by nikhildhirmalani on 16/03/18.
  */
 
-
-import android.content.Context;
+import android.graphics.Color;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
-
-import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.ImageView;
-
-
-
 import com.github.mikephil.charting.charts.BarChart;
+import com.github.mikephil.charting.charts.PieChart;
 import com.github.mikephil.charting.data.BarData;
 import com.github.mikephil.charting.data.BarDataSet;
 import com.github.mikephil.charting.data.BarEntry;
+import com.github.mikephil.charting.data.Entry;
+import com.github.mikephil.charting.data.PieData;
+import com.github.mikephil.charting.data.PieDataSet;
+import com.github.mikephil.charting.formatter.PercentFormatter;
 import com.github.mikephil.charting.interfaces.datasets.IBarDataSet;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -32,13 +29,9 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.StorageReference;
-import com.squareup.picasso.Picasso;
-
-
 import net.alhazmy13.wordcloud.ColorTemplate;
 import net.alhazmy13.wordcloud.WordCloud;
 import net.alhazmy13.wordcloud.WordCloudView;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -47,15 +40,17 @@ import java.util.Random;
 public class InfoClass extends Fragment {
 
 
-    Button effects;
+    Button effects,negative,happy;
     public static final String FIREBASE_CHILD_PRODUCTS = "Products";
     Product_Class obj;
     BarChart chart;
     private LinearLayoutManager mLinearLayoutManager;
     private StorageReference mStorageRef;
-    private RecyclerView rv;
+    private RecyclerView rv,pv;
     MyAdapter adapter;
     List<WordCloud> list ;
+    Url_Adapter urladp;
+    PieChart pieChart ;
 
 
     @Override
@@ -69,24 +64,21 @@ public class InfoClass extends Fragment {
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         effects = getView().findViewById(R.id.Effects);
+        negative = getView().findViewById(R.id.Negative);
+        happy = getView().findViewById(R.id.Happy);
         chart = getView().findViewById(R.id.chart);
+        pieChart=getView().findViewById(R.id.chart1);
+        pieChart.setUsePercentValues(true);
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference myRef = database.getReference(FIREBASE_CHILD_PRODUCTS);
         rv= getView().findViewById(R.id.mRecylcerID);
-        LinearLayoutManager layoutManager
+        pv=getView().findViewById(R.id.PostRecylcerID);
+        LinearLayoutManager  layoutManager
+                = new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL, false);
+        LinearLayoutManager  layoutManager2
                 = new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL, false);
         rv.setLayoutManager(layoutManager);
-
-
-
-        final ArrayList<BarEntry> barentry = new ArrayList<>();
-
-        final ArrayList<String> ef = new ArrayList<>();
-        ef.add("1");
-        ef.add("2");
-        ef.add("3");
-        ef.add("4");
-        ef.add("5");
+        pv.setLayoutManager(layoutManager2);
         obj = new Product_Class();
         myRef = myRef.child("Blue Dream");
 
@@ -98,19 +90,37 @@ public class InfoClass extends Fragment {
 
 
                 }
+                effects.setPressed(true);
                 adapter=new MyAdapter(getContext(),obj.getImage_Url());
                 rv.setAdapter(adapter);
+                getEffects(obj);
+                new_method2(obj.getThcCbd());
+                negative.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
 
-                for (int i = 0; i < obj.getEffects().size(); i++) {
+                        getNegative(obj);
 
-                    barentry.add(new BarEntry((float) obj.getEffects().get(i), i));
-                    BarDataSet set1 = new BarDataSet(barentry, "entry1");
+                    }
+                });
+                happy.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                   getMedical(obj);
 
-                    BarData data = new BarData(ef, (IBarDataSet) set1);
-                    chart.setData(data);
-                    chart.animateXY(2000, 2000);
-                    chart.invalidate();
-                }
+
+                    }
+                });
+                effects.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                       getEffects(obj);
+
+                    }
+                });
+
+                              urladp=new Url_Adapter(obj.getWeb_url());
+                              pv.setAdapter(urladp);
 
             }
 
@@ -142,61 +152,86 @@ public class InfoClass extends Fragment {
         }
     }
 
-}
-
-class MyHolder extends RecyclerView.ViewHolder {
-
-
-    ImageView img;
-
-    public MyHolder(View itemView) {
-        super(itemView);
-
-
-        img= (ImageView) itemView.findViewById(R.id.imageView);
-
-    }
-}
-class MyAdapter extends RecyclerView.Adapter<MyHolder> {
-
-    Context c;
-    List<String> url;
-
-    public MyAdapter(Context c, List<String> url) {
-        this.c = c;
-        this.url = url;
-    }
-
-    @Override
-    public MyHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View v= LayoutInflater.from(parent.getContext()).inflate(R.layout.strain_images,parent,false);
-        MyHolder holder=new MyHolder(v);
-        return holder;
-    }
-
-    @Override
-    public void onBindViewHolder(MyHolder holder, int position) {
-
-
-        PicassoClient.downloadImage(c,url.get(position),holder.img);
-    }
-
-    @Override
-    public int getItemCount() {
-        Log.e("TAG", String.valueOf(url.size()));
-        return url.size();
-    }
-}
-
-class PicassoClient {
-
-    public static void downloadImage(Context c,String url,ImageView img)
+    public void getEffects(Product_Class obj)
     {
-        if(url != null && url.length()>0)
-        {
-            Picasso.get().load(url).placeholder(R.drawable.placeholder).into(img);
-        }else {
+        final ArrayList<String> ef = new ArrayList<>();
+        ef.add("1");
+        ef.add("2");
+        ef.add("3");
+        ef.add("4");
+        ef.add("5");
+        new_method(obj.getEffects(),ef);
+    }
 
+    public void getNegative(Product_Class obj)
+    {final ArrayList<String> ef = new ArrayList<>();
+        ef.add("1");
+        ef.add("2");
+        ef.add("3");
+        ef.add("4");
+        ef.add("5");
+        new_method(obj.getNegative(),ef);
+    }
+
+    public void getMedical(Product_Class obj)
+    {
+        final ArrayList<String> ef = new ArrayList<>();
+        ef.add("1");
+        ef.add("2");
+        ef.add("3");
+        ef.add("4");
+        ef.add("5");
+        new_method(obj.getMedical(),ef);
+    }
+
+    public void new_method(List<Integer> obj,ArrayList<String> ef)
+    {
+
+
+        final ArrayList<BarEntry> barentry = new ArrayList<>();
+        for (int i = 0; i < obj.size(); i++) {
+
+
+            barentry.add(new BarEntry((float) obj.get(i), i));
+            BarDataSet set1 = new BarDataSet(barentry, "entry1");
+
+            BarData data = new BarData(ef, (IBarDataSet) set1);
+            chart.setData(data);
+            chart.animateXY(2000, 2000);
+            chart.invalidate();
         }
     }
+    public void new_method2(List<Integer> obj)
+    {
+        ArrayList<Entry> yvalues = new ArrayList<Entry>();
+        for (int i = 0; i < obj.size(); i++) {
+
+            yvalues.add(new Entry(obj.get(i), i));
+
+        }
+        PieDataSet dataSet = new PieDataSet(yvalues, "THC-CBD ratio");
+
+        ArrayList<String> xVals = new ArrayList<String>();
+
+        xVals.add("THC");
+        xVals.add("CBD");
+        PieData data = new PieData(xVals, dataSet);
+        // In Percentage term
+        data.setValueFormatter(new PercentFormatter());
+        // Default value
+        //data.setValueFormatter(new DefaultValueFormatter(0));
+        pieChart.setData(data);
+        pieChart.setDescription("This is Pie Chart");
+
+        pieChart.setDrawHoleEnabled(true);
+        pieChart.setTransparentCircleRadius(25f);
+        pieChart.setHoleRadius(25f);
+
+        dataSet.setColors(ColorTemplate.VORDIPLOM_COLORS);
+        data.setValueTextSize(13f);
+        data.setValueTextColor(Color.DKGRAY);
+        pieChart.animateXY(1400, 1400);
+    }
 }
+
+
