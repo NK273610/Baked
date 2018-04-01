@@ -4,15 +4,22 @@ package com.example.shakt.baked;
  * Created by nikhildhirmalani on 16/03/18.
  */
 
+import android.annotation.SuppressLint;
+import android.content.Context;
 import android.graphics.Color;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebView;
 import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.Toast;
+
 import com.github.mikephil.charting.charts.BarChart;
 import com.github.mikephil.charting.charts.PieChart;
 import com.github.mikephil.charting.data.BarData;
@@ -29,12 +36,15 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.StorageReference;
+import com.squareup.picasso.Picasso;
+
 import net.alhazmy13.wordcloud.ColorTemplate;
 import net.alhazmy13.wordcloud.WordCloud;
 import net.alhazmy13.wordcloud.WordCloudView;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
+
 
 
 public class InfoClass extends Fragment {
@@ -53,6 +63,8 @@ public class InfoClass extends Fragment {
     PieChart pieChart ;
 
 
+
+
     @Override
     public View onCreateView(
             LayoutInflater inflater,
@@ -69,6 +81,8 @@ public class InfoClass extends Fragment {
         chart = getView().findViewById(R.id.chart);
         pieChart=getView().findViewById(R.id.chart1);
         pieChart.setUsePercentValues(true);
+
+
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference myRef = database.getReference(FIREBASE_CHILD_PRODUCTS);
         rv= getView().findViewById(R.id.mRecylcerID);
@@ -87,9 +101,10 @@ public class InfoClass extends Fragment {
             public void onDataChange(DataSnapshot dataSnapshot) {
                 for (DataSnapshot userDataSnapshot : dataSnapshot.getChildren()) {
                     obj = dataSnapshot.getValue(Product_Class.class);
-
+                    Log.e("he",obj.getProductPic());
 
                 }
+
                 effects.setPressed(true);
                 adapter=new MyAdapter(getContext(),obj.getImageUrl());
                 rv.setAdapter(adapter);
@@ -121,6 +136,7 @@ public class InfoClass extends Fragment {
 
                               urladp=new Url_Adapter(obj.getWebUrl());
                               pv.setAdapter(urladp);
+
 
             }
 
@@ -232,6 +248,7 @@ public class InfoClass extends Fragment {
         data.setValueTextColor(Color.DKGRAY);
         pieChart.animateXY(1400, 1400);
     }
+
 }
 
 
