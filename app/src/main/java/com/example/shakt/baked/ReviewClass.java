@@ -10,15 +10,24 @@ import android.app.Fragment;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
 public class ReviewClass extends android.support.v4.app.Fragment {
 
     TextView text;
+    Product_Class obj;
+    private String FIREBASE_CHILD_PRODUCTS="Products";
     @Override
     public View onCreateView(
             LayoutInflater inflater,
@@ -30,7 +39,32 @@ public class ReviewClass extends android.support.v4.app.Fragment {
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        text=getView().findViewById(R.id.textView);
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference myRef = database.getReference(FIREBASE_CHILD_PRODUCTS);
+        myRef = myRef.child("Blue Dream");
+        obj=new Product_Class();
+
+        myRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                for (DataSnapshot userDataSnapshot : dataSnapshot.getChildren()) {
+                    obj = dataSnapshot.getValue(Product_Class.class);
+                    Log.e("TAG",obj.getReviews().get(1));
+
+                }
+
+
+
+
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+
+            }
+        });
+
 
 
 
