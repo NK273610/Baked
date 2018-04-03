@@ -9,6 +9,10 @@
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.NETWORK" />
+    <uses-permission android:name="android.permission.USE_CREDENTIALS" />
 
     <application
         android:allowBackup="true"
@@ -60,6 +64,14 @@
             android:theme="@style/AppTheme.NoActionBar">
 
         </activity>
+
+        <activity android:name=".IntroActivity"></activity>
+        <activity
+            android:name=".RecommendationActivity"
+            android:parentActivityName=".HomeActivity"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+  
+
         <activity
             android:name=".UserAccount"
             android:parentActivityName=".HomeActivity"
@@ -90,6 +102,7 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".UserAccount" />
         </activity>
+
         <activity android:name=".SearchBar_activity"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
@@ -97,6 +110,7 @@
                 android:value=".HomeActivity" />
 
         </activity>
+
     </application>
 
 </manifest>

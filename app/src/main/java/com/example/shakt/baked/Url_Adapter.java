@@ -4,12 +4,16 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+import android.widget.Button;
+import android.widget.ImageButton;
+import android.widget.Toast;
 
 import java.util.List;
 
@@ -24,23 +28,34 @@ public class Url_Adapter extends RecyclerView.Adapter<Url_Adapter.MyViewHolder> 
     private List<String> dataSet;
     Context c;
 
-
-
-    public static class MyViewHolder extends RecyclerView.ViewHolder {
-
-        WebView wv;
-
-        public MyViewHolder(View itemView) {
-            super(itemView);
-            this.wv = (WebView) itemView.findViewById(R.id.webview);
-
-        }
-    }
-
     public Url_Adapter(List<String> data) {
         this.dataSet = data;
         this.c=c;
     }
+
+    public static class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+
+        WebView wv;
+         ImageButton explore;
+
+        public MyViewHolder(View itemView) {
+            super(itemView);
+            this.wv = (WebView) itemView.findViewById(R.id.webview);
+            this.explore=(ImageButton)itemView.findViewById(R.id.explore);
+            explore.setOnClickListener(this);
+        }
+
+
+        @Override
+        public void onClick(View view) {
+            String x=wv.getOriginalUrl();
+            Intent intent = new Intent(itemView.getContext(),PostView.class);
+            intent.putExtra("url", x);
+            itemView.getContext().startActivity(intent);
+        }
+    }
+
+
 
     @Override
     public MyViewHolder onCreateViewHolder(ViewGroup parent,
@@ -60,6 +75,13 @@ public class Url_Adapter extends RecyclerView.Adapter<Url_Adapter.MyViewHolder> 
         webSetting.setJavaScriptEnabled(true);
         webSetting.setDisplayZoomControls(true);
         Url_Load.downloadUrl(c,dataSet.get(listPosition),webview);
+
+        webview.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+               Toast.makeText(c,"hello",Toast.LENGTH_SHORT).show();
+            }
+        });
 
 
     }
