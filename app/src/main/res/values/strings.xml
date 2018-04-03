@@ -32,5 +32,11 @@
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="action_settings">Settings</string>
+    <string-array name="product_array">
+        <item>Blue Kush</item>
+        <item>Blue dream</item>
+        <item>sativa</item>
+
+    </string-array>
 
 </resources>

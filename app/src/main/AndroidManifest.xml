@@ -39,7 +39,11 @@
         <activity android:name=".MainActivity" />
         <activity
             android:name=".HomeActivity"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.NoActionBar" >
+
+
+        </activity>
+
         <activity
             android:name=".MapActivity"
             android:label="Go Back"
@@ -51,16 +55,29 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
+        <activity android:name=".IntroActivity" />
+        <activity
+            android:name=".RecommendationActivity"
+            android:parentActivityName=".HomeActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+
+        </activity>
+
         <activity android:name=".IntroActivity"></activity>
         <activity
             android:name=".RecommendationActivity"
             android:parentActivityName=".HomeActivity"
             android:theme="@style/AppTheme.NoActionBar"></activity>
+  
+
         <activity
             android:name=".UserAccount"
             android:parentActivityName=".HomeActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+
+        </activity>
         <activity
             android:name=".Reviews"
             android:parentActivityName=".UserAccount"
@@ -85,7 +102,15 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".UserAccount" />
         </activity>
-        <activity android:name=".ProductDesc"></activity>
+
+        <activity android:name=".SearchBar_activity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".HomeActivity" />
+
+        </activity>
+
     </application>
 
 </manifest>
