@@ -1,5 +1,6 @@
 package com.example.shakt.baked;
 
+import android.annotation.SuppressLint;
 import android.content.DialogInterface;
 import android.content.pm.PackageManager;
 import android.location.Location;
@@ -8,6 +9,8 @@ import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 
 
@@ -34,6 +37,8 @@ import android.widget.Toast;
 
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 
+import java.util.ArrayList;
+
 
 // inspired from : https://github.com/priyankapakhale/GoogleMapsNearbyPlacesDemo
 
@@ -48,13 +53,16 @@ public class MapActivity extends AppCompatActivity
     private SupportMapFragment mapFragment;
 
     private LocationRequest mLocationRequest;
-    private Location mLastLocation;
     private Marker mCurrLocationMarker;
 
     private Button nslc_button;
     int PROXIMITY_RADIUS = 800;
     double latitude;
     double longitude;
+    ArrayList<String> mAddress = new ArrayList<>();
+    ArrayList<String> mUrls = new ArrayList<>();
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -94,14 +102,15 @@ public class MapActivity extends AppCompatActivity
         }
     }
 
+    @SuppressLint("RestrictedApi")
     @Override
     public void onMapReady(GoogleMap googleMap) {
 
         mMap = googleMap;
 
         mLocationRequest = new LocationRequest();
-        mLocationRequest.setInterval(100000);
-        mLocationRequest.setFastestInterval(100000);
+        mLocationRequest.setInterval(10000);
+        mLocationRequest.setFastestInterval(10000);
         mLocationRequest.setPriority(LocationRequest.PRIORITY_BALANCED_POWER_ACCURACY);
 
         if (ContextCompat.checkSelfPermission(this,
@@ -124,7 +133,7 @@ public class MapActivity extends AppCompatActivity
                 longitude = location.getLongitude();
                 latitude = location.getLatitude();
                 Log.i("MapActivity", "Location: " + location.getLatitude() + " " + location.getLongitude());
-                mLastLocation = location;
+                Location mLastLocation = location;
                 if (mCurrLocationMarker != null) {
                     mCurrLocationMarker.remove();
                 }
@@ -154,8 +163,28 @@ public class MapActivity extends AppCompatActivity
 
         GetNearbyPlacesData getNearbyPlacesData = new GetNearbyPlacesData();
         getNearbyPlacesData.execute(dataTransfer);
+//        mAddress = getNearbyPlacesData.getmAddress(mAddress);
+//        mUrls = getNearbyPlacesData.getmUrls();
+        mAddress.add("parkwell street");
+        mAddress.add("somewhere but no whrere");
+        mAddress.add("Here but not here");
+        mAddress.add("Arriving some where but not here");
+        mUrls.add("https://www.mynslc.com/-/media/About/About-Landing-Pages/650x450/650x450-About-Media-Our-logo.jpg");
+        mUrls.add("https://www.mynslc.com/-/media/About/About-Landing-Pages/650x450/650x450-About-Media-Our-logo.jpg");
+        mUrls.add("https://www.mynslc.com/-/media/About/About-Landing-Pages/650x450/650x450-About-Media-Our-logo.jpg");
+        mUrls.add("https://www.mynslc.com/-/media/About/About-Landing-Pages/650x450/650x450-About-Media-Our-logo.jpg");
 
-        Toast.makeText(MapActivity.this, "Nearby NSLC", Toast.LENGTH_SHORT).show();
+        fillrecyclerView();
+
+        Toast.makeText(MapActivity.this, "Nearby Stores", Toast.LENGTH_SHORT).show();
+    }
+
+    private void fillrecyclerView(){
+        LinearLayoutManager layoutManager = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
+        RecyclerView recyclerView = findViewById(R.id.recyclerViewMap);
+        recyclerView.setLayoutManager(layoutManager);
+        mapRecycleViewAdapter adapter = new mapRecycleViewAdapter(this, mAddress, mUrls);
+        recyclerView.setAdapter(adapter);
     }
 
     public static final int MY_PERMISSIONS_REQUEST_LOCATION = 99;

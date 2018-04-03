@@ -26,8 +26,8 @@ public class home_tab_2 extends Fragment implements View.OnClickListener {
 
         View view = inflater.inflate(R.layout.fragment_home_tab_2, container, false);
         // Inflate the layout for this fragment
-        mapButton = (Button) view.findViewById(R.id.map_button);
-        mapButton.setOnClickListener(this);
+//        mapButton = (Button) view.findViewById(R.id.map_button);
+//        mapButton.setOnClickListener(this);
         return view;
     }
 

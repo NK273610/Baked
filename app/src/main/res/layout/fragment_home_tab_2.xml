@@ -8,30 +8,42 @@
     android:orientation="vertical"
     android:weightSum="3">
 
-    <!--<LinearLayout-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:layout_weight="2">-->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
         <fragment xmlns:android="http://schemas.android.com/apk/res/android"
             xmlns:tools="http://schemas.android.com/tools"
             android:id="@+id/map"
             android:name="com.google.android.gms.maps.SupportMapFragment"
             android:layout_width="match_parent"
-            android:layout_height="200sp"
-            tools:context="com.example.shakt.baked.MapActivity"
-            android:layout_margin="5sp"/>
-    <!--</LinearLayout>-->
+            android:layout_height="match_parent"
+            android:layout_margin="3sp"
+            tools:context="com.example.shakt.baked.MapActivity" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1">
         <Button
-            android:id="@+id/map_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="60dp"
-            android:text="Map" />
-    </LinearLayout>
+            android:id="@id/nslcButton"
+            android:layout_width="65sp"
+            android:layout_height="65sp"
+            android:layout_gravity="end|top"
+            android:text="@string/nslc_button"
+            android:textSize="12sp"
+            android:layout_marginStart="10sp"
+            android:layout_marginTop="10sp"
+            android:onClick="onClick"
+            android:background="@drawable/round_button"
+            />
+    </RelativeLayout>
+
+    <!--<LinearLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_weight="1">-->
+        <!--<Button-->
+            <!--android:id="@+id/map_button"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginStart="60dp"-->
+            <!--android:text="Map" />-->
+    <!--</LinearLayout>-->
 
 </LinearLayout>
