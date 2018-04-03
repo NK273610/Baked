@@ -101,7 +101,6 @@ public class InfoClass extends Fragment {
             public void onDataChange(DataSnapshot dataSnapshot) {
                 for (DataSnapshot userDataSnapshot : dataSnapshot.getChildren()) {
                     obj = dataSnapshot.getValue(Product_Class.class);
-                    Log.e("he",obj.getProductPic());
 
                 }
 
@@ -109,6 +108,7 @@ public class InfoClass extends Fragment {
                 adapter=new MyAdapter(getContext(),obj.getImageUrl());
                 rv.setAdapter(adapter);
                 getEffects(obj);
+
                 new_method2(obj.getThcCbd());
                 negative.setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -206,7 +206,6 @@ public class InfoClass extends Fragment {
 
         final ArrayList<BarEntry> barentry = new ArrayList<>();
         for (int i = 0; i < obj.size(); i++) {
-
 
             barentry.add(new BarEntry((float) obj.get(i), i));
             BarDataSet set1 = new BarDataSet(barentry, "entry1");

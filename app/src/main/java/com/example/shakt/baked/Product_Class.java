@@ -14,7 +14,7 @@ public class Product_Class {
     private List<Integer> medical;
     private String description;
     private String type;
-    private List<String> flavour;
+    private List<String> flavor;
     private String productPic;
     private String productInfo;
     private List<String> imageUrl;
@@ -25,36 +25,12 @@ public class Product_Class {
     public Product_Class() {
     }
 
-    public List<Integer> getThcCbd() {
-        return thcCbd;
-    }
-
-    public void setThcCbd(List<Integer> thcCbd) {
-        thcCbd = thcCbd;
-    }
-
-    public List<String> getImageUrl() {
-        return imageUrl;
-    }
-
-    public List<String> getWebUrl() {
-        return webUrl;
-    }
-
-    public void setWebUrl(List<String> webUrl) {
-        this.webUrl = webUrl;
-    }
-
-    public void setImageUrl(List<String> imageUrl) {
-        imageUrl = imageUrl;
-    }
-
     public List<Integer> getEffects() {
         return effects;
     }
 
     public void setEffects(List<Integer> effects) {
-        effects = effects;
+        this.effects = effects;
     }
 
     public List<Integer> getNegative() {
@@ -62,7 +38,7 @@ public class Product_Class {
     }
 
     public void setNegative(List<Integer> negative) {
-        negative = negative;
+        this.negative = negative;
     }
 
     public List<Integer> getMedical() {
@@ -70,7 +46,7 @@ public class Product_Class {
     }
 
     public void setMedical(List<Integer> medical) {
-        medical = medical;
+        this.medical = medical;
     }
 
     public String getDescription() {
@@ -86,15 +62,15 @@ public class Product_Class {
     }
 
     public void setType(String type) {
-        this.type= type;
+        this.type = type;
     }
 
-    public List<String> getFlavour() {
-        return flavour;
+    public List<String> getFlavor() {
+        return flavor;
     }
 
-    public void setFlavour(List<String> flavour) {
-        this.flavour = flavour;
+    public void setFlavor(List<String> flavor) {
+        this.flavor = flavor;
     }
 
     public String getProductPic() {
@@ -111,5 +87,29 @@ public class Product_Class {
 
     public void setProductInfo(String productInfo) {
         this.productInfo = productInfo;
+    }
+
+    public List<String> getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(List<String> imageUrl) {
+        this.imageUrl = imageUrl;
+    }
+
+    public List<String> getWebUrl() {
+        return webUrl;
+    }
+
+    public void setWebUrl(List<String> webUrl) {
+        this.webUrl = webUrl;
+    }
+
+    public List<Integer> getThcCbd() {
+        return thcCbd;
+    }
+
+    public void setThcCbd(List<Integer> thcCbd) {
+        this.thcCbd = thcCbd;
     }
 }
