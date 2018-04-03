@@ -1,5 +1,6 @@
 package com.example.shakt.baked;
 
+
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
@@ -17,6 +18,9 @@ public class RecommendationActivity extends AppCompatActivity {
         setContentView(R.layout.activity_recommendation);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+
+
 
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tabLayout);
         tabLayout.addTab(tabLayout.newTab().setText("Info"));
@@ -69,8 +73,6 @@ class PagerAdapter extends FragmentStatePagerAdapter {
                 return new InfoClass();
             case 1:
                 return new ReviewClass();
-
-
 
         }
 

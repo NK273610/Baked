@@ -9,73 +9,107 @@ import java.util.List;
 
 public class Product_Class {
 
-    private List<Integer> Effects;
-    private List<Integer> Negative;
-    private List<Integer> Medical;
+    private List<Integer> effects;
+    private List<Integer> negative;
+    private List<Integer> medical;
     private String description;
+    private String type;
     private List<String> flavour;
-    private String product_pic;
-    private String product_info;
+    private String productPic;
+    private String productInfo;
+    private List<String> imageUrl;
+    private List<String> webUrl;
+    private List<Integer>thcCbd;
 
 
     public Product_Class() {
     }
 
-
-
-    public List<Integer> getEffects() {
-        return Effects;
+    public List<Integer> getThcCbd() {
+        return thcCbd;
     }
 
-    public void setEffects(List<Integer> Effects) {
-        Effects = Effects;
+    public void setThcCbd(List<Integer> thcCbd) {
+        thcCbd = thcCbd;
+    }
+
+    public List<String> getImageUrl() {
+        return imageUrl;
+    }
+
+    public List<String> getWebUrl() {
+        return webUrl;
+    }
+
+    public void setWebUrl(List<String> webUrl) {
+        this.webUrl = webUrl;
+    }
+
+    public void setImageUrl(List<String> imageUrl) {
+        imageUrl = imageUrl;
+    }
+
+    public List<Integer> getEffects() {
+        return effects;
+    }
+
+    public void setEffects(List<Integer> effects) {
+        effects = effects;
     }
 
     public List<Integer> getNegative() {
-        return Negative;
+        return negative;
     }
 
-    public void setNegative(List<Integer> Negative) {
-        Negative = Negative;
+    public void setNegative(List<Integer> negative) {
+        negative = negative;
     }
 
     public List<Integer> getMedical() {
-        return Medical;
+        return medical;
     }
 
-    public void setMedical(List<Integer> Medical) {
-        Medical = Medical;
+    public void setMedical(List<Integer> medical) {
+        medical = medical;
     }
 
-    public String getdescription() {
+    public String getDescription() {
         return description;
     }
 
-    public void setdescription(String description) {
+    public void setDescription(String description) {
         this.description = description;
     }
 
-    public List<String> getflavour() {
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type= type;
+    }
+
+    public List<String> getFlavour() {
         return flavour;
     }
 
-    public void setflavour(List<String> flavour) {
+    public void setFlavour(List<String> flavour) {
         this.flavour = flavour;
     }
 
-    public String getproduct_pic() {
-        return product_pic;
+    public String getProductPic() {
+        return productPic;
     }
 
-    public void setproduct_pic(String product_pic) {
-        this.product_pic = product_pic;
+    public void setProductPic(String productPic) {
+        this.productPic = productPic;
     }
 
-    public String getproduct_info() {
-        return product_info;
+    public String getProductInfo() {
+        return productInfo;
     }
 
-    public void setproduct_info(String product_info) {
-        this.product_info = product_info;
+    public void setProductInfo(String productInfo) {
+        this.productInfo = productInfo;
     }
 }

@@ -9,6 +9,7 @@
     <string name="nslc_button">find\nstores</string>
     <string name="recommendation_text">Recommendation</string>
     <string name="map">Map</string>
+    <string name="gmail_login">Connect with Gmail</string>
 
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_info">InfoActivity</string>
@@ -31,5 +32,11 @@
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="action_settings">Settings</string>
+    <string-array name="product_array">
+        <item>Blue Kush</item>
+        <item>Blue dream</item>
+        <item>sativa</item>
+
+    </string-array>
 
 </resources>
