@@ -28,7 +28,7 @@ public class home_tab_1 extends Fragment implements View.OnClickListener{
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_home_tab_1, container, false);
         // Inflate the layout for this fragment
-        infoButton = (Button) view.findViewById(R.id.info_button);
+        infoButton = (Button) view.findViewById(R.id.body_button);
         infoButton.setOnClickListener(this);
 //        accountButton = (Button) view.findViewById(R.id.account_button);
 //        accountButton.setOnClickListener(this);
@@ -44,10 +44,6 @@ public class home_tab_1 extends Fragment implements View.OnClickListener{
     public void onClick(View v) {
 
         switch (v.getId()){
-            case R.id.info_button:
-                Intent intent2  = new Intent(getActivity().getApplicationContext(), RecommendationActivity.class);
-                startActivity(intent2);
-                break;
             case R.id.body_button:
                 Intent intent3  = new Intent(getActivity().getApplicationContext(), ProductDesc.class);
                 intent3.putExtra("type", "sativa");

@@ -88,6 +88,7 @@ public class Reviews extends AppCompatActivity {
                     @Override
                     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                         Intent intent = new Intent(getApplicationContext(),RecommendationActivity.class);
+                        intent.putExtra("Review",reviews.get(position*2));
                         startActivity(intent);
                     }
                 });
