@@ -57,13 +57,15 @@ class ProductHolder extends RecyclerView.ViewHolder implements View.OnClickListe
 
 
     TextView text;
+    View view;
 
     public ProductHolder(View itemView) {
         super(itemView);
+        view = itemView;
 
 
         text= (TextView) itemView.findViewById(R.id.product_text);
-        text.setOnClickListener(this);
+        view.setOnClickListener(this);
 
     }
 
