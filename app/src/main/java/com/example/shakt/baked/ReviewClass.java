@@ -9,12 +9,14 @@ import android.app.Fragment;
 
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.ListViewCompat;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import com.google.firebase.database.DataSnapshot;
@@ -23,10 +25,14 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.List;
+
 public class ReviewClass extends android.support.v4.app.Fragment {
 
     TextView text;
     Product_Class obj;
+    ListViewCompat listView;
+    Review_CustomAdapter review_customAdapter;
     private String FIREBASE_CHILD_PRODUCTS="Products";
     @Override
     public View onCreateView(
@@ -52,9 +58,9 @@ public class ReviewClass extends android.support.v4.app.Fragment {
                     Log.e("TAG",obj.getReviews().get(1));
 
                 }
-
-
-
+                listView = getView().findViewById(R.id.Custom_review_list);
+                review_customAdapter = new Review_CustomAdapter(getContext(),obj);
+                listView.setAdapter(review_customAdapter);
 
             }
 
