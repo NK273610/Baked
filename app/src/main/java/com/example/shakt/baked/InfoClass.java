@@ -107,7 +107,7 @@ public class InfoClass extends Fragment {
         rv.setLayoutManager(layoutManager);
         pv.setLayoutManager(layoutManager2);
         obj = new Product_Class();
-        myRef = myRef.child("Blue Dream");
+        myRef = myRef.child(value);
 
         myRef.addValueEventListener(new ValueEventListener() {
             @Override

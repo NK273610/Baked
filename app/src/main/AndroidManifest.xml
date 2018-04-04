@@ -36,27 +36,41 @@
             android:value="@string/google_maps_key" />
 
         <activity android:name=".MainActivity" />
+      
         <activity
             android:name=".HomeActivity"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" >
+        </activity>
+      
+        <activity
+            android:name=".ProductDesc"
+            android:theme="@style/AppTheme.NoActionBar" />
+
         <activity
             android:name=".MapActivity"
             android:label="Go Back"
             android:parentActivityName=".HomeActivity"
             android:theme="@style/AppTheme" />
-        <activity android:name=".SplashScreenActivity"></activity>
-        <activity android:name=".IntroActivity" />
-        <activity
-            android:name=".RecommendationActivity"
-            android:parentActivityName=".HomeActivity"
-            android:theme="@style/AppTheme.NoActionBar">
+
+        <activity android:name=".SplashScreenActivity">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity android:name=".IntroActivity" />
+      
+        <activity
+            android:name=".RecommendationActivity"
+            android:parentActivityName=".HomeActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+     
         <activity android:name=".PostView" />
+      
         <activity
             android:name=".UserAccount"
             android:parentActivityName=".HomeActivity"
