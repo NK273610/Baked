@@ -21,11 +21,38 @@ public class Product_Class {
     private List<String> webUrl;
     private List<Integer>thcCbd;
     private List<String>reviews;
+
     private List<Integer>rating;
+
     private List<String>user;
 
 
     public Product_Class() {
+    }
+
+
+    public List<String> getReviews() {
+        return reviews;
+    }
+
+    public void setReviews(List<String> reviews) {
+        this.reviews = reviews;
+    }
+
+    public List<Integer> getRating() {
+        return rating;
+    }
+
+    public void setRating(List<Integer> rating) {
+        this.rating = rating;
+    }
+
+    public List<String> getUser() {
+        return user;
+    }
+
+    public void setUser(List<String> user) {
+        this.user = user;
     }
 
     public List<Integer> getEffects() {
@@ -116,27 +143,4 @@ public class Product_Class {
         this.thcCbd = thcCbd;
     }
 
-    public List<String> getReviews() {
-        return reviews;
-    }
-
-    public void setReviews(List<String> reviews) {
-        this.reviews = reviews;
-    }
-
-    public List<Integer> getRating() {
-        return rating;
-    }
-
-    public void setRating(List<Integer> rating) {
-        this.rating = rating;
-    }
-
-    public List<String> getUser() {
-        return user;
-    }
-
-    public void setUser(List<String> user) {
-        this.user = user;
-    }
 }
