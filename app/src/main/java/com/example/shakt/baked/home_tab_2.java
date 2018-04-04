@@ -37,6 +37,7 @@ public class home_tab_2 extends Fragment implements View.OnClickListener {
         gotoMap.setOnClickListener(this);
 
         return view;
+        // googgle
     }
 
     @Override
