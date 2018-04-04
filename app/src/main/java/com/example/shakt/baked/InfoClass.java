@@ -4,15 +4,19 @@ package com.example.shakt.baked;
  * Created by nikhildhirmalani on 16/03/18.
  */
 
+import android.annotation.SuppressLint;
 import android.graphics.Color;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.Toast;
+
 import com.github.mikephil.charting.charts.BarChart;
 import com.github.mikephil.charting.charts.PieChart;
 import com.github.mikephil.charting.data.BarData;
@@ -51,6 +55,7 @@ public class InfoClass extends Fragment {
     List<WordCloud> list ;
     Url_Adapter urladp;
     PieChart pieChart ;
+    public String value;
 
 
     @Override
@@ -58,11 +63,18 @@ public class InfoClass extends Fragment {
             LayoutInflater inflater,
             ViewGroup container,
             Bundle saveInstanceState) {
+        Bundle bundle = this.getArguments();
+        if (bundle != null){
+            value= bundle.getString("strain");
+            Log.e("value",value);
+        }
+
         return inflater.inflate(R.layout.infotab, container, false);
     }
 
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
+
         effects = getView().findViewById(R.id.Effects);
         negative = getView().findViewById(R.id.Negative);
         happy = getView().findViewById(R.id.Happy);
@@ -72,6 +84,9 @@ public class InfoClass extends Fragment {
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference myRef = database.getReference(FIREBASE_CHILD_PRODUCTS);
         rv= getView().findViewById(R.id.mRecylcerID);
+
+
+
         pv=getView().findViewById(R.id.PostRecylcerID);
         LinearLayoutManager  layoutManager
                 = new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL, false);
