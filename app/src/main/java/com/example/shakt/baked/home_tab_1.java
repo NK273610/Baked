@@ -30,8 +30,8 @@ public class home_tab_1 extends Fragment implements View.OnClickListener{
         // Inflate the layout for this fragment
         infoButton = (Button) view.findViewById(R.id.info_button);
         infoButton.setOnClickListener(this);
-        accountButton = (Button) view.findViewById(R.id.account_button);
-        accountButton.setOnClickListener(this);
+//        accountButton = (Button) view.findViewById(R.id.account_button);
+//        accountButton.setOnClickListener(this);
 
         bodyButton = (Button) view.findViewById(R.id.body_button);
         bodyButton.setOnClickListener(this);
@@ -44,10 +44,6 @@ public class home_tab_1 extends Fragment implements View.OnClickListener{
     public void onClick(View v) {
 
         switch (v.getId()){
-            case R.id.account_button:
-                Intent intent1  = new Intent(getActivity().getApplicationContext(), UserAccount.class);
-                startActivity(intent1);
-                break;
             case R.id.info_button:
                 Intent intent2  = new Intent(getActivity().getApplicationContext(), RecommendationActivity.class);
                 startActivity(intent2);

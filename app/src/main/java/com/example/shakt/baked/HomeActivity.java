@@ -36,11 +36,6 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
           android.support.v7.widget.Toolbar toolbar = findViewById(R.id.home_toolbar);
           setSupportActionBar(toolbar);
 
-
-
-
-
-
         mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
 
         // Set up the ViewPager with the sections adapter.
@@ -97,7 +92,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
             startActivity(new Intent(getApplicationContext(), MainActivity.class));
         }
         else if(id == R.id.nav_acct){
-            startActivity(new Intent(getApplicationContext(), MainActivity.class));
+            startActivity(new Intent(getApplicationContext(), UserAccount.class));
         }
         else if(id == R.id.nav_map){
             startActivity(new Intent(getApplicationContext(), MapActivity.class));
