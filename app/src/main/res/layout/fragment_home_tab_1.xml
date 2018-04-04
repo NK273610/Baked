@@ -7,31 +7,23 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context="com.example.shakt.baked.home_tab_1">
-    <!--<ImageView-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="match_parent"-->
-        <!--android:id="@+id/image_home"-->
-        <!--android:src ="@drawable/weed"-->
-        <!--android:scaleType="centerCrop">-->
-    <!--</ImageView>ImageView-->
-
 
         <Button
             android:id="@+id/brain_button"
             android:layout_width="match_parent"
             android:layout_height="255dp"
-            android:background="@drawable/sativa"
             android:fontFamily="sans-serif-condensed"
             android:text="Brain"
             android:textColor="@color/colorWhite"
+            android:background="@color/cardview_dark_background"
             android:textSize="50sp" />
 
         <Button
             android:id="@+id/body_button"
             android:layout_width="match_parent"
             android:layout_height="253dp"
-            android:background="@drawable/indica"
             android:fontFamily="sans-serif-condensed"
+            android:background="@color/cardview_dark_background"
             android:text="Body"
             android:textColor="@color/colorWhite"
             android:textSize="50sp" />

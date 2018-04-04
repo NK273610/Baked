@@ -32,7 +32,8 @@ public class home_tab_2 extends Fragment implements View.OnClickListener {
 //         Inflate the layout for this fragment
         mapButton = (Button) view.findViewById(R.id.find);
         mapButton.setOnClickListener(this);
-        gotoMap = view.findViewById(R.id.gotomap);
+        gotoMap = view.findViewById(R.id.gotoMap
+        );
         gotoMap.setOnClickListener(this);
 
         return view;
@@ -47,7 +48,7 @@ public class home_tab_2 extends Fragment implements View.OnClickListener {
                 intent.putExtra("Redirecting to", "Map");
                 startActivity(intent);
                 break;
-            case R.id.gotomap:
+            case R.id.gotoMap:
                 Intent intent2  = new Intent(getActivity().getApplicationContext(), MapActivity.class);
                 intent2.putExtra("Redirecting to", "Map");
                 startActivity(intent2);

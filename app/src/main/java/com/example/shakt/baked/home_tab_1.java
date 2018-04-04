@@ -13,8 +13,6 @@ import android.widget.Button;
 
 public class home_tab_1 extends Fragment implements View.OnClickListener{
 
-    private Button infoButton;
-    private Button accountButton;
     private Button bodyButton;
     private Button brainButton;
 
@@ -39,16 +37,7 @@ public class home_tab_1 extends Fragment implements View.OnClickListener{
     public void onClick(View v) {
 
         switch (v.getId()){
-            /*
-            case R.id.account_button:
-                Intent intent1  = new Intent(getActivity().getApplicationContext(), UserAccount.class);
-                startActivity(intent1);
-                break;
-            case R.id.info_button:
-                Intent intent2  = new Intent(getActivity().getApplicationContext(), RecommendationActivity.class);
-                startActivity(intent2);
-                break;
-            */
+
             case R.id.body_button:
                 Intent intent3  = new Intent(getActivity().getApplicationContext(), ProductDesc.class);
                 intent3.putExtra("type", "sativa");
