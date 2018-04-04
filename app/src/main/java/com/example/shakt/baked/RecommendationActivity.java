@@ -9,25 +9,54 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
+import android.view.View;
+import android.widget.ImageView;
+
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+import com.squareup.picasso.Picasso;
 
 public class RecommendationActivity extends AppCompatActivity {
 
+    ImageView img;
+    public static final String FIREBASE_CHILD_PRODUCTS = "Products";
+    Product_Class obj;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recommendation);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
-
-
-
+        img=findViewById(R.id.img);
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tabLayout);
         tabLayout.addTab(tabLayout.newTab().setText("Info"));
         tabLayout.addTab(tabLayout.newTab().setText("Review"));
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference myRef = database.getReference(FIREBASE_CHILD_PRODUCTS);
+
+        myRef = myRef.child("Blue Dream");
+       obj=new Product_Class();
+
+        myRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                for (DataSnapshot userDataSnapshot : dataSnapshot.getChildren()) {
+                    obj = dataSnapshot.getValue(Product_Class.class);
+
+                }
+                Picasso.get().load(obj.getProductPic()).into(img);
+
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
 
 
-
+            }
+        });
         final ViewPager viewPager = (ViewPager) findViewById(R.id.viewPager);
         final PagerAdapter pagerAdapter = new PagerAdapter(getSupportFragmentManager(), tabLayout.getTabCount());
         viewPager.setAdapter(pagerAdapter);

@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fancy="http://schemas.android.com/apk/res-auto"
     android:id="@+id/ScrollView01"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fillViewport="true"
-    android:scrollbars="none" >
+    android:scrollbars="none">
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -13,40 +14,78 @@
     android:orientation="vertical"
     app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-    <Button
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:id="@id/LinearLay">
+
+    <mehdi.sakout.fancybuttons.FancyButton
         android:id="@+id/Effects"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="39dp"
-        android:layout_marginTop="49dp"
-        android:text="Effects" />
+        android:paddingBottom="10dp"
+        android:paddingLeft="35dp"
+        android:paddingRight="20dp"
+        android:paddingTop="10dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="50dp"
+        fancy:fb_borderColor="#FFFFFF"
+        fancy:fb_borderWidth="1dp"
+        fancy:fb_defaultColor="#7ab800"
+        fancy:fb_focusColor="#9bd823"
+        fancy:fb_iconPosition="left"
+        fancy:fb_radius="30dp"
+        fancy:fb_text="Effects"
+        fancy:fb_textColor="#FFFFFF" />
 
-    <Button
+    <mehdi.sakout.fancybuttons.FancyButton
         android:id="@+id/Negative"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/chart"
-        android:layout_centerHorizontal="true"
-        android:text="Negative" />
+        android:paddingBottom="10dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="50dp"
+        android:paddingTop="10dp"
+        fancy:fb_borderColor="#FFFFFF"
+        fancy:fb_borderWidth="1dp"
+        fancy:fb_defaultColor="#7ab800"
+        fancy:fb_focusColor="#9bd823"
+        fancy:fb_iconPosition="left"
+        fancy:fb_radius="30dp"
+        fancy:fb_text="Negative"
+        fancy:fb_textColor="#FFFFFF" />
 
-    <Button
-        android:id="@+id/Happy"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/Negative"
-        android:layout_marginStart="27dp"
-        android:layout_toEndOf="@+id/Negative"
-        android:text="Happy" />
-
+    <mehdi.sakout.fancybuttons.FancyButton
+    android:id="@+id/Happy"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:paddingBottom="10dp"
+    android:paddingLeft="20dp"
+    android:paddingRight="20dp"
+    android:paddingTop="10dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="50dp"
+    fancy:fb_borderColor="#FFFFFF"
+    fancy:fb_borderWidth="1dp"
+    fancy:fb_defaultColor="#7ab800"
+    fancy:fb_focusColor="#9bd823"
+    fancy:fb_iconPosition="left"
+    fancy:fb_radius="30dp"
+    fancy:fb_text="Medical"
+    fancy:fb_textColor="#FFFFFF" />
+    </LinearLayout>
     <com.github.mikephil.charting.charts.BarChart
         android:id="@+id/chart"
+
         android:layout_width="300dp"
         android:layout_height="200dp"
-        android:layout_below="@+id/Effects"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/LinearLay"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="53dp" />
+         />
 
     <com.github.mikephil.charting.charts.PieChart
         android:id="@+id/chart1"
@@ -56,6 +95,12 @@
         android:layout_below="@+id/chart"
         android:layout_marginTop="40dp"/>
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/chart1"
+        android:text="Images" />
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/mRecylcerID"
@@ -67,6 +112,13 @@
 
 
     </android.support.v7.widget.RecyclerView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/mRecylcerID"
+        android:layout_marginTop="20dp"
+        android:text="WordCloud" />
     <net.alhazmy13.wordcloud.WordCloudView
         android:id="@+id/wordCloud"
         android:layout_width="match_parent"
@@ -74,6 +126,12 @@
         android:layout_marginTop="40dp"
         android:layout_below="@+id/mRecylcerID"/>
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/wordCloud"
+        android:text="Articles" />
     <android.support.v7.widget.RecyclerView
         android:id="@+id/PostRecylcerID"
         android:layout_width="wrap_content"

@@ -2,7 +2,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    xmlns:fancy="http://schemas.android.com/apk/res-auto">
 
     <android.support.v7.widget.CardView
         android:layout_width="match_parent"
@@ -27,14 +28,25 @@
 
 </LinearLayout>
 
-        <ImageButton
+        <mehdi.sakout.fancybuttons.FancyButton
             android:id="@+id/explore"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:background="@android:color/transparent"
-            android:contentDescription="Delete"
-            android:src="@drawable/ic_launcher_background" />
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:padding="10dp"
+            fancy:fb_borderColor="#FFFFFF"
+            fancy:fb_borderWidth="2dp"
+            fancy:fb_defaultColor="#40a75a"
+            fancy:fb_focusColor="#8cc9f8"
+            fancy:fb_fontIconSize="30sp"
+            fancy:fb_iconPosition="left"
+            fancy:fb_radius="10dp"
+            fancy:fb_text="Explore"
+            fancy:fb_textColor="#FFFFFF">
+        </mehdi.sakout.fancybuttons.FancyButton>
 
     </android.support.v7.widget.CardView>
+
+
 
 </LinearLayout>
