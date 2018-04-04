@@ -41,11 +41,11 @@
             android:name=".HomeActivity"
             android:theme="@style/AppTheme.NoActionBar" >
         </activity>
+
       
         <activity
             android:name=".ProductDesc"
             android:theme="@style/AppTheme.NoActionBar" />
-
         <activity
             android:name=".MapActivity"
             android:label="Go Back"
@@ -53,6 +53,11 @@
             android:theme="@style/AppTheme" />
 
         <activity android:name=".SplashScreenActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
 
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
