@@ -14,7 +14,6 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
 
-import android.widget.TextView;
 import android.widget.Toast;
 import android.view.View;
 import android.widget.ImageView;
@@ -33,8 +32,7 @@ public class RecommendationActivity extends AppCompatActivity {
     ImageView img;
     public static final String FIREBASE_CHILD_PRODUCTS = "Products";
     Product_Class obj;
-    TextView txt;
-
+    ReviewClass reviewClass;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,7 +40,7 @@ public class RecommendationActivity extends AppCompatActivity {
         setContentView(R.layout.activity_recommendation);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        txt=findViewById(R.id.myImageViewText);
+
         Intent intent = getIntent();
         if(intent.getStringExtra("Strain")!=null) {
             value = intent.getStringExtra("Strain");
@@ -56,11 +54,18 @@ public class RecommendationActivity extends AppCompatActivity {
         if(intent.getStringExtra("Review")!=null) {
             value = intent.getStringExtra("Review");
         }
-        txt.setText(value);
+        if(intent.getStringExtra("search")!=null) {
+            value = intent.getStringExtra("search");
+        }
         Bundle bundle = new Bundle();
         bundle.putString("strain", value );
         fragInfo = new InfoClass();
         fragInfo.setArguments(bundle);
+        Bundle bundle1 = new Bundle();
+        bundle1.putString("strainName", value );
+        reviewClass = new ReviewClass();
+        reviewClass.setArguments(bundle1);
+
 //        Log.e(RecommendationActivity.class.getCanonicalName(), value);
 
         img=findViewById(R.id.img);
@@ -83,7 +88,6 @@ public class RecommendationActivity extends AppCompatActivity {
 
                 }
                 Picasso.get().load(obj.getProductPic()).into(img);
-
 
             }
 
@@ -136,7 +140,7 @@ public class RecommendationActivity extends AppCompatActivity {
                 case 0:
                     return fragInfo;
                 case 1:
-                    return new ReviewClass();
+                    return reviewClass;
 
 
            }

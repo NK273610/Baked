@@ -52,7 +52,7 @@ public class Review_CustomAdapter extends BaseAdapter{
         RatingBar ratingBar = convertView.findViewById(R.id.Custom_review_list_ratingbar);
        // Set image URI
         img.setImageResource(imagearray[position]);
-        product_name.setText("Nam toh add karo db mein");
+        product_name.setText(data.getProductInfo());
         review.setText(data.getReviews().get(position));
         ratingBar.setRating(data.getRating().get(position));
         return convertView;

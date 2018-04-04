@@ -34,11 +34,16 @@ public class ReviewClass extends android.support.v4.app.Fragment {
     ListViewCompat listView;
     Review_CustomAdapter review_customAdapter;
     private String FIREBASE_CHILD_PRODUCTS="Products";
+    String value ;
     @Override
     public View onCreateView(
             LayoutInflater inflater,
             ViewGroup container,
             Bundle saveInstanceState){
+        Bundle bundle = this.getArguments();
+        if (bundle.containsKey("strainName")){
+            value= bundle.getString("strainName");
+        }
         return inflater.inflate(R.layout.review, container, false);
     }
 
@@ -47,7 +52,7 @@ public class ReviewClass extends android.support.v4.app.Fragment {
         super.onActivityCreated(savedInstanceState);
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference myRef = database.getReference(FIREBASE_CHILD_PRODUCTS);
-        myRef = myRef.child("Blue Dream");
+        myRef = myRef.child(value);
         obj=new Product_Class();
 
         myRef.addValueEventListener(new ValueEventListener() {

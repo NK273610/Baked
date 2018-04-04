@@ -77,11 +77,13 @@ public class InfoClass extends Fragment {
         Bundle bundle = this.getArguments();
         if (bundle.containsKey("strain")){
             value= bundle.getString("strain");
-//            Log.e("value",value);
+        }
+        if (bundle.containsKey("strainName")){
+            value= bundle.getString("strainName");
         }
         if (bundle.containsKey("favorite")){
             value= bundle.getString("favorite");
-//            Log.e("value",value);
+
         }
 
         return inflater.inflate(R.layout.infotab, container, false);
