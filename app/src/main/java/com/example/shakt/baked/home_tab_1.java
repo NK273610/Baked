@@ -28,11 +28,6 @@ public class home_tab_1 extends Fragment implements View.OnClickListener{
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_home_tab_1, container, false);
         // Inflate the layout for this fragment
-        //infoButton = (Button) view.findViewById(R.id.info_button);
-        //infoButton.setOnClickListener(this);
-        //accountButton = (Button) view.findViewById(R.id.account_button);
-        //accountButton.setOnClickListener(this);
-
         bodyButton = (Button) view.findViewById(R.id.body_button);
         bodyButton.setOnClickListener(this);
         brainButton = (Button) view.findViewById(R.id.brain_button);

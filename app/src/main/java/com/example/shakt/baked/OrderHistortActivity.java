@@ -71,6 +71,7 @@ public class OrderHistortActivity extends AppCompatActivity {
                     @Override
                     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                         Intent intent = new Intent(getApplicationContext(),RecommendationActivity.class);
+                        intent.putExtra("OrderHistory",order_history.get(position*2));
                         startActivity(intent);
                     }
                 });

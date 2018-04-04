@@ -17,6 +17,7 @@ import java.util.List;
 
 public class Review_CustomAdapter extends BaseAdapter{
     private Context context ;
+    // fetch image uri
     int[] imagearray = {R.drawable.ganjaoldy,R.drawable.ganjaoldy,R.drawable.ganjaoldy};
     Product_Class data;
   Review_CustomAdapter(Context c ,Product_Class data){
@@ -49,6 +50,7 @@ public class Review_CustomAdapter extends BaseAdapter{
         TextView product_name = convertView.findViewById(R.id.product_name);
         TextView review = convertView.findViewById(R.id.review);
         RatingBar ratingBar = convertView.findViewById(R.id.Custom_review_list_ratingbar);
+       // Set image URI
         img.setImageResource(imagearray[position]);
         product_name.setText("Nam toh add karo db mein");
         review.setText(data.getReviews().get(position));

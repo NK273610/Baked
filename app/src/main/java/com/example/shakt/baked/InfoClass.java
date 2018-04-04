@@ -73,9 +73,13 @@ public class InfoClass extends Fragment {
             ViewGroup container,
             Bundle saveInstanceState) {
         Bundle bundle = this.getArguments();
-        if (bundle != null){
+        if (bundle.containsKey("strain")){
             value= bundle.getString("strain");
-            Log.e("value",value);
+//            Log.e("value",value);
+        }
+        if (bundle.containsKey("favorite")){
+            value= bundle.getString("favorite");
+//            Log.e("value",value);
         }
 
         return inflater.inflate(R.layout.infotab, container, false);

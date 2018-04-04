@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.ListViewCompat;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
@@ -71,8 +72,11 @@ public class favourite_Activity extends AppCompatActivity {
                 favourite_list_view.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                     @Override
                     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                        Intent intent = new Intent(getApplicationContext(),RecommendationActivity.class);
-                        startActivity(intent);
+                        Log.e("value","temp");
+                       Intent intent = new Intent(getApplicationContext(),RecommendationActivity.class);
+                       intent.putExtra("favorite",favourites.get(position*2));
+                       startActivity(intent);
+
                     }
                 });
 

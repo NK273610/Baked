@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
+import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -13,7 +14,6 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
 
-import android.widget.TextView;
 import android.widget.Toast;
 import android.view.View;
 import android.widget.ImageView;
@@ -32,7 +32,6 @@ public class RecommendationActivity extends AppCompatActivity {
     ImageView img;
     public static final String FIREBASE_CHILD_PRODUCTS = "Products";
     Product_Class obj;
-    TextView txt;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,14 +41,25 @@ public class RecommendationActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         Intent intent = getIntent();
-         value= intent.getStringExtra("Strain");
+        if(intent.getStringExtra("Strain")!=null) {
+            value = intent.getStringExtra("Strain");
+        }
+        if(intent.getStringExtra("OrderHistory")!=null) {
+            value = intent.getStringExtra("OrderHistory");
+        }
+        if(intent.getStringExtra("favorite")!=null) {
+            value = intent.getStringExtra("favorite");
+        }
+        if(intent.getStringExtra("Review")!=null) {
+            value = intent.getStringExtra("Review");
+        }
         Bundle bundle = new Bundle();
         bundle.putString("strain", value );
         fragInfo = new InfoClass();
         fragInfo.setArguments(bundle);
+//        Log.e(RecommendationActivity.class.getCanonicalName(), value);
 
         img=findViewById(R.id.img);
-        txt=findViewById(R.id.myImageViewText);
 
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tabLayout);
         tabLayout.addTab(tabLayout.newTab().setText("Info"));
@@ -57,7 +67,8 @@ public class RecommendationActivity extends AppCompatActivity {
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference myRef = database.getReference(FIREBASE_CHILD_PRODUCTS);
 
-        myRef = myRef.child("Blue Dream");
+//        myRef = myRef.child("Blue Dream");
+        myRef = myRef.child(value);
        obj=new Product_Class();
 
         myRef.addValueEventListener(new ValueEventListener() {
@@ -68,7 +79,6 @@ public class RecommendationActivity extends AppCompatActivity {
 
                 }
                 Picasso.get().load(obj.getProductPic()).into(img);
-                txt.setText(obj.getDescription());
 
             }
 
