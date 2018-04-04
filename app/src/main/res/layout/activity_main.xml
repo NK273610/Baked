@@ -8,11 +8,17 @@
     android:orientation="vertical"
     tools:context="com.example.shakt.baked.MainActivity">
 
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@mipmap/baked_app_icon"/>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
         android:orientation="horizontal">
+
 
         <EditText
             android:id="@+id/user_name_input"
@@ -61,24 +67,23 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="10dp"
         android:gravity="center"
         android:orientation="horizontal">
 
+
         <com.google.android.gms.common.SignInButton
             android:id="@+id/gmailLoginButton"
-            style="@style/ColoredButton"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:background="@color/colorPrimaryDark"
             android:text="@string/gmail_login" />
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="30sp"
         android:gravity="center"
         android:orientation="horizontal">
 
@@ -87,6 +92,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:textColor="#039be5"
             android:background="@color/cardview_light_background"
             android:text="@string/anonymousLogin" />
     </LinearLayout>
