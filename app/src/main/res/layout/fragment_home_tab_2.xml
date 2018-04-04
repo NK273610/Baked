@@ -11,17 +11,16 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-        <fragment xmlns:android="http://schemas.android.com/apk/res/android"
-            xmlns:tools="http://schemas.android.com/tools"
-            android:id="@+id/map"
-            android:name="com.google.android.gms.maps.SupportMapFragment"
+
+        <fragment
+            android:id="@+id/map_2"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_margin="3sp"
-            tools:context="com.example.shakt.baked.MapActivity" />
+            class="com.google.android.gms.maps.SupportMapFragment" />
 
         <Button
-            android:id="@id/nslcButton"
+            android:id="@id/find"
             android:layout_width="65sp"
             android:layout_height="65sp"
             android:layout_gravity="end|top"
@@ -29,21 +28,13 @@
             android:textSize="12sp"
             android:layout_marginStart="10sp"
             android:layout_marginTop="10sp"
-            android:onClick="onClick"
             android:background="@drawable/round_button"
             />
+        <Button
+            android:id="@+id/gotomap"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/transparent"/>
     </RelativeLayout>
-
-    <!--<LinearLayout-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:layout_weight="1">-->
-        <!--<Button-->
-            <!--android:id="@+id/map_button"-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:layout_marginStart="60dp"-->
-            <!--android:text="Map" />-->
-    <!--</LinearLayout>-->
 
 </LinearLayout>
