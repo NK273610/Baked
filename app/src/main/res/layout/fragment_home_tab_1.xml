@@ -1,42 +1,48 @@
-<LinearLayout
+
+<FrameLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:orientation="vertical"
     android:layout_height="match_parent"
     tools:context="com.example.shakt.baked.home_tab_1">
+    <!--<ImageView-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:id="@+id/image_home"-->
+        <!--android:src ="@drawable/weed"-->
+        <!--android:scaleType="centerCrop">-->
+    <!--</ImageView>ImageView-->
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:weightSum="2">
 
         <Button
             android:id="@+id/brain_button"
             android:layout_width="match_parent"
-            android:layout_height="250dp"
-            android:text="Brain" />
-
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
-
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="Brain"
+            android:textSize="50sp"
+            android:textColor="@color/colorWhite"
+            android:fontFamily="sans-serif-condensed"
+            android:background="@android:color/transparent"/>
         <Button
             android:id="@+id/body_button"
             android:layout_width="match_parent"
-            android:layout_height="250dp"
 
-            android:background="@drawable/bodyweed2"
-            android:text="Body" />
-
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Body"
+            android:textSize="50sp"
+            android:textColor="@color/colorWhite"
+            android:fontFamily="sans-serif-condensed"
+            android:background="@android:color/transparent"/>
 
     </LinearLayout>
 
 
 
-
-</LinearLayout>
+</FrameLayout>
