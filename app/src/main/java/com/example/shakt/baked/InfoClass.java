@@ -45,12 +45,13 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
+import mehdi.sakout.fancybuttons.FancyButton;
 
 
 public class InfoClass extends Fragment {
 
 
-    Button effects,negative,happy;
+    FancyButton effects,negative,happy;
     public static final String FIREBASE_CHILD_PRODUCTS = "Products";
     Product_Class obj;
     BarChart chart;
@@ -75,9 +76,9 @@ public class InfoClass extends Fragment {
 
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        effects = getView().findViewById(R.id.Effects);
-        negative = getView().findViewById(R.id.Negative);
-        happy = getView().findViewById(R.id.Happy);
+        effects = (FancyButton) getView().findViewById(R.id.Effects);
+        negative = (FancyButton)getView().findViewById(R.id.Negative);
+        happy = (FancyButton)getView().findViewById(R.id.Happy);
         chart = getView().findViewById(R.id.chart);
         pieChart=getView().findViewById(R.id.chart1);
         pieChart.setUsePercentValues(true);
@@ -171,32 +172,32 @@ public class InfoClass extends Fragment {
     public void getEffects(Product_Class obj)
     {
         final ArrayList<String> ef = new ArrayList<>();
-        ef.add("1");
-        ef.add("2");
-        ef.add("3");
-        ef.add("4");
-        ef.add("5");
+        ef.add("Relaxed");
+        ef.add("Happy");
+        ef.add("Euphoric");
+        ef.add("Uplifted");
+        ef.add("Giggly");
         new_method(obj.getEffects(),ef);
     }
 
     public void getNegative(Product_Class obj)
     {final ArrayList<String> ef = new ArrayList<>();
-        ef.add("1");
-        ef.add("2");
-        ef.add("3");
-        ef.add("4");
-        ef.add("5");
+        ef.add("Dry Mouth");
+        ef.add("Dry eyes");
+        ef.add("Anxious");
+        ef.add("Paranoid");
+        ef.add("Headache");
         new_method(obj.getNegative(),ef);
     }
 
     public void getMedical(Product_Class obj)
     {
         final ArrayList<String> ef = new ArrayList<>();
-        ef.add("1");
-        ef.add("2");
-        ef.add("3");
-        ef.add("4");
-        ef.add("5");
+        ef.add("Stress");
+        ef.add("Depression");
+        ef.add("Pain");
+        ef.add("Insomnia");
+        ef.add("Lack of Appetite");
         new_method(obj.getMedical(),ef);
     }
 

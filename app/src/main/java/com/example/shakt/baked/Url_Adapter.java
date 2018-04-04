@@ -17,6 +17,7 @@ import android.widget.Toast;
 
 import java.util.List;
 
+import mehdi.sakout.fancybuttons.FancyButton;
 
 
 /**
@@ -36,12 +37,12 @@ public class Url_Adapter extends RecyclerView.Adapter<Url_Adapter.MyViewHolder> 
     public static class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         WebView wv;
-         ImageButton explore;
+         FancyButton explore;
 
         public MyViewHolder(View itemView) {
             super(itemView);
             this.wv = (WebView) itemView.findViewById(R.id.webview);
-            this.explore=(ImageButton)itemView.findViewById(R.id.explore);
+            this.explore=(FancyButton) itemView.findViewById(R.id.explore);
             explore.setOnClickListener(this);
         }
 
