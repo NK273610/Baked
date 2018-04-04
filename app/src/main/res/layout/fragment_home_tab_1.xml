@@ -1,10 +1,11 @@
 
-<FrameLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context="com.example.shakt.baked.home_tab_1">
     <!--<ImageView-->
         <!--android:layout_width="match_parent"-->
@@ -13,36 +14,29 @@
         <!--android:src ="@drawable/weed"-->
         <!--android:scaleType="centerCrop">-->
     <!--</ImageView>ImageView-->
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:weightSum="2">
+
 
         <Button
             android:id="@+id/brain_button"
             android:layout_width="match_parent"
-            android:layout_weight="1"
-            android:layout_height="wrap_content"
-            android:text="Brain"
-            android:textSize="50sp"
-            android:textColor="@color/colorWhite"
+            android:layout_height="255dp"
+            android:background="@drawable/sativa"
             android:fontFamily="sans-serif-condensed"
-            android:background="@android:color/transparent"/>
+            android:text="Brain"
+            android:textColor="@color/colorWhite"
+            android:textSize="50sp" />
+
         <Button
             android:id="@+id/body_button"
             android:layout_width="match_parent"
-
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Body"
-            android:textSize="50sp"
-            android:textColor="@color/colorWhite"
+            android:layout_height="253dp"
+            android:background="@drawable/indica"
             android:fontFamily="sans-serif-condensed"
-            android:background="@android:color/transparent"/>
+            android:text="Body"
+            android:textColor="@color/colorWhite"
+            android:textSize="50sp" />
 
-    </LinearLayout>
 
 
 
-</FrameLayout>
+</LinearLayout>
