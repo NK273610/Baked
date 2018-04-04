@@ -40,7 +40,6 @@ public class ProductDesc extends AppCompatActivity {
         rv.setLayoutManager(layoutManager);
 
 
-        Toast.makeText(getApplicationContext(), typeProd, Toast.LENGTH_SHORT).show();
         productHandler = new Product_Class();
         Log.e("New TAg",typeProd);
         typeReference = FirebaseDatabase.getInstance().getReference("Type").child(typeProd);
