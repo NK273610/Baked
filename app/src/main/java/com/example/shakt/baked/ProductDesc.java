@@ -3,6 +3,8 @@ package com.example.shakt.baked;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.widget.Toast;
 
@@ -20,13 +22,23 @@ public class ProductDesc extends AppCompatActivity {
 
     DatabaseReference typeReference;
     Product_Class productHandler;
+    RecyclerView rv;
+    ProductAdapter pa;
+    List<String> productHandlerList;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_product_desc);
         Intent intent = getIntent();
         String typeProd = intent.getStringExtra("type");
         final String[] prodName = new String[1];
+        rv= findViewById(R.id.product_recycler);
+        productHandlerList = new ArrayList<>();
+        LinearLayoutManager layoutManager
+                = new LinearLayoutManager(getApplicationContext(), LinearLayoutManager.VERTICAL, false);
+        rv.setLayoutManager(layoutManager);
+
 
         Toast.makeText(getApplicationContext(), typeProd, Toast.LENGTH_SHORT).show();
         productHandler = new Product_Class();
@@ -37,20 +49,21 @@ public class ProductDesc extends AppCompatActivity {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
 
-                List<String> productHandlerList = (ArrayList<String>) dataSnapshot.getValue();
+                productHandlerList = (ArrayList<String>) dataSnapshot.getValue();
                 Log.e("Here", "" + productHandlerList.get(1));
-
-
-
-
+                pa=new ProductAdapter(getApplicationContext(),productHandlerList);
+                rv.setAdapter(pa);
+                pa.notifyDataSetChanged();
 
             }
+
 
             @Override
             public void onCancelled(DatabaseError databaseError) {
                 Log.e("dbError", "" + databaseError);
 
             }
+
         });
 
 

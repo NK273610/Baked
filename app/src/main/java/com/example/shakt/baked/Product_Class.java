@@ -21,12 +21,15 @@ public class Product_Class {
     private List<String> webUrl;
     private List<Integer>thcCbd;
     private List<String>reviews;
-    private List<Integer> rating;
+
+    private List<Integer>rating;
+
     private List<String>user;
 
 
     public Product_Class() {
     }
+
 
     public List<String> getReviews() {
         return reviews;
@@ -139,4 +142,5 @@ public class Product_Class {
     public void setThcCbd(List<Integer> thcCbd) {
         this.thcCbd = thcCbd;
     }
+
 }

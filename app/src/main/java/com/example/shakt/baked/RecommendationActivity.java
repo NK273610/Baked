@@ -1,6 +1,8 @@
 package com.example.shakt.baked;
 
 
+import android.content.Intent;
+
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
@@ -8,7 +10,10 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
+
+import android.widget.Toast;
 import android.view.View;
 import android.widget.ImageView;
 
@@ -20,17 +25,30 @@ import com.google.firebase.database.ValueEventListener;
 import com.squareup.picasso.Picasso;
 
 public class RecommendationActivity extends AppCompatActivity {
-
+  
+    String value;
+    InfoClass fragInfo;
     ImageView img;
     public static final String FIREBASE_CHILD_PRODUCTS = "Products";
     Product_Class obj;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recommendation);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        Intent intent = getIntent();
+         value= intent.getStringExtra("Strain");
+        Bundle bundle = new Bundle();
+        bundle.putString("strain", value );
+        fragInfo = new InfoClass();
+        fragInfo.setArguments(bundle);
+        Log.e(RecommendationActivity.class.getCanonicalName(), value);
+
         img=findViewById(R.id.img);
+
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tabLayout);
         tabLayout.addTab(tabLayout.newTab().setText("Info"));
         tabLayout.addTab(tabLayout.newTab().setText("Review"));
@@ -83,34 +101,37 @@ public class RecommendationActivity extends AppCompatActivity {
         getMenuInflater().inflate(R.menu.navigation_menu, menu);
         return true;
     }
-    }
+    class PagerAdapter extends FragmentStatePagerAdapter {
 
-class PagerAdapter extends FragmentStatePagerAdapter {
+        int numberOfTabs;
 
-    int numberOfTabs;
 
-    public PagerAdapter(FragmentManager fm, int numberOfTabs){
-        super(fm);
-        this.numberOfTabs = numberOfTabs;
-    }
+        public PagerAdapter(FragmentManager fm, int numberOfTabs){
+            super(fm);
+            this.numberOfTabs = numberOfTabs;
+        }
 
-    @Override
-    public android.support.v4.app.Fragment getItem(int position) {
+        @Override
+        public android.support.v4.app.Fragment getItem(int position) {
 
-        switch (position){
-            case 0:
-                return new InfoClass();
-            case 1:
-                return new ReviewClass();
+            switch (position){
+                case 0:
+                    return fragInfo;
+                case 1:
+                    return new ReviewClass();
+
+
+           }
+
+
+            return null;
 
         }
 
-        return null;
-
+        @Override
+        public int getCount() {
+            return numberOfTabs;
+        }
+    }
     }
 
-    @Override
-    public int getCount() {
-        return numberOfTabs;
-    }
-}

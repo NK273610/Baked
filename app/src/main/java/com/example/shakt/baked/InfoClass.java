@@ -62,6 +62,7 @@ public class InfoClass extends Fragment {
     List<WordCloud> list ;
     Url_Adapter urladp;
     PieChart pieChart ;
+    public String value;
 
 
 
@@ -71,14 +72,22 @@ public class InfoClass extends Fragment {
             LayoutInflater inflater,
             ViewGroup container,
             Bundle saveInstanceState) {
+        Bundle bundle = this.getArguments();
+        if (bundle != null){
+            value= bundle.getString("strain");
+            Log.e("value",value);
+        }
+
         return inflater.inflate(R.layout.infotab, container, false);
     }
 
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
+
         effects = (FancyButton) getView().findViewById(R.id.Effects);
         negative = (FancyButton)getView().findViewById(R.id.Negative);
         happy = (FancyButton)getView().findViewById(R.id.Happy);
+
         chart = getView().findViewById(R.id.chart);
         pieChart=getView().findViewById(R.id.chart1);
         pieChart.setUsePercentValues(true);
@@ -87,6 +96,9 @@ public class InfoClass extends Fragment {
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference myRef = database.getReference(FIREBASE_CHILD_PRODUCTS);
         rv= getView().findViewById(R.id.mRecylcerID);
+
+
+
         pv=getView().findViewById(R.id.PostRecylcerID);
         LinearLayoutManager  layoutManager
                 = new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL, false);
