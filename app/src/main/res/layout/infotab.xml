@@ -15,67 +15,83 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:id="@+id/line"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:id="@id/LinearLay">
+        android:orientation="vertical">
 
-    <mehdi.sakout.fancybuttons.FancyButton
-        android:id="@+id/Effects"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:paddingBottom="10dp"
-        android:paddingLeft="35dp"
-        android:paddingRight="20dp"
-        android:paddingTop="10dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="50dp"
-        fancy:fb_borderColor="#FFFFFF"
-        fancy:fb_borderWidth="1dp"
-        fancy:fb_defaultColor="#7ab800"
-        fancy:fb_focusColor="#9bd823"
-        fancy:fb_iconPosition="left"
-        fancy:fb_radius="30dp"
-        fancy:fb_text="Effects"
-        fancy:fb_textColor="#FFFFFF" />
+        <TextView
+            android:id="@+id/textdesc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:textSize="18sp" />
 
-    <mehdi.sakout.fancybuttons.FancyButton
-        android:id="@+id/Negative"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:paddingBottom="10dp"
-        android:paddingLeft="20dp"
-        android:paddingRight="20dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="50dp"
-        android:paddingTop="10dp"
-        fancy:fb_borderColor="#FFFFFF"
-        fancy:fb_borderWidth="1dp"
-        fancy:fb_defaultColor="#7ab800"
-        fancy:fb_focusColor="#9bd823"
-        fancy:fb_iconPosition="left"
-        fancy:fb_radius="30dp"
-        fancy:fb_text="Negative"
-        fancy:fb_textColor="#FFFFFF" />
 
-    <mehdi.sakout.fancybuttons.FancyButton
-    android:id="@+id/Happy"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:paddingBottom="10dp"
-    android:paddingLeft="20dp"
-    android:paddingRight="20dp"
-    android:paddingTop="10dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="50dp"
-    fancy:fb_borderColor="#FFFFFF"
-    fancy:fb_borderWidth="1dp"
-    fancy:fb_defaultColor="#7ab800"
-    fancy:fb_focusColor="#9bd823"
-    fancy:fb_iconPosition="left"
-    fancy:fb_radius="30dp"
-    fancy:fb_text="Medical"
-    fancy:fb_textColor="#FFFFFF" />
+        <LinearLayout
+            android:id="@id/line2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textdesc"
+            android:orientation="horizontal">
+
+            <mehdi.sakout.fancybuttons.FancyButton
+                android:id="@+id/Effects"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="50dp"
+                android:paddingBottom="10dp"
+                android:paddingLeft="25dp"
+                android:paddingRight="20dp"
+                android:paddingTop="10dp"
+                fancy:fb_borderColor="#FFFFFF"
+                fancy:fb_borderWidth="1dp"
+                fancy:fb_defaultColor="#7ab800"
+                fancy:fb_focusColor="#9bd823"
+                fancy:fb_iconPosition="left"
+                fancy:fb_radius="30dp"
+                fancy:fb_text="Effects"
+                fancy:fb_textColor="#FFFFFF" />
+
+            <mehdi.sakout.fancybuttons.FancyButton
+                android:id="@+id/Negative"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="50dp"
+                android:paddingBottom="10dp"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:paddingTop="10dp"
+                fancy:fb_borderColor="#FFFFFF"
+                fancy:fb_borderWidth="1dp"
+                fancy:fb_defaultColor="#7ab800"
+                fancy:fb_focusColor="#9bd823"
+                fancy:fb_iconPosition="left"
+                fancy:fb_radius="30dp"
+                fancy:fb_text="Negative"
+                fancy:fb_textColor="#FFFFFF" />
+
+            <mehdi.sakout.fancybuttons.FancyButton
+                android:id="@+id/Happy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="50dp"
+                android:paddingBottom="10dp"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:paddingTop="10dp"
+                fancy:fb_borderColor="#FFFFFF"
+                fancy:fb_borderWidth="1dp"
+                fancy:fb_defaultColor="#7ab800"
+                fancy:fb_focusColor="#9bd823"
+                fancy:fb_iconPosition="left"
+                fancy:fb_radius="30dp"
+                fancy:fb_text="Medical"
+                fancy:fb_textColor="#FFFFFF" />
+        </LinearLayout>
     </LinearLayout>
     <com.github.mikephil.charting.charts.BarChart
         android:id="@+id/chart"
@@ -83,7 +99,7 @@
         android:layout_width="300dp"
         android:layout_height="200dp"
         android:layout_marginTop="20dp"
-        android:layout_below="@+id/LinearLay"
+        android:layout_below="@+id/line"
         android:layout_centerHorizontal="true"
          />
 

@@ -59,8 +59,9 @@
                     android:layout_margin="1dp"
                     android:gravity="center"
                     android:text="Hello"
-                    android:textColor="@color/wallet_hint_foreground_holo_dark"
-                    android:textSize="24sp" />
+                    android:textColor="?android:attr/colorControlActivated"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
             </RelativeLayout>
 
             <android.support.v7.widget.Toolbar

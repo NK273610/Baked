@@ -18,6 +18,7 @@ import android.view.ViewGroup;
 import android.webkit.WebView;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.github.mikephil.charting.charts.BarChart;
@@ -63,6 +64,7 @@ public class InfoClass extends Fragment {
     Url_Adapter urladp;
     PieChart pieChart ;
     public String value;
+    TextView text;
 
 
 
@@ -91,7 +93,7 @@ public class InfoClass extends Fragment {
         effects = (FancyButton) getView().findViewById(R.id.Effects);
         negative = (FancyButton)getView().findViewById(R.id.Negative);
         happy = (FancyButton)getView().findViewById(R.id.Happy);
-
+        text=getView().findViewById(R.id.textdesc);
         chart = getView().findViewById(R.id.chart);
         pieChart=getView().findViewById(R.id.chart1);
         pieChart.setUsePercentValues(true);
@@ -120,7 +122,7 @@ public class InfoClass extends Fragment {
                     obj = dataSnapshot.getValue(Product_Class.class);
 
                 }
-
+                text.setText(obj.getDescription());
                 effects.setPressed(true);
                 adapter=new MyAdapter(getContext(),obj.getImageUrl());
                 rv.setAdapter(adapter);
