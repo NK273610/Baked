@@ -26,6 +26,7 @@ import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 
+import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
@@ -38,6 +39,8 @@ import android.widget.Toast;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
 
 
 // inspired from : https://github.com/priyankapakhale/GoogleMapsNearbyPlacesDemo
@@ -59,8 +62,11 @@ public class MapActivity extends AppCompatActivity
     int PROXIMITY_RADIUS = 800;
     double latitude;
     double longitude;
-    ArrayList<String> mAddress = new ArrayList<>();
-    ArrayList<String> mUrls = new ArrayList<>();
+    public ArrayList<String> mAddress = new ArrayList<>();
+    public ArrayList<String> mUrls = new ArrayList<>();
+    private List<HashMap<String,String>> nearByPlaceList = new ArrayList<>();
+    private RecyclerView recyclerView;
+    private mapRecycleViewAdapter adapter;
 
 
 
@@ -70,6 +76,8 @@ public class MapActivity extends AppCompatActivity
         setContentView(R.layout.activity_map);
 
         nslc_button = findViewById(R.id.nslcButton);
+        recyclerView = findViewById(R.id.recyclerViewMap);
+
 
         mFusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this);
 
@@ -124,6 +132,40 @@ public class MapActivity extends AppCompatActivity
                 checkLocationPermission();
         }
 
+
+        mMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
+            @Override
+            public boolean onMarkerClick(Marker marker) {
+
+                final LatLng markerPosition = marker.getPosition();
+                int selected_marker = -1;
+                for (int i = 0; i < nearByPlaceList.size(); i++) {
+                    LatLng latLng = new LatLng(Double.parseDouble(nearByPlaceList.get(i).get("lat")),
+                                                Double.parseDouble(nearByPlaceList.get(i).get("lng")));
+                    if (markerPosition.latitude == latLng.latitude && markerPosition.longitude == latLng.longitude) {
+                        selected_marker = i;
+                    }
+                }
+
+                CameraPosition cameraPosition = new CameraPosition.Builder().target(markerPosition).zoom(12).build();
+                mMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
+                adapter.notifyDataSetChanged();
+                recyclerView.smoothScrollToPosition(selected_marker);
+
+                marker.showInfoWindow();
+
+
+                return false;
+            }
+        });
+
+    }
+
+    public void setList(List<HashMap<String,String>> list) {
+        this.nearByPlaceList = list;
+        Log.d("list", nearByPlaceList.get(1).toString());
+        fillrecyclerView();
+
     }
 
     LocationCallback mLocationCallback = new LocationCallback(){
@@ -153,6 +195,7 @@ public class MapActivity extends AppCompatActivity
 
     };
 
+
     public void onClick(View view){
         mMap.clear();
         String nslc = "NSLC";
@@ -161,31 +204,30 @@ public class MapActivity extends AppCompatActivity
         dataTransfer[0] = mMap;
         dataTransfer[1] = url;
 
-        GetNearbyPlacesData getNearbyPlacesData = new GetNearbyPlacesData();
+        GetNearbyPlacesData getNearbyPlacesData = new GetNearbyPlacesData(this, this);
         getNearbyPlacesData.execute(dataTransfer);
-//        mAddress = getNearbyPlacesData.getmAddress(mAddress);
-//        mUrls = getNearbyPlacesData.getmUrls();
-        mAddress.add("parkwell street");
-        mAddress.add("somewhere but no whrere");
-        mAddress.add("Here but not here");
-        mAddress.add("Arriving some where but not here");
-        mUrls.add("https://www.mynslc.com/-/media/About/About-Landing-Pages/650x450/650x450-About-Media-Our-logo.jpg");
-        mUrls.add("https://www.mynslc.com/-/media/About/About-Landing-Pages/650x450/650x450-About-Media-Our-logo.jpg");
-        mUrls.add("https://www.mynslc.com/-/media/About/About-Landing-Pages/650x450/650x450-About-Media-Our-logo.jpg");
-        mUrls.add("https://www.mynslc.com/-/media/About/About-Landing-Pages/650x450/650x450-About-Media-Our-logo.jpg");
-
-        fillrecyclerView();
 
         Toast.makeText(MapActivity.this, "Nearby Stores", Toast.LENGTH_SHORT).show();
     }
 
-    private void fillrecyclerView(){
+    public void fillrecyclerView(){
+
+        for (int i = 0; i < nearByPlaceList.size(); i++){
+            HashMap<String, String> googlePlace = nearByPlaceList.get(i);
+
+            String vicinity = googlePlace.get("vicinity");
+            mAddress.add(vicinity);
+            mUrls.add("https://www.mynslc.com/-/media/About/About-Landing-Pages/650x450/650x450-About-Media-Our-logo.jpg");
+
+        }
+
         LinearLayoutManager layoutManager = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
-        RecyclerView recyclerView = findViewById(R.id.recyclerViewMap);
         recyclerView.setLayoutManager(layoutManager);
-        mapRecycleViewAdapter adapter = new mapRecycleViewAdapter(this, mAddress, mUrls);
+        adapter = new mapRecycleViewAdapter(this, mAddress, mUrls);
         recyclerView.setAdapter(adapter);
+
     }
+
 
     public static final int MY_PERMISSIONS_REQUEST_LOCATION = 99;
     private void checkLocationPermission() {

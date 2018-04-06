@@ -1,19 +1,25 @@
 package com.example.shakt.baked;
 
+import android.app.Activity;
+import android.content.Context;
 import android.os.AsyncTask;
 import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.widget.LinearLayout;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
+import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
 import org.w3c.dom.DOMImplementation;
 
 import java.io.IOException;
 import java.net.URL;
+import java.nio.DoubleBuffer;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -31,10 +37,16 @@ public class GetNearbyPlacesData extends AsyncTask<Object, String, String> {
     String googlePlacesData;
     GoogleMap mMap;
     String url;
-    MapActivity mapActivity = new MapActivity();
+    private Context mContext;
+    private MapActivity activity;
 
     private ArrayList<String> mAddress = new ArrayList<>();
     private ArrayList<String> mUrls = new ArrayList<>();
+
+    public GetNearbyPlacesData (Context context, MapActivity activity1){
+        mContext = context;
+        activity = activity1;
+    }
 
     @Override
     protected String doInBackground(Object... objects) {
@@ -57,10 +69,11 @@ public class GetNearbyPlacesData extends AsyncTask<Object, String, String> {
         DataParser dataParser = new DataParser();
         nearByPlaceList = dataParser.parse(s);
         showNearbyPlaces(nearByPlaceList);
-
+        activity.setList(nearByPlaceList);
     }
 
-    private void showNearbyPlaces(List<HashMap<String, String>> nearbyPlaceList){
+    private void showNearbyPlaces(final List<HashMap<String, String>> nearbyPlaceList){
+
         for (int i = 0; i < nearbyPlaceList.size(); i++){
             MarkerOptions markerOptions = new MarkerOptions();
             HashMap<String, String> googlePlace = nearbyPlaceList.get(i);
@@ -83,16 +96,10 @@ public class GetNearbyPlacesData extends AsyncTask<Object, String, String> {
             mMap.addMarker(markerOptions);
             mMap.moveCamera(CameraUpdateFactory.newLatLng(latLng));
             mMap.animateCamera(CameraUpdateFactory.zoomTo(13));
+
         }
+
     }
 
-    public ArrayList<String> getmAddress(ArrayList<String> address) {
-//        address = mAddress;
-        return mAddress;
-    }
-
-    public ArrayList<String> getmUrls(){
-        return mUrls;
-    }
 }
 
