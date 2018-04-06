@@ -42,13 +42,15 @@ public class Reviews extends AppCompatActivity {
     UserInfoClass obj ;
     public static final String FIREBASE_CHILD_USERS = "Users";
     public String User_id = "0";
+    //variables for accesing data from
+    //firebase
     public List<String> reviews ;
     public  List<String> order_history;
     public  List<String> Ratings;
     public  List<String> pictures;
     public ListViewCompat review_list_view;
     public CustomListadapter review_list_adapter ;
-
+    //product info page
     public List<String> product_name;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -130,7 +132,7 @@ public class Reviews extends AppCompatActivity {
             int description_position;
            name_position = 2*position;
            description_position = name_position+1;
-
+//inflate
             convertView = getLayoutInflater().inflate(R.layout.customlist_reviews,null);
             ImageView img = convertView.findViewById(R.id.product_pic);
             TextView product_name = convertView.findViewById(R.id.product_name);
