@@ -48,6 +48,7 @@ public class MainActivity extends AppCompatActivity {
         password_input = findViewById(R.id.password_input);
         loginButton = findViewById(R.id.loginButton);
         anonymousButton = findViewById(R.id.anonymousButton);
+        googleBtn=findViewById(R.id.gmailLoginButton);
         //auth = FirebaseAuth.getInstance();
 
 
@@ -112,7 +113,9 @@ public class MainActivity extends AppCompatActivity {
                             // Sign in success, update UI with the signed-in user's information
                             Log.d(TAG, "signInWithCredential:success");
                             FirebaseUser user = mAuth.getCurrentUser();
+                            Toast.makeText(MainActivity.this, "Login Successfull", Toast.LENGTH_SHORT).show();
                             startActivity(new Intent(MainActivity.this, HomeActivity.class));
+
                         } else {
                             // If sign in fails, display a message to the user.
                             Log.e(TAG, "signInWithCredential:failure", task.getException());
