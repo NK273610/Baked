@@ -86,7 +86,7 @@ To customize the view on each list , we had to learn how to make custom adapters
     }
 }
 ```
-**Problem 2: Create Bar chart and Pie Chart from data **
+**Problem 2: Create Bar chart and Pie Chart from data**
 
 We have used MPAndroid chart library to created bar chart and Pie Chart
 ```
