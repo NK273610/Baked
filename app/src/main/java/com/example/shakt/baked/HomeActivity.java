@@ -97,9 +97,10 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         else if(id == R.id.nav_map){
             startActivity(new Intent(getApplicationContext(), MapActivity.class));
         }
+        /*
         else if(id == R.id.nav_info){
             startActivity(new Intent(getApplicationContext(), RecommendationActivity.class));
-        }
+        }*/
         return true;
     }
 
