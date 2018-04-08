@@ -126,5 +126,19 @@ What to include in your project sources:
 - Everything listed on the Dalhousie [*Plagiarism and Cheating*](https://www.dal.ca/dept/university_secretariat/academic-integrity/plagiarism-cheating.html)
 - Remember AC/DC *Always Cite / Don't Cheat* (see Lecture 0 for more info)
 
-[1] "Java (programming language)", En.wikipedia.org, 2018. [Online]. Available: https://en.wikipedia.org/wiki/Java_(programming_language).
+[1] "pantrif/EasySplashScreen",En.github.com, 2018.
+[Online]. Available:
+https://github.com/pantrif/EasySplashScreen
+
+[2] "TangoAgency/material-intro-screen",En.github.com, 2018.
+[Online]. Available:
+https://github.com/TangoAgency/material-intro-screen
+
+[3] "alhazmy13/AndroidWordCloud", En.github.com, 2018.
+[Online]. Available:
+https://github.com/alhazmy13/AndroidWordCloud
+
+[4] "PhilJay/MPAndroidChart", En.github.com, 2018.
+[Online]. Available:
+https://github.com/PhilJay/MPAndroidChart
 
