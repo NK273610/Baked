@@ -270,7 +270,7 @@ https://github.com/PhilJay/MPAndroidChart
 https://github.com/medyo/Fancybuttons
 
 
-Stock Images
+**Stock Images**
 
 
 [1] "Blue Dream" . Retrieved from 
