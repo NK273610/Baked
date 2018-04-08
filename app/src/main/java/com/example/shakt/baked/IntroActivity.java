@@ -12,8 +12,10 @@ import agency.tango.materialintroscreen.MessageButtonBehaviour;
 import agency.tango.materialintroscreen.SlideFragmentBuilder;
 import agency.tango.materialintroscreen.animations.IViewTranslation;
 
-public class IntroActivity extends MaterialIntroActivity {
 
+//the code was directly taken and used from this library https://github.com/TangoAgency/material-intro-screen
+//we have changed the parameters but the methods were directly used from this library
+public class IntroActivity extends MaterialIntroActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,34 +28,33 @@ public class IntroActivity extends MaterialIntroActivity {
                         view.setAlpha(percentage);
                     }
                 });
-        Log.e("hello","hi");
         addSlide(new SlideFragmentBuilder()
                         .backgroundColor(R.color.colorAccent)
                         .buttonsColor(R.color.colorWhite)
                         .image(R.mipmap.baked_app_icon)
-                        .title("Organize your time with us")
+                        .title("Please have time and checkout strains")
                         .description("Would you try?")
                         .build(),
                 new MessageButtonBehaviour(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        showMessage("We provide solutions to make you love your work");
+                        showMessage("Our Recommendation gives you info about best strain in market");
                     }
                 }, "Work with love"));
 
-        addSlide(new SlideFragmentBuilder()
+        addSlide(new SlideFragmentBuilder() //we add slides method with given functionalities
                 .backgroundColor(R.color.colorWhite)
                 .buttonsColor(R.color.colorAccent)
                 .title("Want more?")
                 .description("Go on")
                 .build());
 
-        addSlide(new SlideFragmentBuilder()
+        addSlide(new SlideFragmentBuilder() //add slide method with given functionalities
                         .backgroundColor(R.color.colorAccent)
                         .buttonsColor(R.color.colorPrimary)
                         .neededPermissions(new String[]{android.Manifest.permission.ACCESS_FINE_LOCATION, android.Manifest.permission.ACCESS_COARSE_LOCATION})
                         .image(R.drawable.ic_next)
-                        .title("We provide best tools")
+                        .title("We provide best Strains")
                         .description("ever")
                         .build(),
                 new MessageButtonBehaviour(new View.OnClickListener() {
@@ -61,9 +62,9 @@ public class IntroActivity extends MaterialIntroActivity {
                     public void onClick(View v) {
                         showMessage("Try us!");
                     }
-                }, "Tools"));
+                }, "Strains"));
 
-        addSlide(new SlideFragmentBuilder()
+        addSlide(new SlideFragmentBuilder()//add slide method with given functionalities
                 .backgroundColor(R.color.colorPrimary)
                 .buttonsColor(R.color.colorWhite)
                 .title("That's it")
