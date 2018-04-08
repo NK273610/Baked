@@ -93,7 +93,7 @@ List all the main features of your application with a brief description of each 
 1. *Store Locator*:  Users can locate the stores nearby to thier current location and can see the vicinity of indiviual stores in the cards
 2. *Search Bar* : Using this bar one can easily filter out a particular product they want information of.
 3. *Recommendation System*:
-4. *Product Info*:
+4. *Product Info*: The info page shows all the information of selected strain. It shoes the effects (positive,negative and medical), images, posts, description and wordcloud of selected strain. We have created wordcloud from text in description. But in future we will apply TFIDF ML algorithm to find most frequent word from reviews of particular strain and display that words in word cloud. 
 5. *User Account*:
 
 
