@@ -6,8 +6,6 @@ Our project aims to capitalize on the new law of marijuana legalization which al
 ## Libraries
 Provide a list of **ALL** the libraries you used for your project.
 
-Example:
-
 **google-gson:** Gson is a Java library that can be used to convert Java Objects into their JSON representation. It can also be used to convert a JSON string to an equivalent Java object. Source [here](https://github.com/google/gson)
 
 **espresso-core:3.0.1** 
@@ -142,6 +140,40 @@ Source: https://github.com/PhilJay/MPAndroidChart
 
 **Problem 3 : Attaching store markers to theri corresponding vicinity cards**
 
+While implementing cardView on the map activity, we found it challenging to attach a selected marker to its corresponding vicinity card. We used setOnMarkerClickListener() to implement that with some help from the mentioned source.
+
+```
+        // Listener for the map markers to attach them to vicinity cards
+        mMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
+            @Override
+            public boolean onMarkerClick(Marker marker) {
+
+                final LatLng markerPosition = marker.getPosition();
+                int selected_marker = -1;
+
+                // getting the position of selected marker
+                for (int i = 0; i < nearByPlaceList.size(); i++) {
+                    LatLng latLng = new LatLng(Double.parseDouble(nearByPlaceList.get(i).get("lat")),
+                                                Double.parseDouble(nearByPlaceList.get(i).get("lng")));
+                    if (markerPosition.latitude == latLng.latitude && markerPosition.longitude == latLng.longitude) {
+                        selected_marker = i;
+                    }
+                }
+
+                // Move camera and show corresponding card in front
+                CameraPosition cameraPosition = new CameraPosition.Builder().target(markerPosition).zoom(12).build();
+                mMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
+                adapter.notifyDataSetChanged();
+                recyclerView.smoothScrollToPosition(selected_marker);
+
+                marker.showInfoWindow();
+
+
+                return false;
+            }
+        });
+```
+Source : [here](https://stackoverflow.com/questions/37058897/connect-cards-of-recyclerview-to-marker-in-google-maps)
 
 
 ## Feature Section
