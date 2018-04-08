@@ -17,16 +17,16 @@ import java.util.List;
 
 class MyAdapter extends RecyclerView.Adapter<MyHolder> {
 
-    Context c;
-    List<String> url;
+    Context c;//context c
+    List<String> url;//list of string url
 
     public MyAdapter(Context c, List<String> url) {
-        this.c = c;
+        this.c = c; //myadapter constructor
         this.url = url;
     }
 
     @Override
-    public MyHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public MyHolder onCreateViewHolder(ViewGroup parent, int viewType) { //holder class which inflates strain_images
         View v= LayoutInflater.from(parent.getContext()).inflate(R.layout.strain_images,parent,false);
         MyHolder holder=new MyHolder(v);
         return holder;
@@ -36,8 +36,8 @@ class MyAdapter extends RecyclerView.Adapter<MyHolder> {
     public void onBindViewHolder(MyHolder holder, int position) {
 
 
-        PicassoClient.downloadImage(c,url.get(position),holder.img);
-    }
+        PicassoClient.downloadImage(c,url.get(position),holder.img);//picasso used to get image from url and place in imageview
+    } //picasoClient class method called
 
     @Override
     public int getItemCount() {
@@ -46,28 +46,28 @@ class MyAdapter extends RecyclerView.Adapter<MyHolder> {
     }
 }
 
-class PicassoClient {
+class PicassoClient { //picasso client class
 
     public static void downloadImage(Context c,String url,ImageView img)
     {
         if(url != null && url.length()>0)
         {
-            Picasso.get().load(url).placeholder(R.drawable.placeholder).into(img);
+            Picasso.get().load(url).placeholder(R.drawable.placeholder).into(img);// picasso class
         }else {
 
         }
     }
 }
-class MyHolder extends RecyclerView.ViewHolder {
+class MyHolder extends RecyclerView.ViewHolder {//holder class
 
 
-    ImageView img;
+    ImageView img; //imageview
 
     public MyHolder(View itemView) {
         super(itemView);
 
 
-        img= (ImageView) itemView.findViewById(R.id.imageView);
+        img= (ImageView) itemView.findViewById(R.id.imageView);//the imageview id taken
 
     }
 }

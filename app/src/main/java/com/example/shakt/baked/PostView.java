@@ -8,17 +8,17 @@ import android.webkit.WebView;
 
 public class PostView extends AppCompatActivity {
 
-    WebView wv;
+    WebView webView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_post_view);
-        wv=findViewById(R.id.webpost);
+        webView =findViewById(R.id.webpost); //we take the id for webview
         Intent intent = getIntent();
-        String url = intent.getStringExtra("url");
-        wv.getSettings().setJavaScriptEnabled(true);
-        wv.getSettings().setPluginState(WebSettings.PluginState.ON);
-        wv.loadUrl(url);
+        String url = intent.getStringExtra("url");//we taje the url from intent
+        webView.getSettings().setJavaScriptEnabled(true);
+        webView.getSettings().setPluginState(WebSettings.PluginState.ON);//we show the url on the webview
+        webView.loadUrl(url);
 
 
 
