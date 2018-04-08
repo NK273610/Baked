@@ -190,6 +190,8 @@ What to include in your project sources:
 
 [4] "PhilJay/MPAndroidChart", En.github.com, 2018. [Online]. Available: https://github.com/PhilJay/MPAndroidChart
 
+[5]"GoogleMapsNearbyPlacesDemo", GitHub, 2017. [Online]. Available: https://github.com/priyankapakhale/GoogleMapsNearbyPlacesDemo.
+
 Stock Images
 
 [1] "Blue Dream" . Retrieved from 
