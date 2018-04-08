@@ -88,6 +88,22 @@ To customize the view on each list , we had to learn how to make custom adapters
 ```
 Source: https://www.journaldev.com/10416/android-listview-with-custom-adapter-example-tutorial
 
+**Problem 1: Using Picaso to download url and set image to imageview**
+
+We have used Picaso to load images from url to the imageview.
+```
+ImageView img;
+public static void downloadImage(Context c,String url,ImageView img)
+    {
+        if(url != null && url.length()>0)
+        {
+            Picasso.get().load(url).placeholder(R.drawable.placeholder).into(img);// picasso class
+        }else {
+
+        }
+    }
+```
+
 ## Feature Section
 List all the main features of your application with a brief description of each feature.
 1. *Store Locator*:
