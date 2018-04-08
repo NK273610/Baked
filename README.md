@@ -175,6 +175,45 @@ While implementing cardView on the map activity, we found it challenging to atta
 ```
 Source : [here](https://stackoverflow.com/questions/37058897/connect-cards-of-recyclerview-to-marker-in-google-maps)
 
+**Problem 4 : Show webview of url list inside carview**
+
+While implementing cardView on the info activty, we found it challenging to attach all the webviews generated from the url string to cardview. We took use of webview client in order to solve it.
+
+```
+        public void onBindViewHolder(final MyViewHolder holder, final int listPosition) {
+
+        WebView webview = holder.wv; //we take the webview
+        WebSettings webSetting = webview.getSettings();
+        webSetting.setJavaScriptEnabled(true);//set the webview with the url
+        webSetting.setDisplayZoomControls(true);
+        Url_Load.downloadUrl(c,dataSet.get(listPosition),webview);//we call the given method download url
+
+        webview.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+               Toast.makeText(c,"hello",Toast.LENGTH_SHORT).show();
+            }
+        });
+
+
+    }
+    
+    class MyWebViewClient extends WebViewClient { //mywebview client class created
+    @Override
+    public boolean shouldOverrideUrlLoading(WebView view, String url) {
+
+        if (Uri.parse(url).getHost().equals(url)) {
+            // This is my web site, so do not override; let my WebView load the page
+            return false;
+        }
+        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url)); //we start the intent with the data
+        view.getContext().startActivity(intent);
+        return true;
+    }
+}
+
+```
+Source : [here] https://stackoverflow.com/questions/6850017/how-to-set-webview-client
 
 ## Feature Section
 List all the main features of your application with a brief description of each feature.
@@ -216,14 +255,19 @@ What to include in your project sources:
 
 [1] "pantrif/EasySplashScreen",En.github.com, 2018. [Online]. Available: https://github.com/pantrif/EasySplashScreen
 
-[2] "TangoAgency/material-intro-screen",En.github.com, 2018. [Online]. Available: https://github.com/TangoAgency/material-intro-screen
+[2] "TangoAgency/material-intro-screen",En.github.com, 2018. [Online]. Available:
+https://github.com/TangoAgency/material-intro-screen
 
-[3] "alhazmy13/AndroidWordCloud", En.github.com, 2018. [Online]. Available: https://github.com/alhazmy13/AndroidWordCloud
+[3] "alhazmy13/AndroidWordCloud", En.github.com, 2018. [Online]. Available: 
+https://github.com/alhazmy13/AndroidWordCloud
 
-[4] "PhilJay/MPAndroidChart", En.github.com, 2018. [Online]. Available: https://github.com/PhilJay/MPAndroidChart
+[4] "PhilJay/MPAndroidChart", En.github.com, 2018. [Online]. Available: 
+https://github.com/PhilJay/MPAndroidChart
 
 [5]"GoogleMapsNearbyPlacesDemo", GitHub, 2017. [Online]. Available: https://github.com/priyankapakhale/GoogleMapsNearbyPlacesDemo.
 
+[6] "medyo/Fancybuttons", En.github.com, 2018. [Online]. Available: 
+https://github.com/medyo/Fancybuttons
 Stock Images
 
 [1] "Blue Dream" . Retrieved from 
