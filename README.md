@@ -268,7 +268,10 @@ https://github.com/PhilJay/MPAndroidChart
 
 [6] "medyo/Fancybuttons", En.github.com, 2018. [Online]. Available: 
 https://github.com/medyo/Fancybuttons
+
+
 Stock Images
+
 
 [1] "Blue Dream" . Retrieved from 
 http://lotuslandclub.com/product/sativa-blue-dream/
