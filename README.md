@@ -88,7 +88,7 @@ To customize the view on each list , we had to learn how to make custom adapters
 ```
 Source: https://www.journaldev.com/10416/android-listview-with-custom-adapter-example-tutorial
 
-**Problem 1: Using Picaso to download url and set image to imageview**
+**Problem 2: Using Picaso to download url and set image to imageview**
 
 We have used Picaso to load images from url to the imageview.
 ```
@@ -103,6 +103,40 @@ public static void downloadImage(Context c,String url,ImageView img)
         }
     }
 ```
+
+**Problem 3: Attaching Srore markers to theri corresponding vicinity cards**
+
+While trying to implement the RecyclerView on the Map fragment in MapActivity, we faced a problem with attaching the markers of the stores to their corresponding vicinity cards. We solved this problem by implementing onMarkerClickListener().
+
+```
+ mMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
+            @Override
+            public boolean onMarkerClick(Marker marker) {
+
+                final LatLng markerPosition = marker.getPosition();
+                int selected_marker = -1;
+                for (int i = 0; i < nearByPlaceList.size(); i++) {
+                    LatLng latLng = new LatLng(Double.parseDouble(nearByPlaceList.get(i).get("lat")),
+                                                Double.parseDouble(nearByPlaceList.get(i).get("lng")));
+                    if (markerPosition.latitude == latLng.latitude && markerPosition.longitude == latLng.longitude) {
+                        selected_marker = i;
+                    }
+                }
+
+                CameraPosition cameraPosition = new CameraPosition.Builder().target(markerPosition).zoom(12).build();
+                mMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
+                adapter.notifyDataSetChanged();
+                recyclerView.smoothScrollToPosition(selected_marker);
+
+                marker.showInfoWindow();
+
+
+                return false;
+            }
+        });
+ ```
+ Source: [here](https://stackoverflow.com/questions/37058897/connect-cards-of-recyclerview-to-marker-in-google-maps)
+
 
 ## Feature Section
 List all the main features of your application with a brief description of each feature.
