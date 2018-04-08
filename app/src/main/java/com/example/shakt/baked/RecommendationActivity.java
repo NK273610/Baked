@@ -27,14 +27,15 @@ import com.google.firebase.database.ValueEventListener;
 import com.squareup.picasso.Picasso;
 
 public class RecommendationActivity extends AppCompatActivity {
-  
-    String value;
-    InfoClass fragInfo;
-    ImageView img;
+
+    //variables used in the class declared
+    String strain_value;//string strain value
+    InfoClass fragInfo; //infoclass obj
+    ImageView imgview;
     public static final String FIREBASE_CHILD_PRODUCTS = "Products";
-    Product_Class obj;
-    ReviewClass reviewClass;
-    TextView text;
+    Product_Class Data_obj;//product class object
+    ReviewClass reviewClass;//review class object
+    TextView textview;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,55 +46,57 @@ public class RecommendationActivity extends AppCompatActivity {
         text=findViewById(R.id.myImageViewText);
 
         Intent intent = getIntent();
-        if(intent.getStringExtra("Strain")!=null) {
-            value = intent.getStringExtra("Strain");
+        if(intent.getStringExtra("Strain")!=null) { //we take the intent value
+            strain_value = intent.getStringExtra("Strain");//if the respective values are not null
         }
-        if(intent.getStringExtra("OrderHistory")!=null) {
-            value = intent.getStringExtra("OrderHistory");
+        if(intent.getStringExtra("OrderHistory")!=null) { //orderhistory value
+            strain_value = intent.getStringExtra("OrderHistory");
         }
         if(intent.getStringExtra("favorite")!=null) {
-            value = intent.getStringExtra("favorite");
+            strain_value = intent.getStringExtra("favorite");//favourite value
         }
         if(intent.getStringExtra("Review")!=null) {
-            value = intent.getStringExtra("Review");
+            strain_value = intent.getStringExtra("Review");//review value
         }
         if(intent.getStringExtra("search")!=null) {
-            value = intent.getStringExtra("search");
+            strain_value = intent.getStringExtra("search");//search value
         }
-        Bundle bundle = new Bundle();
-        bundle.putString("strain", value );
+        Bundle bundle = new Bundle(); //we take the bundle
+        bundle.putString("strain", strain_value );//we add the strain value
         fragInfo = new InfoClass();
-        fragInfo.setArguments(bundle);
-        Bundle bundle1 = new Bundle();
-        bundle1.putString("strainName", value );
-        reviewClass = new ReviewClass();
-        reviewClass.setArguments(bundle1);
+        fragInfo.setArguments(bundle);//we set the arguments
+        Bundle bundle1 = new Bundle();//create new bunble
+        bundle1.putString("strainName", strain_value );//add strain value
+        reviewClass = new ReviewClass();//create review class object
+        reviewClass.setArguments(bundle1);//set the arguments
 
 //        Log.e(RecommendationActivity.class.getCanonicalName(), value);
 
-        img=findViewById(R.id.img);
+        imgview=findViewById(R.id.img); //get the imageview id
+        textview=findViewById(R.id.myImageViewText);
 
-        TabLayout tabLayout = (TabLayout) findViewById(R.id.tabLayout);
-        tabLayout.addTab(tabLayout.newTab().setText("Info"));
+        TabLayout tabLayout = (TabLayout) findViewById(R.id.tabLayout); //get tablayout id
+        tabLayout.addTab(tabLayout.newTab().setText("Info"));//we set the texts for info and review
         tabLayout.addTab(tabLayout.newTab().setText("Review"));
-        FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference myRef = database.getReference(FIREBASE_CHILD_PRODUCTS);
+        FirebaseDatabase database = FirebaseDatabase.getInstance(); //create fire base object
+        DatabaseReference myRef = database.getReference(FIREBASE_CHILD_PRODUCTS); //get reference to our database
 
 //        myRef = myRef.child("Blue Dream");
-        myRef = myRef.child(value);
-       obj=new Product_Class();
+        myRef = myRef.child(strain_value);//we go to particular strain
+        Data_obj=new Product_Class();//data object  created
 
         myRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 for (DataSnapshot userDataSnapshot : dataSnapshot.getChildren()) {
-                    obj = dataSnapshot.getValue(Product_Class.class);
+                    Data_obj = dataSnapshot.getValue(Product_Class.class);//data object has all values from firebase
 
                 }
-                Picasso.get().load(obj.getProductPic()).into(img);
-                text.setText(obj.getProductInfo());
 
-            }
+                Picasso.get().load(Data_obj.getProductPic()).into(imgview);//using picaso to set image from url
+                textview.setText(Data_obj.getProductInfo());
+
+           }
 
             @Override
             public void onCancelled(DatabaseError databaseError) {
@@ -101,7 +104,7 @@ public class RecommendationActivity extends AppCompatActivity {
 
             }
         });
-        final ViewPager viewPager = (ViewPager) findViewById(R.id.viewPager);
+        final ViewPager viewPager = (ViewPager) findViewById(R.id.viewPager); //view pager code
         final PagerAdapter pagerAdapter = new PagerAdapter(getSupportFragmentManager(), tabLayout.getTabCount());
         viewPager.setAdapter(pagerAdapter);
         viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
@@ -129,7 +132,7 @@ public class RecommendationActivity extends AppCompatActivity {
     }
     class PagerAdapter extends FragmentStatePagerAdapter {
 
-        int numberOfTabs;
+        int numberOfTabs; //no of tabs
 
 
         public PagerAdapter(FragmentManager fm, int numberOfTabs){
@@ -142,13 +145,10 @@ public class RecommendationActivity extends AppCompatActivity {
 
             switch (position){
                 case 0:
-                    return fragInfo;
+                    return fragInfo; //fraginto class object
                 case 1:
-                    return reviewClass;
-
-
-           }
-
+                    return reviewClass; //review class object
+            }
 
             return null;
 

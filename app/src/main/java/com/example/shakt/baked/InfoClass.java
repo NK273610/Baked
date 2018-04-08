@@ -229,6 +229,9 @@ public class InfoClass extends Fragment {
             barchart.invalidate();
         }
     }
+
+    // code for creating pie chart and bar chart has been taken from https://github.com/PhilJay/MPAndroidChart
+    //library all the functions used are from the given site
     public void getPie_method(List<Integer> Data_obj)
     {
         ArrayList<Entry> yvalues = new ArrayList<Entry>();
