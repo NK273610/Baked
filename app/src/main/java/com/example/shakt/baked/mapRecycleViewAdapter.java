@@ -16,11 +16,13 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
 
-//import de.hdodenhof.circleimageview.CircleImageView;
 
 /**
  * Created by Shakti on 23-03-2018.
  */
+
+
+// This class is a Recycles view adapter class that maps the data to the cards in recycler view
 
 public class mapRecycleViewAdapter extends RecyclerView.Adapter<mapRecycleViewAdapter.ViewHolder> {
 
@@ -36,6 +38,7 @@ public class mapRecycleViewAdapter extends RecyclerView.Adapter<mapRecycleViewAd
         this.context = context;
     }
 
+    // View holder to
     @Override
     public mapRecycleViewAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
 

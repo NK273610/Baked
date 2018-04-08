@@ -49,6 +49,8 @@ import java.util.List;
 public class MapActivity extends AppCompatActivity
     implements OnMapReadyCallback{
 
+
+    // declaring all the variables needed
     private static final String TAG = MapActivity.class.getSimpleName();
     private GoogleMap mMap;
     private FusedLocationProviderClient mFusedLocationProviderClient;
@@ -78,7 +80,6 @@ public class MapActivity extends AppCompatActivity
         nslc_button = findViewById(R.id.nslcButton);
         recyclerView = findViewById(R.id.recyclerViewMap);
 
-
         mFusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this);
 
         mapFragment = (SupportMapFragment) getSupportFragmentManager()
@@ -87,6 +88,7 @@ public class MapActivity extends AppCompatActivity
 
     }
 
+    // function to add url make the url by adding different components of it.
     private String getUrl(double latitude, double longitude, String nearbyPlace){
         StringBuilder googlePlaceUrl = new StringBuilder("https://maps.googleapis.com/maps/api/place/nearbysearch/json?");
         googlePlaceUrl.append("location="+latitude+","+longitude);
@@ -117,10 +119,11 @@ public class MapActivity extends AppCompatActivity
         mMap = googleMap;
 
         mLocationRequest = new LocationRequest();
-        mLocationRequest.setInterval(10000);
+        mLocationRequest.setInterval(10000);        // Intervals for location updates
         mLocationRequest.setFastestInterval(10000);
         mLocationRequest.setPriority(LocationRequest.PRIORITY_BALANCED_POWER_ACCURACY);
 
+        //check required permissions
         if (ContextCompat.checkSelfPermission(this,
                     Manifest.permission.ACCESS_FINE_LOCATION)
                     == PackageManager.PERMISSION_GRANTED) {
@@ -133,12 +136,16 @@ public class MapActivity extends AppCompatActivity
         }
 
 
+        // Listener for the map markers to attach them to vicinity cards
+        // Source : https://stackoverflow.com/questions/37058897/connect-cards-of-recyclerview-to-marker-in-google-maps
         mMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
             @Override
             public boolean onMarkerClick(Marker marker) {
 
                 final LatLng markerPosition = marker.getPosition();
                 int selected_marker = -1;
+
+                // getting the position of selected marker
                 for (int i = 0; i < nearByPlaceList.size(); i++) {
                     LatLng latLng = new LatLng(Double.parseDouble(nearByPlaceList.get(i).get("lat")),
                                                 Double.parseDouble(nearByPlaceList.get(i).get("lng")));
@@ -147,6 +154,7 @@ public class MapActivity extends AppCompatActivity
                     }
                 }
 
+                // Move camera and show corresponding card in front
                 CameraPosition cameraPosition = new CameraPosition.Builder().target(markerPosition).zoom(12).build();
                 mMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
                 adapter.notifyDataSetChanged();
@@ -161,6 +169,7 @@ public class MapActivity extends AppCompatActivity
 
     }
 
+    // function to transfer Vicinity data from AsyncTask to Map activity
     public void setList(List<HashMap<String,String>> list) {
         this.nearByPlaceList = list;
         Log.d("list", nearByPlaceList.get(1).toString());
@@ -168,6 +177,7 @@ public class MapActivity extends AppCompatActivity
 
     }
 
+    // Location callback that generates periodic location updates
     LocationCallback mLocationCallback = new LocationCallback(){
         @Override
         public void onLocationResult(LocationResult locationResult) {
@@ -196,6 +206,8 @@ public class MapActivity extends AppCompatActivity
     };
 
 
+    // onClick for the "Find stores" button. it transfers the data to Async task class GetNearbyPlacesData
+    // functionality to show nearby stores is implemented in that class.
     public void onClick(View view){
         mMap.clear();
         String nslc = "NSLC";
@@ -210,8 +222,11 @@ public class MapActivity extends AppCompatActivity
         Toast.makeText(MapActivity.this, "Nearby Stores", Toast.LENGTH_SHORT).show();
     }
 
+    // function to fill the vicinity recycler view when Find Stores button is pressed
+    // it contains the vicinity of all the nearby stores.
     public void fillrecyclerView(){
 
+        // create array lists to store data
         for (int i = 0; i < nearByPlaceList.size(); i++){
             HashMap<String, String> googlePlace = nearByPlaceList.get(i);
 
@@ -221,6 +236,7 @@ public class MapActivity extends AppCompatActivity
 
         }
 
+        // attach the adapter and pass data
         LinearLayoutManager layoutManager = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
         recyclerView.setLayoutManager(layoutManager);
         adapter = new mapRecycleViewAdapter(this, mAddress, mUrls);
@@ -229,6 +245,9 @@ public class MapActivity extends AppCompatActivity
     }
 
 
+    // Location check functionality
+    // Source : https://github.com/priyankapakhale/GoogleMapsNearbyPlacesDemo
+    // this snipped shows an alert to the user if Access location permission is not granted
     public static final int MY_PERMISSIONS_REQUEST_LOCATION = 99;
     private void checkLocationPermission() {
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION)
