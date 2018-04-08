@@ -8,27 +8,24 @@ Provide a list of **ALL** the libraries you used for your project.
 
 **google-gson:** Gson is a Java library that can be used to convert Java Objects into their JSON representation. It can also be used to convert a JSON string to an equivalent Java object. Source [here](https://github.com/google/gson)
 
-**espresso-core:3.0.1** 
-
-**material-intro-screen:0.0.5**
+**material-intro-screen:0.0.5** Material intro screen is inspired by Material Intro and developed with love from scratch. I decided to rewrite completely almost all features in order to make Android intro screen easy to use for everyone and extensible as possible. Source [here](https://github.com/TangoAgency/material-intro-screen)
 
 **play-services-maps:12.0.1** Google maps API for android is used to implement and use Google maps on mobile devices. it comes with a lot of features related to maps and is easy to implement too. Source [here](https://developers.google.com/maps/documentation/android-api/)
 
-**easy-android-splash-screen:0.0.1**
+**easy-android-splash-screen:0.0.1** Splash Screen library is used to implement awesome splash screens. it comes with a lot of features related to fonts, pictures and is easy to implement too. Source [here](https://github.com/pantrif/EasySplashScreen)
 
-**cardview-v7:26.1.0**
+**firebase:12.0.1** Firebase is a mobile and web app development platform that provides developers with a plethora of tools and services to help them develop high-quality apps, grow their user base, and earn more profit. Source [here](https://console.firebase.google.com)
 
-**firebase:12.0.1**
+**MPAndroidChart:v2.2.5** MPAndroidChart library is used to implement awesome charts. it comes with a lot of different types of charts with animations and is easy to implement too. Source [here](https://github.com/PhilJay/MPAndroidChart)
 
-**MPAndroidChart:v2.2.5**
+**picasso:2.71828** Picasso is used to download image url and load it to the imageview. Picasso allows for hassle-free image loading in your application—often in one line of code! Source [here](http://square.github.io/picasso/)
 
-**picasso:2.71828**
+**wordcloud:library:0.2.0-beta** WordCloud library is used to implement awesome wordclouds. it comes with a lot of different shapes, colors, fonts, animations and is easy to implement too. Source [here](https://github.com/alhazmy13/AndroidWordCloud)
 
-**wordcloud:library:0.2.0-beta**
+**glide:3.7.0** Glide supports fetching, decoding, and displaying video stills, images, and animated GIFs. Glide includes a flexible API that allows developers to plug in to almost any network stack. By default Glide uses a custom HttpUrlConnection based stack, but also includes utility libraries plug in to Google's Volley project or Square's OkHttp library instead.
+Source [here](https://github.com/bumptech/glide)
 
-**glide:3.7.0**
-
-**fancybuttons:1.8.4**
+**fancybuttons:1.8.4** FAncy Button library is used to implement awesome buttons. it comes with a lot of different shapes, colors, fonts, animations and is easy to implement too. Source [here](https://github.com/medyo/Fancybuttons)
 
 
 
