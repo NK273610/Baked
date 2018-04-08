@@ -14,6 +14,7 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
 
+import android.widget.TextView;
 import android.widget.Toast;
 import android.view.View;
 import android.widget.ImageView;
@@ -33,6 +34,7 @@ public class RecommendationActivity extends AppCompatActivity {
     public static final String FIREBASE_CHILD_PRODUCTS = "Products";
     Product_Class obj;
     ReviewClass reviewClass;
+    TextView text;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +42,7 @@ public class RecommendationActivity extends AppCompatActivity {
         setContentView(R.layout.activity_recommendation);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        text=findViewById(R.id.myImageViewText);
 
         Intent intent = getIntent();
         if(intent.getStringExtra("Strain")!=null) {
@@ -88,6 +91,7 @@ public class RecommendationActivity extends AppCompatActivity {
 
                 }
                 Picasso.get().load(obj.getProductPic()).into(img);
+                text.setText(obj.getProductInfo());
 
             }
 

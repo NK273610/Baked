@@ -98,7 +98,6 @@ public class favourite_Activity extends AppCompatActivity {
         public int getCount() {
             return (int)(favourites.size()/2);
         }
-
         @Override
         public Object getItem(int position) {
             return null;

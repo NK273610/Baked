@@ -1,5 +1,5 @@
 # Baked
-One paragraph to describe your project. Your description should include the project concept and key features implemented.
+Our project aims to capitalize on the new law of marijuana legalization which allows recreational marijuana to be distributed and sold on NLSC centers throughout Canada. This law would make marijuana available to much larger audience who are unaware of the effects of taking it . We have created an app which will help specially new users to decide what kind of marijuana they can try and what all effects it could have on them. By providing all relevant information associated with marijuana and a NLSC store locator in the app we have we have made a complete platform to find, search and score marijuana.
 
 ## Libraries
 Provide a list of **ALL** the libraries you used for your project.
@@ -9,7 +9,7 @@ Example:
 
 **material-intro-screen:0.0.5**
 
-**play-services-maps:12.0.1** 
+**play-services-maps:12.0.1**
 
 **easy-android-splash-screen:0.0.1**
 
@@ -43,37 +43,66 @@ You will encounter roadblocks and problems while developing your project. Share 
 
 **Problem 1: We needed a method to calculate a Fibonacci sequence**
 
-A short description.
+To customize the view on each list , we had to learn how to make custom adapters.
 ```
-// The method we implemented that solved our problem
-public static int fibonacci(int fibIndex) {
-    if (memoized.containsKey(fibIndex)) {
-        return memoized.get(fibIndex);
-    } else {
-        int answer = fibonacci(fibIndex - 1) + fibonacci(fibIndex - 2);
-        memoized.put(fibIndex, answer);
-        return answer;
+// The class we made for one of our custom lists
+    class CustomListadapter extends BaseAdapter {
+        @Override
+        public int getCount() {
+            return (int)(favourites.size()/2);
+        }
+        @Override
+        public Object getItem(int position) {
+            return null;
+        }
+
+        @Override
+        public long getItemId(int position) {
+            return 0;
+        }
+
+        @Override
+        public View getView(int position, View convertView, ViewGroup parent) {
+            int name_position;
+            int description_position;
+            name_position = 2*position;
+            description_position = name_position+1;
+            convertView = getLayoutInflater().inflate(R.layout.customlayoutratings,null);
+            ImageView img = convertView.findViewById(R.id.product_pic);
+            TextView product_name = convertView.findViewById(R.id.product_name);
+            RatingBar ratingBar = convertView.findViewById(R.id.ratingBar);
+            img.setImageResource(imagearray[position]);
+            product_name.setText(favourites.get(name_position));
+            ratingBar.setRating(Integer.parseInt(favourites.get(description_position)));
+
+            return convertView;
+        }
     }
 }
-
-// Source: Wikipedia Java [1]
 ```
+Source: https://www.journaldev.com/10416/android-listview-with-custom-adapter-example-tutorial
 
 ## Feature Section
 List all the main features of your application with a brief description of each feature.
+1. *Store Locator*:
+2. *Search Bar* : Using this bar one can easily filter out a particular product they want information of.
+3. *Recommendation System*:
+4. *Product Info*:
+5. *User Account*:
+
 
 ## Final Project Status
 Write a description of the final status of the project. Did you achieve all your goals? What would be the next step for this project (if it were to continue)?
 
 #### Minimum Functionality
-- Feature 1 name (Completed)
-- Feature 2 name (Partially Completed)
-- Feature 3 (Not Implemented)
+- Feature 1 User Account (Completed)
+- Feature 2 Recomendation System ( Completed)
+- Feature 3 Map Functionality (Completed)
 
 #### Expected Functionality
-- Feature 1 name (Completed)
-- Feature 2 name (Partially Completed)
-- Feature 3 (Not Implemented)
+- Feature 1 Location based notifications (Completed)
+- Feature 2 User Login (Partially Completed)
+- Feature 3 Interactive Graphs (Completed)
 
 #### Bonus Functionality
 - Feature 1 name (Completed)
