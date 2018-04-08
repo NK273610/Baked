@@ -1,10 +1,10 @@
 # Baked
 "Baked" application is built to provide an insight into a variety of strains of marijuana. It can be used by a user who has no prior knowledge about it. It can also recommend strains for the user according to their needs. The recommendation system is mostly useful to a new user who is not aware of the effects a given type of strain cause. It also explains the effects of various strains with meaningful graphs displaying the type effects it produces. In addition, the map functionality helps the user identify and locate the store nearest to them. The app allows users to log in to their account using Gmail to set their preferences or use the app anonymously.
 
-Our project aims to capitalize on the new law of marijuana legalization which allows recreational marijuana to be distributed and sold on NLSC centers throughout Canada. This law would make marijuana available to much larger audience who are unaware of the effects of taking it . Our app wishes to guide the new users to help them decide what kind of marijuana strain they should try based on their preferences. The app will also be appreciated by veteran users, abd provide them a platform to share their knowledge , experiencces and advices using the comments section.
+Our project also aims to capitalize on the new law of marijuana legalization which allows recreational marijuana to be distributed and sold on NLSC centers throughout Canada. This law would make marijuana available to a much larger audience who are unaware of the effects of taking it. Our app wishes to guide the new users to help them decide what kind of marijuana strain they should try based on their preferences. The app will also be appreciated by veteran users, and provide them a platform to share their knowledge, experiences, and advice using the comments section.
 
 ## Libraries
-Provide a list of **ALL** the libraries you used for your project.
+Provided a list of **ALL** the libraries used for the project.
 
 **google-gson:** Gson is a Java library that can be used to convert Java Objects into their JSON representation. It can also be used to convert a JSON string to an equivalent Java object. Source [here](https://github.com/google/gson)
 
@@ -30,21 +30,21 @@ Source [here](https://github.com/bumptech/glide)
 
 
 ## Installation Notes
-1. Install the application as ususal from the apk or zip file. 
-2. Upon your first run of the application, you will be walked through several screens giving an idea about the application. On third screen you will be asked to grant permissions to the app (eg. acccess location).
-3. After a splash screen with Baked logo on it, you will be redirected to the Home page of the application. The home page conatins two tabs on it one for recommending the products and other for accessing the store locator. 
-4. The recommendation tab have buttons that wil take you to the list of products corresponding to that class of products. (for eg. Brain section will take you to the Cannabis products which are responsible for enhancing Brain activity.)
-5. A simple tap anywhere on Map tab will take you to the Map Activity where you can use the store locator functionlaity. The default location is set to your current location with a green marker on it. Upon tapping the _Find Stores_ button, The map will show nearby stores with a NSLC marker on them (As we all know that the distribution of Cannabis will be controlled by government) [source](https://www.mynslc.com/en/Cannabis/Cannabis).
-6. Upon tapping the store markers, the vivinity of the store will be shown in the cards on top of the map and in marker's title. Back action on this activity will take you to the Home activity.
-7. You can also access side navigation drawer on the Home acivity. It contain links to The User account page, Login Page and map page.
-8. User account link will take you to the account page where the user can see their reviews, Favorites  and Order history.
+1. Install the application as usual from the apk or zip file. 
+2. Upon your first run of the application, you will be walked through several screens giving an idea about the application. On the third screen, you will be asked to grant permissions to the app (eg. access location).
+3. After a splash screen with Baked logo on it, you will be redirected to the Home page of the application. The home page contains two tabs on it one for recommending the products and other for accessing the store locator. 
+4. The recommendation tab has buttons that will take you to the list of products corresponding to that class of products. (for eg. Brain section will take you to the Cannabis products which are responsible for enhancing Brain activity.)
+5. A simple tap anywhere on Map tab will take you to the Map Activity where you can use the store locator functionality. The default location is set to your current location with a green marker on it. Upon tapping the _Find Stores_ button, The map will show nearby stores with an NSLC marker on them (As we all know that the distribution of Cannabis will be controlled by the government) [source](https://www.mynslc.com/en/Cannabis/Cannabis).
+6. Upon tapping the store markers, the vicinity of the store will be shown in the cards on top of the map and in marker's title. Back action on this activity will take you to the Home activity.
+7. You can also access side navigation drawer on the Home activity. It contains links to The User account page, Login Page and map page.
+8. User account link will take you to the account page where the user can see their reviews, Favorites and Order history.
 9. Search button can be located on the Home page top right corner and can be used to search the directory of available products.
-10. The Info page of a product can be accessed form the list of products after recommendation , or by performing a search from Home page.
-11. The Info page conatins all the information about the product, its composition, pictures and link to the reviews. The reviews can be accessed at the bottom of the info page in a horizontal swipe card view.
+10. The Info page of a product can be accessed from the list of products after a recommendation , or by performing a search on the Home activity.
+11. The Info page contains all the information about the product, its composition, pictures, and link to the reviews. The reviews can be accessed at the bottom of the info page in a horizontal swipe card view.
 
 
 ## Code Examples
-You will encounter roadblocks and problems while developing your project. Share 2-3 'problems' that your team solved while developing your project. Write a few sentences that describe your solution and provide a code snippet/block that shows your solution. Example:
+While developing the app, we faced few problems which are as follows: -
 
 **Problem 1: Making custom adapters on customize views on each list**
 
@@ -220,13 +220,12 @@ Source : https://stackoverflow.com/questions/6850017/how-to-set-webview-client
 List all the main features of your application with a brief description of each feature.
 1. *Store Locator*:  Users can locate the stores nearby to thier current location and can see the vicinity of indiviual stores in the cards
 2. *Search Bar* : Using this bar one can easily filter out a particular product they want information of.
-3. *Recommendation System*:
+3. *Recommendation System*: This activity helps the user to select the strain as per their need. It can be useful to an amateur as well as a veteran user.
 4. *Product Info*: The info page shows all the information of selected strain. It shows the effects (positive,negative and medical), images, posts, description and wordcloud of selected strain. We have created wordcloud from text in description. But in future we will apply TFIDF ML algorithm to find most frequent word from reviews of particular strain and display that words in word cloud. 
-5. *User Account*:
+5. *User Account*: This feature allows the user to review the products they have purchased and rated. They can even see the reviews they have made on the products.
 
 
 ## Final Project Status
-Write a description of the final status of the project. Did you achieve all your goals? What would be the next step for this project (if it were to continue)?
 
 #### Minimum Functionality
 - Login (Completed)
