@@ -213,7 +213,7 @@ While implementing cardView on the info activty, we found it challenging to atta
 }
 
 ```
-Source : [here] https://stackoverflow.com/questions/6850017/how-to-set-webview-client
+Source : [here] (https://stackoverflow.com/questions/6850017/how-to-set-webview-client)
 
 ## Feature Section
 List all the main features of your application with a brief description of each feature.
