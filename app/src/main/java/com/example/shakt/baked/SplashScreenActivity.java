@@ -14,12 +14,14 @@ import gr.net.maroulis.library.EasySplashScreen;
 
 public class SplashScreenActivity extends AppCompatActivity {
 
+    //code used for splash screen was inspired from this https://github.com/pantrif/EasySplashScreen
+    //library. The code was directly taken from this place
     @Override
     protected void onStart() {
         super.onStart();
-        SharedPreferences prefs = PreferenceManager
+        SharedPreferences prefs = PreferenceManager //shared preferneces used to check if the is app is doenloaded and being used
                 .getDefaultSharedPreferences(this);
-        if (!prefs.getBoolean("firstTime", false)) {
+        if (!prefs.getBoolean("firstTime", false)) {//if its not first time we will show intro activity
 
             SharedPreferences.Editor editor = prefs.edit();
             editor.putBoolean("firstTime", true);
@@ -32,7 +34,7 @@ public class SplashScreenActivity extends AppCompatActivity {
 
             // link for background image : https://www.wallpaperup.com/66805/green_abstract_gaussian_blur.html
 
-            EasySplashScreen config = new EasySplashScreen(SplashScreenActivity.this)
+            EasySplashScreen config = new EasySplashScreen(SplashScreenActivity.this)//we will just show splash screen
                     .withFullScreen()
                     .withSplashTimeOut(3000)
                     .withBackgroundResource(R.color.colorAccent)
