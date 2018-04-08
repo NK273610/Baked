@@ -43,6 +43,7 @@ public class RecommendationActivity extends AppCompatActivity {
         setContentView(R.layout.activity_recommendation);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        text=findViewById(R.id.myImageViewText);
 
         Intent intent = getIntent();
         if(intent.getStringExtra("Strain")!=null) { //we take the intent value
@@ -91,10 +92,11 @@ public class RecommendationActivity extends AppCompatActivity {
                     Data_obj = dataSnapshot.getValue(Product_Class.class);//data object has all values from firebase
 
                 }
+
                 Picasso.get().load(Data_obj.getProductPic()).into(imgview);//using picaso to set image from url
                 textview.setText(Data_obj.getProductInfo());
 
-            }
+           }
 
             @Override
             public void onCancelled(DatabaseError databaseError) {
