@@ -5,7 +5,9 @@ Our project aims to capitalize on the new law of marijuana legalization which al
 
 ## Libraries
 Provide a list of **ALL** the libraries you used for your project.
+
 Example:
+
 **google-gson:** Gson is a Java library that can be used to convert Java Objects into their JSON representation. It can also be used to convert a JSON string to an equivalent Java object. Source [here](https://github.com/google/gson)
 
 **espresso-core:3.0.1** 
