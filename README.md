@@ -6,12 +6,13 @@ Our project aims to capitalize on the new law of marijuana legalization which al
 ## Libraries
 Provide a list of **ALL** the libraries you used for your project.
 Example:
+**google-gson:** Gson is a Java library that can be used to convert Java Objects into their JSON representation. It can also be used to convert a JSON string to an equivalent Java object. Source [here](https://github.com/google/gson)
 
-**espresso-core:3.0.1** __________
+**espresso-core:3.0.1** 
 
 **material-intro-screen:0.0.5**
 
-**play-services-maps:12.0.1**
+**play-services-maps:12.0.1** Google maps API for android is used to implement and use Google maps on mobile devices. it comes with a lot of features related to maps and is easy to implement too. Source [here](https://developers.google.com/maps/documentation/android-api/)
 
 **easy-android-splash-screen:0.0.1**
 
@@ -30,12 +31,13 @@ Example:
 **fancybuttons:1.8.4**
 
 
-**google-gson:** Gson is a Java library that can be used to convert Java Objects into their JSON representation. It can also be used to convert a JSON string to an equivalent Java object. Source [here](https://github.com/google/gson)
-
-
 
 ## Installation Notes
-Installation instructions for markers.
+1. Install the application as ususal from the apk or zip file. 
+2. Upon your first run of the application, you will be walked through several screens giving an idea about the application. On third screen you will be asked to grant permissions to the app (eg. acccess location).
+3. After a splash screen with Baked logo on it, you will be redirected to the Home page of the application. The home page conatins two tabs on it one for recommending the products and other for accessing the store locator. 
+4. The recommendation tab...
+5. A simple tap anywhere on Map tab will take you to the 
 
 
 
