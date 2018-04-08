@@ -43,7 +43,7 @@ public class RecommendationActivity extends AppCompatActivity {
         setContentView(R.layout.activity_recommendation);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        text=findViewById(R.id.myImageViewText);
+        textview=findViewById(R.id.myImageViewText);
 
         Intent intent = getIntent();
         if(intent.getStringExtra("Strain")!=null) { //we take the intent value
