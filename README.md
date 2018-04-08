@@ -1,7 +1,7 @@
 # Baked
-"Baked" application is built to provide an insight into a variety of strains of marijuana. It can be used by a user who has no prior knowledge about it. It also recommends the users about a strain which may be helpful to them as per their needs. The recommendation system is mostly useful to a new user who is not aware of the impact a given type of strain can cause. It also explains the effects of various strains with different forms of visualizations. One of the amazing features of the app is that it has map functionality which helps the user identify different stores which are selling a variety of strains. The app allows users to log in to their account using Gmail to set their preferences or use the app anonymously.
+"Baked" application is built to provide an insight into a variety of strains of marijuana. It can be used by a user who has no prior knowledge about it. It can also recommend strains for the user according to their needs. The recommendation system is mostly useful to a new user who is not aware of the effects a given type of strain cause. It also explains the effects of various strains with meaningful graphs displaying the type effects it produces. In addition, the map functionality helps the user identify and locate the store nearest to them. The app allows users to log in to their account using Gmail to set their preferences or use the app anonymously.
 
-Our project aims to capitalize on the new law of marijuana legalization which allows recreational marijuana to be distributed and sold on NLSC centers throughout Canada. This law would make marijuana available to much larger audience who are unaware of the effects of taking it . We have created an app which will help specially new users to decide what kind of marijuana they can try and what all effects it could have on them. By providing all relevant information associated with marijuana and a NLSC store locator in the app we have we have made a complete platform to find, search and score marijuana.
+Our project aims to capitalize on the new law of marijuana legalization which allows recreational marijuana to be distributed and sold on NLSC centers throughout Canada. This law would make marijuana available to much larger audience who are unaware of the effects of taking it . Our app wishes to guide the new users to help them decide what kind of marijuana strain they should try based on their preferences. The app will also be appreciated by veteran users, abd provide them a platform to share their knowledge , experiencces and advices using the comments section.
 
 ## Libraries
 Provide a list of **ALL** the libraries you used for your project.
@@ -88,56 +88,6 @@ To customize the view on each list , we had to learn how to make custom adapters
 ```
 Source: https://www.journaldev.com/10416/android-listview-with-custom-adapter-example-tutorial
 
-**Problem 2: Using Picaso to download url and set image to imageview**
-
-We have used Picaso to load images from url to the imageview.
-```
-ImageView img;
-public static void downloadImage(Context c,String url,ImageView img)
-    {
-        if(url != null && url.length()>0)
-        {
-            Picasso.get().load(url).placeholder(R.drawable.placeholder).into(img);// picasso class
-        }else {
-
-        }
-    }
-```
-
-**Problem 3: Attaching Srore markers to theri corresponding vicinity cards**
-
-While trying to implement the RecyclerView on the Map fragment in MapActivity, we faced a problem with attaching the markers of the stores to their corresponding vicinity cards. We solved this problem by implementing onMarkerClickListener().
-
-```
- mMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
-            @Override
-            public boolean onMarkerClick(Marker marker) {
-
-                final LatLng markerPosition = marker.getPosition();
-                int selected_marker = -1;
-                for (int i = 0; i < nearByPlaceList.size(); i++) {
-                    LatLng latLng = new LatLng(Double.parseDouble(nearByPlaceList.get(i).get("lat")),
-                                                Double.parseDouble(nearByPlaceList.get(i).get("lng")));
-                    if (markerPosition.latitude == latLng.latitude && markerPosition.longitude == latLng.longitude) {
-                        selected_marker = i;
-                    }
-                }
-
-                CameraPosition cameraPosition = new CameraPosition.Builder().target(markerPosition).zoom(12).build();
-                mMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
-                adapter.notifyDataSetChanged();
-                recyclerView.smoothScrollToPosition(selected_marker);
-
-                marker.showInfoWindow();
-
-
-                return false;
-            }
-        });
- ```
- Source: [here](https://stackoverflow.com/questions/37058897/connect-cards-of-recyclerview-to-marker-in-google-maps)
-
-
 ## Feature Section
 List all the main features of your application with a brief description of each feature.
 1. *Store Locator*:
@@ -176,19 +126,35 @@ What to include in your project sources:
 - Everything listed on the Dalhousie [*Plagiarism and Cheating*](https://www.dal.ca/dept/university_secretariat/academic-integrity/plagiarism-cheating.html)
 - Remember AC/DC *Always Cite / Don't Cheat* (see Lecture 0 for more info)
 
-[1] "pantrif/EasySplashScreen",En.github.com, 2018.
-[Online]. Available:
-https://github.com/pantrif/EasySplashScreen
+[1] "Java (programming language)", En.wikipedia.org, 2018. [Online]. Available: https://en.wikipedia.org/wiki/Java_(programming_language).
 
-[2] "TangoAgency/material-intro-screen",En.github.com, 2018.
-[Online]. Available:
-https://github.com/TangoAgency/material-intro-screen
+Stock Images
+[1] "Blue Dream" . Retrieved from 
+http://lotuslandclub.com/product/sativa-blue-dream/
 
-[3] "alhazmy13/AndroidWordCloud", En.github.com, 2018.
-[Online]. Available:
-https://github.com/alhazmy13/AndroidWordCloud
+[2] "OG KuSh" . Retrieved from 
+http://lotuslandclub.com/product/og-kush/
 
-[4] "PhilJay/MPAndroidChart", En.github.com, 2018.
-[Online]. Available:
-https://github.com/PhilJay/MPAndroidChart
+[3] "Acapulo Gold" . Retrieved from 
+http://lotuslandclub.com/product/Acapulo-Gold/
 
+[4] "Ghost Train Haze" . Retrieved from 
+http://lotuslandclub.com/product/Ghost-Train-Haze/
+
+[5] "Great White Shark" . Retrieved from 
+http://lotuslandclub.com/product/Great-White-Shark/
+
+[6] "Afgoo". Retrieved from
+https://www.leafly.com/sativa/Afgoo
+
+[7] "Headband". Retrieved from
+https://www.leafly.com/sativa/Headband
+
+[8] "LSD". Retrieved from
+https://www.leafly.com/sativa/LSD
+
+[9] "Lavender". Retrieved from
+https://www.leafly.com/sativa/Lavender
+
+[10] "Obama Kush". Retrieved from
+https://www.leafly.com/sativa/Obama-Kush
