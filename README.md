@@ -129,6 +129,7 @@ What to include in your project sources:
 [1] "Java (programming language)", En.wikipedia.org, 2018. [Online]. Available: https://en.wikipedia.org/wiki/Java_(programming_language).
 
 Stock Images
+
 [1] "Blue Dream" . Retrieved from 
 http://lotuslandclub.com/product/sativa-blue-dream/
 
