@@ -86,14 +86,66 @@ To customize the view on each list , we had to learn how to make custom adapters
     }
 }
 ```
-Source: https://www.journaldev.com/10416/android-listview-with-custom-adapter-example-tutorial
+**Problem 2: Create Bar chart and Pie Chart from data **
+
+We have used MPAndroid chart library to created bar chart and Pie Chart
+```
+public void getBar_method(List<Integer> Data_obj, ArrayList<String> ef)
+    {
+
+
+        final ArrayList<BarEntry> barentry = new ArrayList<>();
+        for (int i = 0; i < Data_obj.size(); i++) {
+
+            barentry.add(new BarEntry((float) Data_obj.get(i), i));
+            BarDataSet set1 = new BarDataSet(barentry, "entry1");
+
+            BarData data = new BarData(ef, (IBarDataSet) set1);
+            barchart.setData(data);
+            barchart.animateXY(2000, 2000);
+            barchart.invalidate();
+        }
+    }
+public void getPie_method(List<Integer> Data_obj)
+    {
+        ArrayList<Entry> yvalues = new ArrayList<Entry>();
+        for (int i = 0; i < Data_obj.size(); i++) {
+
+            yvalues.add(new Entry(Data_obj.get(i), i));
+
+        }
+        PieDataSet dataSet = new PieDataSet(yvalues, "THC-CBD ratio");
+
+        ArrayList<String> xVals = new ArrayList<String>();
+
+        xVals.add("THC");
+        xVals.add("CBD");
+        PieData data = new PieData(xVals, dataSet);
+        // In Percentage term
+        data.setValueFormatter(new PercentFormatter());
+        // Default value
+        //data.setValueFormatter(new DefaultValueFormatter(0));
+        pieChart.setData(data);
+        pieChart.setDescription("This is Pie Chart");
+
+        pieChart.setDrawHoleEnabled(true);
+        pieChart.setTransparentCircleRadius(25f);
+        pieChart.setHoleRadius(25f);
+
+        dataSet.setColors(ColorTemplate.VORDIPLOM_COLORS);
+        data.setValueTextSize(13f);
+        data.setValueTextColor(Color.DKGRAY);
+        pieChart.animateXY(1400, 1400);
+    }
+```
+Source: https://github.com/PhilJay/MPAndroidChart
 
 ## Feature Section
 List all the main features of your application with a brief description of each feature.
 1. *Store Locator*:  Users can locate the stores nearby to thier current location and can see the vicinity of indiviual stores in the cards
 2. *Search Bar* : Using this bar one can easily filter out a particular product they want information of.
 3. *Recommendation System*:
-4. *Product Info*: The info page shows all the information of selected strain. It shoes the effects (positive,negative and medical), images, posts, description and wordcloud of selected strain. We have created wordcloud from text in description. But in future we will apply TFIDF ML algorithm to find most frequent word from reviews of particular strain and display that words in word cloud. 
+4. *Product Info*: The info page shows all the information of selected strain. It shows the effects (positive,negative and medical), images, posts, description and wordcloud of selected strain. We have created wordcloud from text in description. But in future we will apply TFIDF ML algorithm to find most frequent word from reviews of particular strain and display that words in word cloud. 
 5. *User Account*:
 
 
