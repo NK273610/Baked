@@ -1,13 +1,42 @@
-# Project Title
+# Baked
 One paragraph to describe your project. Your description should include the project concept and key features implemented.
 
 ## Libraries
-Provide a list of **ALL** the libraries you used for your project. Example:
+Provide a list of **ALL** the libraries you used for your project.
+Example:
+
+**espresso-core:3.0.1** __________
+
+**material-intro-screen:0.0.5**
+
+**play-services-maps:12.0.1** 
+
+**easy-android-splash-screen:0.0.1**
+
+**cardview-v7:26.1.0**
+
+**firebase:12.0.1**
+
+**MPAndroidChart:v2.2.5**
+
+**picasso:2.71828**
+
+**wordcloud:library:0.2.0-beta**
+
+**glide:3.7.0**
+
+**fancybuttons:1.8.4**
+
 
 **google-gson:** Gson is a Java library that can be used to convert Java Objects into their JSON representation. It can also be used to convert a JSON string to an equivalent Java object. Source [here](https://github.com/google/gson)
 
+
+
 ## Installation Notes
 Installation instructions for markers.
+
+
+
 
 ## Code Examples
 You will encounter roadblocks and problems while developing your project. Share 2-3 'problems' that your team solved while developing your project. Write a few sentences that describe your solution and provide a code snippet/block that shows your solution. Example:
