@@ -90,7 +90,7 @@ Source: https://www.journaldev.com/10416/android-listview-with-custom-adapter-ex
 
 ## Feature Section
 List all the main features of your application with a brief description of each feature.
-1. *Store Locator*:
+1. *Store Locator*:  Users can locate the stores nearby to thier current location and can see the vicinity of indiviual stores in the cards
 2. *Search Bar* : Using this bar one can easily filter out a particular product they want information of.
 3. *Recommendation System*:
 4. *Product Info*:
