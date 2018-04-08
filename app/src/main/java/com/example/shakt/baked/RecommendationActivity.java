@@ -14,6 +14,7 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
 
+import android.widget.TextView;
 import android.widget.Toast;
 import android.view.View;
 import android.widget.ImageView;
@@ -34,6 +35,7 @@ public class RecommendationActivity extends AppCompatActivity {
     public static final String FIREBASE_CHILD_PRODUCTS = "Products";
     Product_Class Data_obj;//product class object
     ReviewClass reviewClass;//review class object
+    TextView textview;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,6 +72,7 @@ public class RecommendationActivity extends AppCompatActivity {
 //        Log.e(RecommendationActivity.class.getCanonicalName(), value);
 
         imgview=findViewById(R.id.img); //get the imageview id
+        textview=findViewById(R.id.myImageViewText);
 
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tabLayout); //get tablayout id
         tabLayout.addTab(tabLayout.newTab().setText("Info"));//we set the texts for info and review
@@ -89,6 +92,7 @@ public class RecommendationActivity extends AppCompatActivity {
 
                 }
                 Picasso.get().load(Data_obj.getProductPic()).into(imgview);//using picaso to set image from url
+                textview.setText(Data_obj.getProductInfo());
 
             }
 
