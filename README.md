@@ -1,4 +1,6 @@
 # Baked
+"Baked" application is built to provide an insight into a variety of strains of marijuana. It can be used by a user who has no prior knowledge about it. It also recommends the users about a strain which may be helpful to them as per their needs. The recommendation system is mostly useful to a new user who is not aware of the impact a given type of strain can cause. It also explains the effects of various strains with different forms of visualizations. One of the amazing features of the app is that it has map functionality which helps the user identify different stores which are selling a variety of strains. The app allows users to log in to their account using Gmail to set their preferences or use the app anonymously.
+
 Our project aims to capitalize on the new law of marijuana legalization which allows recreational marijuana to be distributed and sold on NLSC centers throughout Canada. This law would make marijuana available to much larger audience who are unaware of the effects of taking it . We have created an app which will help specially new users to decide what kind of marijuana they can try and what all effects it could have on them. By providing all relevant information associated with marijuana and a NLSC store locator in the app we have we have made a complete platform to find, search and score marijuana.
 
 ## Libraries
@@ -41,7 +43,7 @@ Installation instructions for markers.
 ## Code Examples
 You will encounter roadblocks and problems while developing your project. Share 2-3 'problems' that your team solved while developing your project. Write a few sentences that describe your solution and provide a code snippet/block that shows your solution. Example:
 
-**Problem 1: We needed a method to calculate a Fibonacci sequence**
+**Problem 1: Making custom adapters on customize views on each list**
 
 To customize the view on each list , we had to learn how to make custom adapters.
 ```
@@ -95,19 +97,19 @@ List all the main features of your application with a brief description of each 
 Write a description of the final status of the project. Did you achieve all your goals? What would be the next step for this project (if it were to continue)?
 
 #### Minimum Functionality
-- Feature 1 User Account (Completed)
-- Feature 2 Recomendation System ( Completed)
-- Feature 3 Map Functionality (Completed)
+- Login (Completed)
+- Recommendation Tab (Completed)
+- Product Search (Completed)
 
 #### Expected Functionality
-- Feature 1 Location based notifications (Completed)
-- Feature 2 User Login (Partially Completed)
-- Feature 3 Interactive Graphs (Completed)
+- Store locator (Completed)
+- Product Review and Rating (Completed)
+- Location based notifications (Completed)
 
 #### Bonus Functionality
-- Feature 1 name (Completed)
-- Feature 2 name (Partially Completed)
-- Feature 3 (Not Implemented)
+- Intro Activity and splash screen (Completed)
+- Store Ranking (Completed)
+
 
 ## Sources
 Use IEEE citation style.
@@ -121,3 +123,4 @@ What to include in your project sources:
 - Remember AC/DC *Always Cite / Don't Cheat* (see Lecture 0 for more info)
 
 [1] "Java (programming language)", En.wikipedia.org, 2018. [Online]. Available: https://en.wikipedia.org/wiki/Java_(programming_language).
+
