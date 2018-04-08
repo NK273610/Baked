@@ -140,6 +140,10 @@ public void getPie_method(List<Integer> Data_obj)
 ```
 Source: https://github.com/PhilJay/MPAndroidChart
 
+**Problem 3 : Attaching store markers to theri corresponding vicinity cards**
+
+
+
 ## Feature Section
 List all the main features of your application with a brief description of each feature.
 1. *Store Locator*:  Users can locate the stores nearby to thier current location and can see the vicinity of indiviual stores in the cards
