@@ -34,11 +34,18 @@ Source[here](https://github.com/firebase/FirebaseUI-Android)
 
 
 ## Installation Notes
-1. Install the application as usual from the apk or zip file. 
-2. Upon your first run of the application, you will be walked through several screens giving an idea about the application. On the third screen, you will be asked to grant permissions to the app (eg. access location).
-3. After a splash screen with Baked logo on it, you will be redirected to the Home page of the application. The home page contains two tabs on it one for recommending the products and other for accessing the store locator. 
-4. The recommendation tab...
-5. A simple tap anywhere on Map tab will take you to the 
+
+1. Install the application as ususal from the apk or zip file.
+2. Upon your first run of the application, you will be walked through several screens giving an idea about the application. On third screen you will be asked to grant permissions to the app (eg. acccess location).
+3. After a splash screen with Baked logo on it, you will be redirected to the Home page of the application. The home page conatins two tabs on it one for recommending the products and other for accessing the store locator.
+4. The recommendation tab have buttons that wil take you to the list of products corresponding to that class of products. (for eg. Brain  section will take you to the Cannabis products which are responsible for enhancing Brain activity.)
+5. A simple tap anywhere on Map tab will take you to the Map Activity where you can use the store locator functionlaity. The default location is set to your current location with a green marker on it. Upon tapping the Find Stores button, The map will show nearby stores with a NSLC marker on them (As we all know that the distribution of Cannabis will be controlled by government) source.
+6. Upon tapping the store markers, the vivinity of the store will be shown in the cards on top of the map and in marker's title. Back 7. action on this activity will take you to the Home activity.
+7. You can also access side navigation drawer on the Home acivity. It contain links to The User account page, Login Page and map page.
+8. User account link will take you to the account page where the user can see their reviews, Favorites and Order history.
+9. Search button can be located on the Home page top right corner and can be used to search the directory of available products.
+10. The Info page of a product can be accessed form the list of products after recommendation , or by performing a search from Home page.
+11. The Info page conatins all the information about the product, its composition, pictures and link to the reviews. The reviews can be accessed at the bottom of the info page in a horizontal swipe card view.
 
 
 
