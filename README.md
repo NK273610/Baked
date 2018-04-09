@@ -14,22 +14,22 @@ Provide a list of **ALL** the libraries you used for your project.
 
 **play-services-maps:12.0.1** Google maps API for Android is used to implement and use Google maps on mobile devices. it comes with a lot of features related to maps and is easy to implement too. Source [here](https://developers.google.com/maps/documentation/android-api/)
 
-**easy-android-splash-screen:0.0.1**Easy splash screen library allows you to generate beautiful and customizable Splash screens with less effort. Source[here](https://android-arsenal.com/details/1/3514)
+**easy-android-splash-screen:0.0.1**Easy splash screen library allows you to generate beautiful and customizable Splash screens with less effort. Source [here](https://android-arsenal.com/details/1/3514)
 
-**cardview-v7:26.1.0**he main purpose CardView serves in the Material Design universe is to provide a unified look to all of the card based UIs making it easier for developers to create seamless interfaces.                                                        Source[here](https://developer.android.com/reference/android/support/v7/widget/CardView.html)
+**cardview-v7:26.1.0** The main purpose CardView serves in the Material Design universe is to provide a unified look to all of the card based UIs making it easier for developers to create seamless interfaces.                                                        Source [here](https://developer.android.com/reference/android/support/v7/widget/CardView.html)
 
-**firebase:12.0.1**FirebaseUI is an open-source library for Android that allows you to quickly connect common UI elements to Firebase APIs.FirebaseUI has separate modules for using Firebase Real-time Database, Cloud Firestore, Firebase Auth, and Cloud Storage.
+**firebase:12.0.1** FirebaseUI is an open-source library for Android that allows you to quickly connect common UI elements to Firebase APIs.FirebaseUI has separate modules for using Firebase Real-time Database, Cloud Firestore, Firebase Auth, and Cloud Storage.
 Source[here](https://github.com/firebase/FirebaseUI-Android)
 
-**MPAndroidChart:v2.2.5**MPAndroidChart is a powerful & easy to use chart library for Android.                                        Source[here](https://github.com/PhilJay/MPAndroidChart)
+**MPAndroidChart:v2.2.5** MPAndroidChart is a powerful & easy to use chart library for Android.                                        Source [here](https://github.com/PhilJay/MPAndroidChart)
 
-**picasso:2.71828**Picasso is a powerful image downloading and caching library for Android.Source[here](https://github.com/square/picasso)
+**picasso:2.71828** Picasso is a powerful image downloading and caching library for Android.Source [here](https://github.com/square/picasso)
 
-**wordcloud:library:0.2.0-beta**
+**wordcloud:library:0.2.0-beta** Word cloud gives a graphical representations of word frequency that give greater prominence to words that appear more frequently in a source text.Source [here](https://github.com/alhazmy13/AndroidWordCloud)
 
-**glide:3.7.0**
+**glide:3.7.0**Glide is a fast and efficient open source media management and image loading framework for Android that wraps media decoding, memory and disk caching, and resource pooling into a simple and easy to use interface.Source [here](https://github.com/bumptech/glide)
 
-**fancybuttons:1.8.4**
+**fancybuttons:1.8.4**Icons, Borders, Radius for Android buttons.Source [here](https://github.com/medyo/Fancybuttons)
 
 
 
@@ -270,6 +270,14 @@ https://github.com/medyo/Fancybuttons
 
 [1] "PhilJay/MPAndroidChart", En.github.com, 2018. [Online]. Available: 
 https://github.com/PhilJay/MPAndroidChart
+
+[] "", En.github.com, 2017. [Online]. Available:
+
+[] "", En.github.com, 2017. [Online]. Available:
+
+[] "", En.github.com, 2017. [Online]. Available:
+
+[] "", En.github.com, 2017. [Online]. Available:
 
 
 **Programming tutorials**
