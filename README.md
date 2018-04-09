@@ -51,7 +51,7 @@ Source[here](https://github.com/firebase/FirebaseUI-Android)
 
 
 ## Code Examples
-You will encounter roadblocks and problems while developing your project. Share 2-3 'problems' that your team solved while developing your project. Write a few sentences that describe your solution and provide a code snippet/block that shows your solution. Example:
+Few problems faced by the team while building this app.
 
 **Problem 1: Making custom adapters to customize views on each list**
 
@@ -233,7 +233,7 @@ List all the main features of your application with a brief description of each 
 
 
 ## Final Project Status
-Write a description of the final status of the project. Did you achieve all your goals? What would be the next step for this project (if it were to continue)?
+Functionalities and its status: -
 
 #### Minimum Functionality
 - Login (Completed)
