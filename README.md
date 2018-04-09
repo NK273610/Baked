@@ -27,9 +27,9 @@ Source[here](https://github.com/firebase/FirebaseUI-Android)
 
 **wordcloud:library:0.2.0-beta** Word cloud gives a graphical representations of word frequency that give greater prominence to words that appear more frequently in a source text.Source [here](https://github.com/alhazmy13/AndroidWordCloud)
 
-**glide:3.7.0**Glide is a fast and efficient open source media management and image loading framework for Android that wraps media decoding, memory and disk caching, and resource pooling into a simple and easy to use interface.Source [here](https://github.com/bumptech/glide)
+**glide:3.7.0** Glide is a fast and efficient open source media management and image loading framework for Android that wraps media decoding, memory and disk caching, and resource pooling into a simple and easy to use interface.Source [here](https://github.com/bumptech/glide)
 
-**fancybuttons:1.8.4**Icons, Borders, Radius for Android buttons.Source [here](https://github.com/medyo/Fancybuttons)
+**fancybuttons:1.8.4** Icons, Borders, Radius for Android buttons.Source [here](https://github.com/medyo/Fancybuttons)
 
 
 
