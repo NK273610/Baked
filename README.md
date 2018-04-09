@@ -1,31 +1,35 @@
 # Baked
-"Baked" application is built to provide an insight into a variety of strains of marijuana. It can be used by a user who has no prior knowledge about it. It can also recommend strains for the user according to their needs. The recommendation system is mostly useful to a new user who is not aware of the effects a given type of strain cause. It also explains the effects of various strains with meaningful graphs displaying the type effects it produces. In addition, the map functionality helps the user identify and locate the store nearest to them. The app allows users to log in to their account using Gmail to set their preferences or use the app anonymously.
+"Baked" application is built to provide an insight into a variety of strains of marijuana. It can be used by a user who has no prior knowledge about it. It can also recommend strains for the user according to their needs. The recommendation system is useful for a new user who is not aware of the effects a given type of strain has. It also explains the effects of various strains with meaningful graphs displaying the type effects it produces. In addition, the map functionality helps the user identify and locate the store nearest to them. The app allows users to log in to their account using Gmail to set their preferences or use the app anonymously.
 
-Our project also aims to capitalize on the new law of marijuana legalization which allows recreational marijuana to be distributed and sold on NLSC centers throughout Canada. This law would make marijuana available to a much larger audience who are unaware of the effects of taking it. Our app wishes to guide the new users to help them decide what kind of marijuana strain they should try based on their preferences. The app will also be appreciated by veteran users, and provide them a platform to share their knowledge, experiences, and advice using the comments section.
+Our project aims to capitalize on the new law of marijuana legalization which allows recreational marijuana to be distributed and sold on NLSC centers throughout Canada. This law would make marijuana available to a much larger audience who are unaware of its effects. Our app wishes to guide the new users to help them decide what kind of marijuana strain they should try based on their preferences. The app will also be appreciated by veteran users, and provide them a platform to share their knowledge and expertise.
 
 ## Libraries
-Provided a list of **ALL** the libraries used for the project.
+Provide a list of **ALL** the libraries you used for your project.
 
 **google-gson:** Gson is a Java library that can be used to convert Java Objects into their JSON representation. It can also be used to convert a JSON string to an equivalent Java object. Source [here](https://github.com/google/gson)
 
-**material-intro-screen:0.0.5** Material intro screen is inspired by Material Intro and developed with love from scratch. I decided to rewrite completely almost all features in order to make Android intro screen easy to use for everyone and extensible as possible. Source [here](https://github.com/TangoAgency/material-intro-screen)
+**espresso-core:3.0.1** 
 
-**play-services-maps:12.0.1** Google maps API for android is used to implement and use Google maps on mobile devices. it comes with a lot of features related to maps and is easy to implement too. Source [here](https://developers.google.com/maps/documentation/android-api/)
+**material-intro-screen:0.0.5**
 
-**easy-android-splash-screen:0.0.1** Splash Screen library is used to implement awesome splash screens. it comes with a lot of features related to fonts, pictures and is easy to implement too. Source [here](https://github.com/pantrif/EasySplashScreen)
+**play-services-maps:12.0.1** Google maps API for Android is used to implement and use Google maps on mobile devices. it comes with a lot of features related to maps and is easy to implement too. Source [here](https://developers.google.com/maps/documentation/android-api/)
 
-**firebase:12.0.1** Firebase is a mobile and web app development platform that provides developers with a plethora of tools and services to help them develop high-quality apps, grow their user base, and earn more profit. Source [here](https://console.firebase.google.com)
+**easy-android-splash-screen:0.0.1**Easy splash screen library allows you to generate beautiful and customizable Splash screens with less effort. Source[here](https://android-arsenal.com/details/1/3514)
 
-**MPAndroidChart:v2.2.5** MPAndroidChart library is used to implement awesome charts. it comes with a lot of different types of charts with animations and is easy to implement too. Source [here](https://github.com/PhilJay/MPAndroidChart)
+**cardview-v7:26.1.0**he main purpose CardView serves in the Material Design universe is to provide a unified look to all of the card based UIs making it easier for developers to create seamless interfaces.                                                        Source[here](https://developer.android.com/reference/android/support/v7/widget/CardView.html)
 
-**picasso:2.71828** Picasso is used to download image url and load it to the imageview. Picasso allows for hassle-free image loading in your application—often in one line of code! Source [here](http://square.github.io/picasso/)
+**firebase:12.0.1**FirebaseUI is an open-source library for Android that allows you to quickly connect common UI elements to Firebase APIs.FirebaseUI has separate modules for using Firebase Real-time Database, Cloud Firestore, Firebase Auth, and Cloud Storage.
+Source[here](https://github.com/firebase/FirebaseUI-Android)
 
-**wordcloud:library:0.2.0-beta** WordCloud library is used to implement awesome wordclouds. it comes with a lot of different shapes, colors, fonts, animations and is easy to implement too. Source [here](https://github.com/alhazmy13/AndroidWordCloud)
+**MPAndroidChart:v2.2.5**MPAndroidChart is a powerful & easy to use chart library for Android.                                        Source[here](https://github.com/PhilJay/MPAndroidChart)
 
-**glide:3.7.0** Glide supports fetching, decoding, and displaying video stills, images, and animated GIFs. Glide includes a flexible API that allows developers to plug in to almost any network stack. By default Glide uses a custom HttpUrlConnection based stack, but also includes utility libraries plug in to Google's Volley project or Square's OkHttp library instead.
-Source [here](https://github.com/bumptech/glide)
+**picasso:2.71828**Picasso is a powerful image downloading and caching library for Android.Source[here](https://github.com/square/picasso)
 
-**fancybuttons:1.8.4** FAncy Button library is used to implement awesome buttons. it comes with a lot of different shapes, colors, fonts, animations and is easy to implement too. Source [here](https://github.com/medyo/Fancybuttons)
+**wordcloud:library:0.2.0-beta**
+
+**glide:3.7.0**
+
+**fancybuttons:1.8.4**
 
 
 
@@ -33,22 +37,18 @@ Source [here](https://github.com/bumptech/glide)
 1. Install the application as usual from the apk or zip file. 
 2. Upon your first run of the application, you will be walked through several screens giving an idea about the application. On the third screen, you will be asked to grant permissions to the app (eg. access location).
 3. After a splash screen with Baked logo on it, you will be redirected to the Home page of the application. The home page contains two tabs on it one for recommending the products and other for accessing the store locator. 
-4. The recommendation tab has buttons that will take you to the list of products corresponding to that class of products. (for eg. Brain section will take you to the Cannabis products which are responsible for enhancing Brain activity.)
-5. A simple tap anywhere on Map tab will take you to the Map Activity where you can use the store locator functionality. The default location is set to your current location with a green marker on it. Upon tapping the _Find Stores_ button, The map will show nearby stores with an NSLC marker on them (As we all know that the distribution of Cannabis will be controlled by the government) [source](https://www.mynslc.com/en/Cannabis/Cannabis).
-6. Upon tapping the store markers, the vicinity of the store will be shown in the cards on top of the map and in marker's title. Back action on this activity will take you to the Home activity.
-7. You can also access side navigation drawer on the Home activity. It contains links to The User account page, Login Page and map page.
-8. User account link will take you to the account page where the user can see their reviews, Favorites and Order history.
-9. Search button can be located on the Home page top right corner and can be used to search the directory of available products.
-10. The Info page of a product can be accessed from the list of products after a recommendation , or by performing a search on the Home activity.
-11. The Info page contains all the information about the product, its composition, pictures, and link to the reviews. The reviews can be accessed at the bottom of the info page in a horizontal swipe card view.
+4. The recommendation tab...
+5. A simple tap anywhere on Map tab will take you to the 
+
+
 
 
 ## Code Examples
-While developing the app, we faced few problems which are as follows: -
+You will encounter roadblocks and problems while developing your project. Share 2-3 'problems' that your team solved while developing your project. Write a few sentences that describe your solution and provide a code snippet/block that shows your solution. Example:
 
-**Problem 1: Making custom adapters on customize views on each list**
+**Problem 1: Making custom adapters to customize views on each list**
 
-To customize the view on each list , we had to learn how to make custom adapters.
+To customize the view on each list, we had to learn how to make custom adapters.
 ```
 // The class we made for one of our custom lists
     class CustomListadapter extends BaseAdapter {
@@ -87,7 +87,7 @@ To customize the view on each list , we had to learn how to make custom adapters
 ```
 **Problem 2: Create Bar chart and Pie Chart from data**
 
-We have used MPAndroid chart library to created bar chart and Pie Chart from data array
+We have used MPAndroid chart library to created bar chart and Pie Chart from the data array
 ```
 public void getBar_method(List<Integer> Data_obj, ArrayList<String> ef)
     {
@@ -139,7 +139,7 @@ public void getPie_method(List<Integer> Data_obj)
 ```
 Source: https://github.com/PhilJay/MPAndroidChart
 
-**Problem 3 : Attaching store markers to theri corresponding vicinity cards**
+**Problem 3: Attaching store markers to their corresponding vicinity cards**
 
 While implementing cardView on the map activity, we found it challenging to attach a selected marker to its corresponding vicinity card. We used setOnMarkerClickListener() to implement that with some help from the mentioned source.
 
@@ -176,9 +176,9 @@ While implementing cardView on the map activity, we found it challenging to atta
 ```
 Source : [here](https://stackoverflow.com/questions/37058897/connect-cards-of-recyclerview-to-marker-in-google-maps)
 
-**Problem 4 : Show webview of url list inside carview**
+**Problem 4: Show webview of url list inside carview**
 
-While implementing cardView on the info activty, we found it challenging to attach all the webviews generated from the url string to cardview. We took use of webview client in order to solve it.
+While implementing cardView on the info activity, we found it challenging to attach all the webviews generated from the url string to cardview. We took use of webview client in order to solve it.
 
 ```
         public void onBindViewHolder(final MyViewHolder holder, final int listPosition) {
@@ -218,14 +218,15 @@ Source : https://stackoverflow.com/questions/6850017/how-to-set-webview-client
 
 ## Feature Section
 List all the main features of your application with a brief description of each feature.
-1. *Store Locator*:  Users can locate the stores nearby to thier current location and can see the vicinity of indiviual stores in the cards
-2. *Search Bar* : Using this bar one can easily filter out a particular product they want information of.
-3. *Recommendation System*: This activity helps the user to select the strain as per their need. It can be useful to an amateur as well as a veteran user.
-4. *Product Info*: The info page shows all the information of selected strain. It shows the effects (positive,negative and medical), images, posts, description and wordcloud of selected strain. We have created wordcloud from text in description. But in future we will apply TFIDF ML algorithm to find most frequent word from reviews of particular strain and display that words in word cloud. 
-5. *User Account*: This feature allows the user to review the products they have purchased and rated. They can even see the reviews they have made on the products.
+1. *Store Locator*:  Users can locate the stores nearby through their current location and can see the vicinity of the individual stores in the cards.
+2. *Search Bar*: Using this bar one can conveniently search the database for the information of the product they want. Will be useful when the database size increase.
+3. *Recommendation System*: An interactive screen which allows the user to choose whether they want a brain or body high.This feature will particularly be useful for beginners. 
+4. *Product Info*: The info page shows all the information of selected strain. It shows the effects (positive, negative and medical), images, posts, description and wordcloud of selected strain. We have created the word cloud from the text in the description. But in future, we will apply TFIDF ML algorithm to find the most frequent word from reviews of a particular strain and display that words in a word cloud. 
+5. *User Account*: This tab displays info of the logged in user. This includes personal info of the user and information related to activities on the app, such as the number of reviews posted and following.
 
 
 ## Final Project Status
+Write a description of the final status of the project. Did you achieve all your goals? What would be the next step for this project (if it were to continue)?
 
 #### Minimum Functionality
 - Login (Completed)
@@ -235,24 +236,16 @@ List all the main features of your application with a brief description of each 
 #### Expected Functionality
 - Store locator (Completed)
 - Product Review and Rating (Completed)
-- Location based notifications (Completed)
+- Location-based notifications (Completed)
 
 #### Bonus Functionality
 - Intro Activity and splash screen (Completed)
 - Store Ranking (Completed)
 
 
-## Sources
-Use IEEE citation style.
-What to include in your project sources:
-- Stock images
-- Design guides
-- Programming tutorials
-- Research material
-- Android libraries
-- Everything listed on the Dalhousie [*Plagiarism and Cheating*](https://www.dal.ca/dept/university_secretariat/academic-integrity/plagiarism-cheating.html)
-- Remember AC/DC *Always Cite / Don't Cheat* (see Lecture 0 for more info)
 
+
+**Design guides**
 [1] "pantrif/EasySplashScreen",En.github.com, 2018. [Online]. Available: https://github.com/pantrif/EasySplashScreen
 
 [2] "TangoAgency/material-intro-screen",En.github.com, 2018. [Online]. Available:
@@ -261,13 +254,22 @@ https://github.com/TangoAgency/material-intro-screen
 [3] "alhazmy13/AndroidWordCloud", En.github.com, 2018. [Online]. Available: 
 https://github.com/alhazmy13/AndroidWordCloud
 
-[4] "PhilJay/MPAndroidChart", En.github.com, 2018. [Online]. Available: 
+[4] "medyo/Fancybuttons", En.github.com, 2018. [Online]. Available: 
+https://github.com/medyo/Fancybuttons
+
+
+**Android Libraries**
+
+
+[1] "PhilJay/MPAndroidChart", En.github.com, 2018. [Online]. Available: 
 https://github.com/PhilJay/MPAndroidChart
 
-[5]"GoogleMapsNearbyPlacesDemo", GitHub, 2017. [Online]. Available: https://github.com/priyankapakhale/GoogleMapsNearbyPlacesDemo.
 
-[6] "medyo/Fancybuttons", En.github.com, 2018. [Online]. Available: 
-https://github.com/medyo/Fancybuttons
+**Programming tutorials**
+
+[1]"GoogleMapsNearbyPlacesDemo", GitHub, 2017. [Online]. Available: https://github.com/priyankapakhale/GoogleMapsNearbyPlacesDemo.
+
+
 
 
 **Stock Images**
@@ -279,13 +281,13 @@ http://lotuslandclub.com/product/sativa-blue-dream/
 [2] "OG KuSh" . Retrieved from 
 http://lotuslandclub.com/product/og-kush/
 
-[3] "Acapulo Gold" . Retrieved from 
+[3] "Acapulco Gold". Retrieved from 
 http://lotuslandclub.com/product/Acapulo-Gold/
 
-[4] "Ghost Train Haze" . Retrieved from 
+[4] "Ghost Train Haze". Retrieved from 
 http://lotuslandclub.com/product/Ghost-Train-Haze/
 
-[5] "Great White Shark" . Retrieved from 
+[5] "Great White Shark". Retrieved from 
 http://lotuslandclub.com/product/Great-White-Shark/
 
 [6] "Afgoo". Retrieved from
@@ -302,3 +304,12 @@ https://www.leafly.com/sativa/Lavender
 
 [10] "Obama Kush". Retrieved from
 https://www.leafly.com/sativa/Obama-Kush
+
+**Research material**
+
+[1] Information about product gathered from 
+https://www.leafly.com/
+
+[2]Medical Information about the product gathered from
+https://www.health.harvard.edu/blog/medical-marijuana-2018011513085
+
