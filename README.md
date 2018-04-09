@@ -271,13 +271,20 @@ https://github.com/medyo/Fancybuttons
 [1] "PhilJay/MPAndroidChart", En.github.com, 2018. [Online]. Available: 
 https://github.com/PhilJay/MPAndroidChart
 
-[] "", En.github.com, 2017. [Online]. Available:
+[2] "wordcloud:library:0.2.0-beta", En.github.com, 2017. [Online]. Available:
+https://github.com/alhazmy13/AndroidWordCloud
 
-[] "", En.github.com, 2017. [Online]. Available:
+[3] "glide:3.7.0", En.github.com, 2017. [Online]. Available:
+https://github.com/bumptech/glide
 
-[] "", En.github.com, 2017. [Online]. Available:
+[4] "fancybuttons:1.8.4", En.github.com, 2017. [Online]. Available:
+https://github.com/medyo/Fancybuttons
 
-[] "", En.github.com, 2017. [Online]. Available:
+[5] "google-gson:", En.github.com, 2016. [Online]. Available:
+https://github.com/google/gson
+
+[6] "fancybuttons:1.8.4", En.github.com, 2017. [Online]. Available:
+https://github.com/medyo/Fancybuttons
 
 
 **Programming tutorials**
